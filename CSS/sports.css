@@ -1,0 +1,172 @@
+/* .football-section {
+    width: 1200px;
+    margin: auto;
+} */
+
+.card_sports {
+
+    border-radius: 10px;
+    padding: 5px;
+    background-color: whitesmoke;
+    height:auto;
+}
+
+.card_sports:hover {
+    background-color: white;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.sporst_img {
+    width: 260px;
+    border-radius: 5px;
+    height: 220px;
+}
+
+.btn_sports {
+    background-color: rgb(240, 96, 44);
+    border-radius: 5px;
+
+}
+
+.button-3 {
+    background-color: orangered;
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.button-3:hover {
+    background-color: green;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+.jursey_item_btn{
+    background-color: orangered;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    padding: 7px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.jursey_item_btn:hover{
+    background-color: green;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.team_name{
+
+    background-color: white;
+}
+.team_name:hover{
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+.version_name{
+    background-color: rgb(237, 233, 233);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.version_name:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+
+.jursy_type_price_btn{
+    background-color: green;
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.jursy_type_price_btn:hover{
+    background-color:black;
+    border-radius: 8px;
+    color: white;
+}
+.link-section-sports{
+    background-color: orangered;
+
+}
+
+.li_of_colour{
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+.li_of_colour:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cricket_brand_name{
+    background-color: aliceblue;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cricket_brand_name:hover{
+    background-color: orangered;
+    cursor: pointer;
+    color: whitesmoke;
+
+}
+
+.cricekt_bat_btn{
+    background-color: orange;
+    padding: 4px;
+    border: 2px solid orangered;
+    border-radius: 5px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.cricekt_bat_btn:hover{
+    background-color: rgb(236, 92, 40);
+}
+
+.brn{
+    font-family: 'Times New Roman', Times, serif;
+    color: forestgreen;
+    
+}
+
+.meta_p{
+    background-color: ghostwhite;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.meta_p:hover{
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+}
+
+.Size_p{
+    background-color: honeydew;
+    color: black;
+}
+
+.Size_p:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.fb_price_li{
+    list-style: none;
+}
+.fb_price_li:hover{
+    cursor: pointer;
+    flex-wrap: nowrap;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

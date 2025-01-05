@@ -1,0 +1,121 @@
+.shirt-pic {
+    width: 300px;
+    height: 180px;
+    /* border-radius: 10px; */
+}
+
+.brand-drop-down {
+    list-style: none;
+    color: black;
+
+}
+
+.brand-drop-down:hover {
+
+    background-color: rgb(236, 236, 236);
+}
+
+.shirt-card {
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+}
+
+.shirt-card:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+}
+
+.colour_box{
+
+    background-color:white;
+    border-radius: 10px;
+    
+}
+.colour_box:hover{
+    cursor: pointer;
+    background-color: azure;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.price_box{
+    border-radius: 10px;
+    background-color:rgb(255, 255, 255);
+}
+.price_box:hover{
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+.button-18 {
+    align-items: center;
+    background-color: orangered;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 150px;
+    min-height: 2px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}
+
+.button-18:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+}
+
+.button-18:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+.link-section-shirt{
+    background-color: orangered;
+    height: auto;
+}
+.link-section-li-shirt{
+    background-color:orangered;
+}
+
+
+.filtering-text-section{
+    background-color: orangered;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.find-shirt{
+    border: none;
+    padding: 5px;
+}
+
+.find-shirt:hover{
+    border: 2px solid #09223b;
+    border-radius: 10px;
+}

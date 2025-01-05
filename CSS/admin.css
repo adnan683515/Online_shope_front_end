@@ -1,0 +1,934 @@
+/* CSS */
+.button-18 {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 400px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}
+
+.button-18:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+}
+
+.button-18:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+
+
+
+/* CSS */
+.button-34 {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
+
+
+.pending_btn_admin {
+
+    color: red;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Cenceled_btn {
+    background-color: red;
+    font: bold;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.admin_tabel {
+    border-radius: 4px;
+}
+
+.order_delete_msg {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.suc_btn {
+    background-color: rgb(12, 179, 12);
+    border-radius: 5px;
+    color: whitesmoke;
+    padding: 4px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.shiped {
+    color: whitesmoke;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-size: large;
+    background-color: rgb(248, 100, 46);
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 4px;
+
+}
+
+.select_adminPanel {
+    width: 90px;
+
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom: #0A66C2;
+    /* cursor: pointer; */
+
+}
+
+.select_adminPanel:hover {
+    cursor: pointer;
+}
+
+.delivered_value {
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    background-color: green;
+    color: whitesmoke;
+    border-radius: 3px;
+
+}
+
+.cenceled_value {
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.pen_value {
+    background-color: #09223b;
+    color: whitesmoke;
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.ship_value {
+    color: green;
+    background-color: whitesmoke;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cetagory_form {
+    background-color: #09223b;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid orangered;
+}
+
+.cetagory_input {
+    padding: 4px;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.cetagory_submitbtn {
+    padding: 6px;
+    border-radius: 6px;
+    background-color: rgb(20, 180, 20);
+    color: whitesmoke;
+}
+
+.cetagory_submitbtn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+.all_cetagory_show {
+    /* background-color: #09223b; */
+    background-color: gainsboro;
+    color: black;
+    border-radius: 6px;
+    font-size: larger;
+    padding: 6px;
+    align-items: center;
+}
+
+.text_allcetagory {
+    font-size: large;
+}
+
+.button-country {
+    appearance: button;
+    backface-visibility: hidden;
+    /* background-color: #405cf5; */
+    background-color: #09223b;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 100%;
+    height: 44px;
+    font-weight: bold;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+.button-country:disabled {
+    cursor: default;
+
+}
+
+.button-country:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+
+}
+
+
+.button-colour {
+
+    appearance: button;
+    backface-visibility: hidden;
+    /* background-color: #405cf5; */
+    background-color: rgb(25, 213, 25);
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+
+}
+
+.button-colour:disabled {
+    cursor: default;
+}
+
+.button-colour:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+
+}
+
+
+.button-brand {
+
+    appearance: button;
+    backface-visibility: hidden;
+    /* background-color: #405cf5; */
+    background-color: #00DDEB;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+
+}
+
+.button-brand:disabled {
+    cursor: default;
+}
+
+.button-brand:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+
+}
+
+/* CSS */
+.button-9 {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+.button-9:disabled {
+    cursor: default;
+}
+
+.button-9:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+.button-meta{
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: rgb(179, 9, 226);
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+.button-meta:disabled{
+    cursor: default;
+
+}
+
+.button-meta:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+/* CSS */
+.button-cetagory {
+
+    appearance: button;
+    backface-visibility: hidden;
+    /* background-color: #405cf5; */
+    background-color: deeppink;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+
+}
+
+.button-cetagory:disabled {
+    cursor: default;
+}
+
+.button-cetagory:focus {
+
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+
+}
+
+.edit_cetagory_icon:hover {
+    cursor: pointer;
+}
+
+
+.modal-bd-cetagory {
+    background-color: #5B42F3;
+    border-radius: 5px;
+    margin: 6px;
+}
+
+.cetagory_inut_value {
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.cetagory_name_btn {
+    background-color: whitesmoke;
+    color: black;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.cetagory_name_btn:hover {
+    background-color: #09223b;
+    color: whitesmoke;
+}
+
+.button-price {
+    background-color: initial;
+    background-image: linear-gradient(#8614f8 0, #760be0 100%);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -4px;
+    outline: 0;
+    text-align: center;
+    transition: all .3s cubic-bezier(.05, .03, .35, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: bottom;
+    width: 190px;
+}
+
+price .button-price:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 1000px) {
+    .button-price {
+        font-size: 14px;
+        height: 55px;
+        line-height: 55px;
+        width: 150px;
+    }
+}
+
+
+/* CSS */
+.button-64 {
+    align-items: center;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+    outline: 0;
+}
+
+.button-64 span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-64:hover span {
+    background: none;
+}
+
+@media (min-width: 768px) {
+    .button-64 {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
+
+.brand_form {
+    background-color: #13aa52;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.brand_submitbtn {
+    background-color: rgb(92, 4, 151);
+    color: whitesmoke;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid orangered;
+}
+
+.brand_submitbtn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.brand_name {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.brand_form_succeess {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+
+}
+
+.all_brand_show {
+    background-color: gainsboro;
+    border-radius: 5px;
+    color: black;
+    font-size: large;
+
+    padding: 4px;
+
+}
+
+.form_colour {
+    background-color: aqua;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.colour_btn {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #5E5DF0;
+    border-radius: 5px;
+    width: 100px;
+    color: whitesmoke;
+}
+
+.colour_name {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.colour_name:hover {
+    border: 2px solid aqua;
+}
+
+.colour_box {
+    background-color: whitesmoke;
+    padding: 10px;
+    border: 1px solid slateblue;
+    border-radius: 5px;
+}
+
+.del_icon_colour:hover {
+    cursor: pointer;
+    /* background-color:  #cbd0d8; */
+
+}
+
+.modal-body {
+    background-color: #09223b;
+}
+
+.model_brandbody {
+    background-color: #AF40FF;
+}
+
+.brand_name_edit {
+    background-color: white;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.update_brand_name_label {
+    font-size: large;
+    font-weight: 500;
+}
+
+.update_btn_brand {
+
+    background-color: #00DDEB;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100px;
+}
+
+.edit_brand_btn {
+    width: 40px;
+    height: 40px;
+    background-color: #09223b;
+    border-radius: 9px;
+}
+
+.form_country {
+    background-color: #760be0;
+    padding: 6px;
+    border-radius: 7px;
+    border: 2px solid black;
+
+}
+
+.country_submit_btn {
+    background-color: black;
+    color: whitesmoke;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.cuntry_name_edit {
+    background-color: whitesmoke;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.country_name {
+    color: whitesmoke;
+    font-size: large;
+}
+
+.box_of_country_name-icon {
+    background-color: azure;
+    border: 2px solid antiquewhite;
+    border-radius: 9px;
+    padding: 5px;
+    color: black;
+}
+
+.edit_country_Icon:hover {
+    cursor: pointer;
+
+}
+
+.modal-bd_country {
+    background-color: lightgray;
+    color: black;
+
+}
+
+.country_formUpdate {
+    margin: 10px;
+    background-color: #5B42F3;
+    padding: 6px;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.update_country_btn {
+    background-color: #09223b;
+    padding: 7px;
+    border-radius: 7px;
+    color: whitesmoke;
+}
+
+.update_country_btn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.delete_icon_country:hover {
+    cursor: pointer;
+}
+
+.delete_icon_cetagory:hover {
+    cursor: pointer;
+}
+
+.team_form {
+    background-color: darkslategray;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: whitesmoke;
+    padding: 10px;
+
+}
+
+.team_name_input_class {
+    padding: 7px;
+
+    border-radius: 5px;
+    border: 2px solid navy;
+}
+
+.submit_btn_team_form {
+    background-color: #0A66C2;
+    border-radius: 6px;
+    color: whitesmoke;
+    padding: 7px;
+
+}
+
+.submit_btn_team_form:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.team_name_and_edit_option {
+    background-color: aliceblue;
+    border: 1px solid slateblue;
+    padding: 4px;
+    border-radius: 6px;
+    align-items: center;
+}
+
+.team_name_delete_icn {
+    cursor: pointer;
+}
+
+.modal-bd-team {
+    background-color: darkslategray;
+    color: whitesmoke;
+
+}
+
+.team_edit_update_form{
+    margin: 9px;
+    padding: 10px;
+    border-radius: 9px;
+}
+
+.edit_name_team{
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.submit_btn_team{
+    padding: 6px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 4px;
+}
+.submit_btn_team:hover{
+    background-color: #09223b;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.filter_btn_oder{
+    background-color: #5B42F3;
+    padding: 6px;
+    width: 200px;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.filter_btn_oder:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.date_input_option{
+    padding: 5px;
+    background-color: #fff;
+    color: black;
+    border-radius: 5px;
+    /* width: 120px; */
+
+}
+
+.section_of_filter_count{
+
+    padding: 10px;
+    
+    color: black;
+    border-radius: 5px;
+}
+
+.text_and_icon_box_meta{
+
+
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+.metarial_form{
+    background-color: #760be0;
+    color: whitesmoke;
+
+    border-radius: 6px;
+    margin: 9px;
+    padding: 5px;
+}
+.meta_name{
+    border-radius: 4px;
+    border: 2px solid whitesmoke;
+    padding: 4px;
+}
+
+.meta_edit_form{
+    background-color: darkslategray;
+    color: whitesmoke;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.update_btn_meta{
+    background-color: rgb(223, 78, 25);
+    padding: 5px;
+    border-radius: 6px;
+    color: black;
+}
+.update_btn_meta:hover{
+    background-color: #09223b;
+    color: whitesmoke;
+}
+
+.meta_nput_edit{
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.del_meta{
+    cursor: pointer;
+}
+
+.version_parent_div{
+    border: 1px solid #AF40FF;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+.version_form_class{
+    background-color: darkorange;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.bersion_input_class{
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.submit_version{
+    background-color: #760be0;
+    padding: 6px;
+    border-radius: 5px;
+}
+.submit_version::shadow{
+    background-color: #09223b;
+}
+.submit_version:hover{
+    background-color: whitesmoke;
+    color: black;
+}

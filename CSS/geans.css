@@ -1,0 +1,72 @@
+.size_li{
+    list-style: none;
+}
+.geans_brand_filter{
+    color: gray;
+}
+.hover_li_geans{
+    cursor: pointer;
+    color: gainsboro;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hover_li_geans:hover{
+    
+    background-color: gainsboro;
+    border-radius: 2px;
+    
+
+}
+
+.cetagorys_drop{
+    background-color: orangered;
+}
+
+.dropdown-menu{
+    background-color: orangered;
+}
+.dropdown-menu li:hover{
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.geans_cetagory_filter{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* color: gray; */
+    cursor: pointer;
+}
+.hover_li_geans_cetagroy{
+    color: black;
+}
+.hover_li_geans_cetagroy:hover{
+    background-color: gainsboro;
+    font-family: cursive;
+    color: bisque;
+    border-radius: 4px;
+}
+
+.geans_price_li{
+    color: slategrey;
+}
+.geans_price_li:hover{
+    font-family: 'Courier New', Courier, monospace;
+    color: orangered;
+    cursor: pointer;
+}
+
+.view_more{
+    background-color: rgb(255, 68, 0);
+}
+
+.single_geans_card{
+    border: none;
+    background-color: rgb(207, 207, 207);
+    padding: 2px;
+    height: auto;
+}
+
+.single_geans_card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px coral ;
+}

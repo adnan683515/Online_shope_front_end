@@ -1,0 +1,64 @@
+
+.jakcet_li{
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.jakcet_li:hover{
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+.jacK_a{
+    color: black;
+}
+.jacK_a:hover{
+    color: orangered;
+}
+.type_jack_li{
+    list-style: none;
+}
+.type_jack_li{
+    cursor: pointer;
+}
+.jacK_type{
+    color: black;
+}
+.jacK_type:hover{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: green;
+}
+.jack_colour_li{
+    list-style: none;
+    cursor: pointer;
+}
+
+.LI_of_warrenty{
+    list-style: none;
+    
+}
+.LI_of_warrenty:hover{
+    
+    cursor: pointer;
+    color: orangered;
+    background-color: gainsboro;
+}
+.jacK_wra{
+    text-decoration: none;
+    color: black;
+}
+.jacK_wra:hover{
+    cursor: pointer;
+    
+    color: orangered;
+}
+
+.FILTER-SECTION{
+
+    padding: 15px;
+    padding-top: 15px;
+    border-radius: 10px;
+
+   
+}

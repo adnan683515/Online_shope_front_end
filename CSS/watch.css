@@ -1,0 +1,100 @@
+.watc-pic {
+    width: 220px;
+    height: 180px;
+}
+
+.single_watch {
+    border: none;
+    padding: 5px;
+    height: 290px;
+    align-items: center;
+    background-color: gainsboro;
+}
+
+.wacth-Cetagory-section{
+    margin-bottom: 40px;
+}
+
+.single_watch:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.wtach-li {
+    list-style: none;
+}
+
+.wtach-li:hover {
+    cursor: pointer;
+    background-color: rgb(227, 100, 54);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.brand-wacth-li {
+    list-style: none;
+}
+
+.brand-wacth-li:hover {
+    cursor: pointer;
+    background-color: cadetblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.warenty-li {
+    list-style: none;
+
+}
+
+.warenty-li:hover {
+    cursor: pointer;
+    background-color: orange;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.diyal-li {
+    list-style: none;
+}
+
+.diyal-li:hover {
+    cursor: pointer;
+    background-color: gray;
+    font-family: cursive;
+}
+
+.strap-li {
+    list-style: none;
+}
+
+.strap-li:hover {
+    cursor: pointer;
+    background-color: orangered;
+}
+
+.range_of_price_watch {
+    border: none;
+    background-color: orangered;
+}
+
+.range_of_price_watch:hover {
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.button-5{
+    background-color: orangered;
+    border-radius: 17px;
+}
+
+.icon_details{
+    background-color: orangered;
+    color: black;
+    text-align: center;
+    width: 100px;
+    border-radius: 7px;
+}
+.icon_details:hover{
+    background-color: forestgreen;
+    cursor: pointer;
+}

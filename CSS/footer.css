@@ -1,0 +1,46 @@
+.foot {
+    /* background-color: rgb(8, 77, 105);
+     */
+    background-color: rgb(5, 32, 55);
+    color:white;
+}
+
+.nav_colour {
+    /* background-color: rgb(8, 77, 105); */
+    /* background-color: orangered; */
+    height: auto;
+    color: white;
+    /* background-color:rgb(8, 77, 105); */
+    background-color: rgb(5, 32, 55);
+
+}
+
+/* .nav_colour:hover {
+    background-color: rgb(238, 78, 20);
+
+} */
+
+.deshBord{
+    background-color: whitesmoke;
+    padding: 4px;
+    color: black;
+    border-radius: 4px;
+}
+.deshBord:hover{
+    background-color: rgb(5, 32, 55);
+    color: whitesmoke;
+}
+
+.logOut{
+    background-color: whitesmoke;
+    color: black;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer
+
+}
+
+.logOut:hover{
+    background-color: red;
+    color: whitesmoke;
+}

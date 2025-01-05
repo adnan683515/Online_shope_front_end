@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.banner {
+    width: 100%;
+    min-height: 70vh;
+    background-image: url(/picture/bakcroundshooopin.jpg);
+    background-position: center;
+    background-size: cover;
+    /* padding: 10px 10%; */
+    overflow: hidden;
+}
+
+.item-section {
+    margin: 40px;
+
+}
+
+.home_card{
+
+    height: 300px;
+    padding: 4px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.home_card:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+
+.geans3 {
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.carosel {
+    background-color: gray;
+}
+
+
+.saree_text {
+    width: auto;
+    height: auto;
+}
+
+.red {
+    height: 200px;
+}

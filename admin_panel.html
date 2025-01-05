@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/saree.css">
+    <link rel="stylesheet" href="/CSS/signup.css">
+    <link rel="stylesheet" href="/CSS/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+
+        <a href=""></a>
+        <div class="navigation" id="navber">
+
+
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <main>
+
+
+        <section>
+
+            <div class="adding_cetagory row w-75 m-auto">
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-cetagory" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                        Cetagory
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                        aria-labelledby="staticBackdropLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="staticBackdropLabel">Hello Admin You can Add Cetagory Name
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="cetagory_form">
+                                <p class="text-white" id="cetagory_form_success"></p>
+                                <form id="cetagory_form" onsubmit="BrandPostAdmin(event)" action="">
+
+                                    <select name="select_value" required class="select_adminPanel mb-3"
+                                        aria-label="Default select example " id="cetagory_selection">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Shirt</option>
+                                        <option value="2">Saree</option>
+                                        <option value="3">Geans</option>
+                                        <option value="4">Football</option>
+                                        <option value="5">Powder</option>
+                                        <option value="6">Cricket Bat</option>
+                                        <option value="7">Watch</option>
+                                    </select>
+
+
+                                    <input name="input_cetagory" id="cetagory_input" type="text"
+                                        placeholder="Enter Cetagory Name" required class="mb-3 cetagory_input">
+                                    <br class="mt-3 mb-3">
+                                    <button class="cetagory_submitbtn" type="submit">Submit</button>
+
+
+                                </form>
+
+                            </div>
+
+                            <div class="mt-5">
+                                <h4 class="text-center">All Cetagory</h4>
+                                <p id="delete_msg_ceta"></p>
+                                <ol class="list-group list-group-numbered" id="all_cetagory">
+
+
+                                </ol>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-9" type="button" data-bs-toggle="offcanvas" data-bs-target="#team_modal"
+                        aria-controls="team_modal">Team</button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="team_modal"
+                        aria-labelledby="team_modalLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="team_modalLabel">Hello Admin,You can Add Team</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div>
+                                <p class="text-black" id="team_name_Post_done"></p>
+                                <form onsubmit="TeamNamePOst(event)" action="" class="team_form" id="team_form">
+                                    <label class="mb-3" for="team_name">Team Name:</label>
+                                    <br class="mb-3">
+                                    <input name="team_name_value" type="text" placeholder="Enter the team Name"
+                                        id="team_nameInput" class="team_name_input_class mb-3">
+                                    <br class="mb-3">
+                                    <button class="submit_btn_team_form" type="submit">submit</button>
+
+
+                                </form>
+                            </div>
+
+                            <h4 class="text-center text-black mt-3">All Team</h4>
+                            <div class="div_all_team mt-3" id="all_team">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-meta" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#metarial_canvas" aria-controls="metarial_canvas">
+                        MainMetarials
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="metarial_canvas"
+                        aria-labelledby="metarial_canvasLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="metarial_canvasLabel">Hey Admin,You can Add MainMetarials
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div>
+                                <p id="succ_meta" class="text-black"></p>
+                                <form onsubmit="MetarialPostForm(event)" class="metarial_form" id="metarial_form">
+
+                                    <select name="select_value_metarail" required class="select_adminPanel mb-3"
+                                        aria-label="Default select example" id="main_meta_selection">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">jacket</option>
+                                        <option value="2">Bat</option>
+                                        <option value="3">jursey</option>
+                                        <option value="4">geans</option>
+                                        <option value="5">watch</option>
+                                        <option value="6">Saree</option>
+                                        <option value="7">Football</option>
+                                    </select>
+
+                                    <br>
+                                    <label class="mb-2" for="input_meta">Metarail Name:</label>
+                                    <br>
+                                    <input name="meta_name_input" id="input_meta" type="text"
+                                        placeholder="Enter Brand Name" required class="meta_name mb-3">
+
+                                    <br>
+                                    <button class="brand_submitbtn" type="submit">Submit</button>
+
+
+                                </form>
+
+
+                                <p id="del_succ" class="text-center text-dark"> </p>
+                                <div id="meta_box_bd" class="mt-4">
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-9" type="button" data-bs-toggle="offcanvas" data-bs-target="#version"
+                        aria-controls="version">
+                        Add Version
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="version"
+                        aria-labelledby="versionLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="versionLabel">Hea admin,You can Add Version name!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div>
+
+                                <form action="" id="version_form" class="version_form_class" >
+
+                                    <label class="mb-3" for="version">Name: </label>
+                                    <br>
+                                    <input type="text" placeholder="Enter the Version Name" id="version_input" class="bersion_input_class mb-3">
+                                    <br>
+                                    <button class="submit_version" type="submit">submit</button>
+
+
+                                </form>
+
+                            </div>
+
+                            <div id="version_Div_of_parent" class="mt-5">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-9" type="button" data-bs-toggle="offcanvas" data-bs-target="#size_canvas"
+                        aria-controls="size_canvas">
+                        Add Size
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="size_canvas"
+                        aria-labelledby="staticBackdropLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-9" type="button" data-bs-toggle="offcanvas" data-bs-target="#size_canvas"
+                        aria-controls="size_canvas">
+                        Add Size
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="size_canvas"
+                        aria-labelledby="staticBackdropLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-country" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#country_canvas" aria-controls="country_canvas">
+                        Add Country
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="country_canvas"
+                        aria-labelledby="country_canvas">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="country_canvas">Hello Admin,You Can Add Country Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div>
+
+                                <p class="tex-dark" id="country_delete_msg"></p>
+                                <form onsubmit="countryPost(event)" class="form_country" action="" id="country_form">
+                                    <p class="text-white" id="country_seccess"></p>
+                                    <label class="country_name" for="country_name">Country Name:</label>
+                                    <br class="m-1">
+                                    <input class="cuntry_name_edit" id="country_name_input" type="text"
+                                        placeholder="Enter the Country Name" name="country_name">
+                                    <br class="m-3">
+                                    <button class="country_submit_btn" type="submit">Submit</button>
+                                </form>
+
+                            </div>
+
+                            <div class="country_box mt-4" id="country_box_display">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+
+                    <button class="button-colour" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#size_canvas_colour" aria-controls="size_canvas_colour">
+                        Add Colour
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1"
+                        id="size_canvas_colour" aria-labelledby="staticBackdropLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="size_canvas_colour">Hello Admin,You Can Add colour Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                            <div class="form_colour">
+
+                                <p id="colour_name_success"></p>
+                                <p class="text-dark" id="colour_delte"></p>
+                                <form id="colourPostForm" onsubmit="ColourPost(event)">
+
+                                    <label for="colour-name"></label>
+                                    <input type="text" placeholder="Enter The colour Name" class="colour_name"
+                                        name="colour" id="colour_inpt">
+                                    <br class="m-3">
+                                    <button type="submit" class="colour_btn">POST</button>
+                                </form>
+
+                            </div>
+                            <div id="colour_display_container" class="colour_display_container mt-4">
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+                    <button class="button-brand" type="button" data-bs-toggle="offcanvas" data-bs-target="#asdf"
+                        aria-controls="asdf">Brand Name</button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="asdf" aria-labelledby="asdf">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="asdf">Hello Admin,You can add Brand Name.</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="brand_form">
+                                <p class="text-white brand_form_succeess" id="brand_form_success"></p>
+                                <form id="brand_form" onsubmit="BrandFormPost(event)" action="">
+
+                                    <select name="select_value" required class="select_adminPanel"
+                                        aria-label="Default select example " id="brand_selection">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">geans</option>
+                                        <option value="2">jacket</option>
+                                        <option value="3">Saree</option>
+                                        <option value="4">Shirt</option>
+                                        <option value="5">Watch</option>
+                                        <option value="6">Cricket Bat</option>
+                                        <option value="7">Football</option>
+                                    </select>
+
+                                    <br class="mt-3 mb-3">
+                                    <input name="input_brand" id="input_brand" type="text"
+                                        placeholder="Enter Brand Name" required class="brand_name">
+                                    <br class="mt-3 mb-3">
+                                    <button class="brand_submitbtn" type="submit">Submit</button>
+
+
+                                </form>
+
+                            </div>
+                            <div class="mt-5">
+                                <h4 class="text-center">All Brand Name</h4>
+
+                                <p class="text-dark" id="delete_brand"></p>
+                                <ol class="list-group list-group-numbered" id="all_brand">
+
+
+                                </ol>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <section class="w-75 row m-auto mt-3 section_of_filter_count">
+
+
+            <div class="col-lg-4 col-md-4 col-sm-12 m-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div>
+                            <h5>Form:</h5>
+                            <input type="date" id="date_input" class="date_input_option">
+                        </div>
+
+                        <div>
+                            <h5>To:</h5>
+                            <input type="date" id="end_input" class="date_input_option">
+                        </div>
+                    </div>
+                    <a onclick="CaptureDate(event)" href=""
+                        class="m-1 text-decoration-none mt-1 text-center filter_btn_oder">Filter</a>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-7 col-md-7 col-sm-12 m-1">
+
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+                        <p id="oder_ocut"></p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+                        <p id="pending_Count"></p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+                        <p id="delivered_count"></p>
+                    </div>
+
+
+
+                    <div class="col-lg-2 col-md-2 col-sm-12 m-1">
+                        <p id="shiped_COunt"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <section class="row w-75 m-auto mt-5 mb-5">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 all_oder_list table-responsive admin_tabel">
+                <p class="text-center order_delete_msg" id="order_delete_msg"></p>
+
+                <table class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Oder ID</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">View</th>
+                            <th scope="col">Open</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="admin_panel_order_talbe">
+
+
+
+                    </tbody>
+                </table>
+
+                <div class="odernot" id="odernotfound">
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <section>
+
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Hea Admin , You Can Edit Colour Name
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-white" id="colour_edit_success"></p>
+                            <form onsubmit="EditColourForm(event)" id="edit_colour_form">
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label text-white">Update Colour:</label>
+                                    <input name="edit_value_clr" type="text" class="form-control" id="recipient-name"
+                                        placeholder="Enter your new colour name">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-white" id="model_1_brandEdit">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="model_brandbody">
+                            <p class="text-white" id="brand_edit_succss"></p>
+                            <form onsubmit="BrandNameUpdate(event)" id="brand_name_update_form" class="p-4">
+
+
+
+                                <label class="update_brand_name_label" for="brand_name_edit">Update Brand Name:</label>
+                                <br class="m-2">
+                                <input class="brand_name_edit" id="brand_name_edit" name="brand_name_update" type="text"
+                                    placeholder="Enter The Update Brand Name">
+                                <br class="mt-1">
+                                <br class="mb-1">
+                                <button class="update_btn_brand" href="" type="submit">Update</button>
+                            </form>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                    data-bs-toggle="modal">Previous</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="country_model" tabindex="-1" aria-labelledby="country_modelLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="country_modelLabel">Country Name Edit Now</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-bd_country">
+
+                            <form onsubmit="PutCountryForm(event)" class="country_formUpdate" id="country_form_update"
+                                action="">
+
+                                <p class="text-white" id="update_country"></p>
+                                <label for="update_tiele_country_name">Update Country Name:</label>
+
+                                <br class="m-2">
+                                <input name="update_country_name" type="text" placeholder="Enter the country Name"
+                                    class="p-2" id="update_countryiinput">
+
+                                <br class="m-2">
+
+                                <button type="submit" class="update_country_btn mt-2">UPDATE</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="cetagory_edit_mdl" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="cetagory_edit_mdlLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cetagory_edit_mdlLabel">Hea admin,You Can Edit Cetagory
+                                Name!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-bd-cetagory">
+
+
+                            <form onsubmit="EditCetagoryName(event)" id="cetagory_edit_form"
+                                class="cetagory_edit_form p-3">
+                                <p class="text-dark" id="cetagory_eidt_succcsess"></p>
+                                <label for="cetagory_edit_label" class="text-white">Cetagory Name:</label>
+                                <br class="m-2">
+                                <input name="cetagory_input_value_name" type="text"
+                                    placeholder="Enter the Cetagory Name" id="cetagory_input_bvalue"
+                                    class="cetagory_inut_value">
+                                <br class="m-2">
+                                <button class="mt-2 cetagory_name_btn" type="submit">update</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="teameditmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="teameditmodalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="teameditmodalLabel">Update Team Name</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-bd-team">
+
+                            <p class="text-white" id="success_team_edit"></p>
+                            <form onsubmit="UpdateEditFunction(event)" class="team_edit_update_form" id="team_edit_form"
+                                action="">
+
+                                <label class="mb-3" for="teameditname">Update name:</label>
+                                <br>
+                                <input name="updatenameteam" type="text" placeholder="Enter the update name"
+                                    id="edit_name_team" class="edit_name_team mb-3">
+                                <br class="mb-4">
+                                <button class="submit_btn_team" type="submit">update</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="meta_edit" tabindex="-1" aria-labelledby="meta_editLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h1 class="modal-title fs-5" id="meta_editLabel">Hea admin,you can update Metarails
+                                    name!</h1>
+                                <p style="font-size:20px">&#128540;</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body_meta">
+
+                            <p id="meta_edit_dne" class="text-center text-dark"></p>
+                            <form onsubmit="editdelmetaform(event)" action="" class="meta_edit_form">
+
+                                <label class="mb-2" for="update_title">Update Name:</label>
+                                <br class="mb-2">
+                                <input id="meta_input_eidt" class="meta_nput_edit mb-2" type="text"
+                                    placeholder="Enter the update Metarials name">
+                                <br>
+                                <button class="update_btn_meta" type="submit">update</button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start foot ">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div class="">
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/JS/app.js"></script>
+    <script src="/JS/nav.js"></script>
+    <script src="/JS/singup.js"></script>
+    <script src="/JS/login.js"></script>
+    <script src="/JS/admin.js"></script>
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,109 @@
+.fm_order {
+    /* border: 2px solid wheat; */
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+
+
+.order_details {
+    border: 1px solid wheat;
+}
+
+
+
+.bd_order {
+    /* background-color: aliceblue; */
+    background-color:whitesmoke;
+}
+
+
+
+/* CSS */
+.button-37 {
+    background-color: #13aa52;
+    border: 1px solid #13aa52;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 15px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-37:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    .button-37 {
+        padding: 10px 20px;
+    }
+}
+
+.order_details {
+    padding: 10px;
+    border-radius: 10px;
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.img_items {
+
+    width: 150px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+
+.items_box_roder {
+
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* CSS */
+.button-2 {
+    background-color: orangered;
+    border-radius: 8px;
+    border-width: 0;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-2:hover {
+    background-color: green;
+    font-family: fantasy;
+}

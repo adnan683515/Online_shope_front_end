@@ -1,0 +1,76 @@
+.order_page{
+
+
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+
+}
+.pending_status{
+    color: gray;
+    font-weight: bold;
+}
+.shiped_status{
+    color: rgb(88, 174, 88);
+    font-weight: bolder;
+}
+.cenceled_status{
+    color: red;
+}
+.suc_status{
+    background-color: green;
+    padding: 2px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.user_info{
+    color:black;
+    font-weight: bolder;
+}
+.product_tiel{
+    color: orangered;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.oder_details_info{
+    color: rgb(41, 186, 41);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.product{
+
+    height: auto;
+    background-color: white;
+    
+}
+
+.order_img_detils{
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    margin: 30px;
+}
+
+.text_ship_title{
+    color: orangered;
+    font-size: larger;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.product_descripton{
+
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
