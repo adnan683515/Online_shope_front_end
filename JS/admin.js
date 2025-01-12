@@ -581,7 +581,7 @@ const BrandNameUpdate = (event) => {
         name: formdata.get('brand_name_update')
     }
 
- 
+
 
 
     fetch(`http://127.0.0.1:8000/brandPutDelte/${brand_name_id}/`, {
@@ -994,119 +994,194 @@ const MetarialPostForm = (event) => {
     else {
         value_for_meta = 'Football'
     }
-    document.getElementById('input_meta').value=""
+    document.getElementById('input_meta').value = ""
 
-    obj ={
-        choice_option:value_for_meta,
-        name : input_value_of_meta
+    obj = {
+        choice_option: value_for_meta,
+        name: input_value_of_meta
     }
-    
 
-    fetch('http://127.0.0.1:8000/mainmetarials/',{
-        method:"POST",
-        headers:{"Content-type":'application/json'},
-        body:JSON.stringify(obj)
+
+    fetch('http://127.0.0.1:8000/mainmetarials/', {
+        method: "POST",
+        headers: { "Content-type": 'application/json' },
+        body: JSON.stringify(obj)
     })
-    .then((res)=>{
-        res.json(),
-        document.getElementById('succ_meta').innerText=`Metarial Post done`
-        
-    })
-    document.getElementById('succ_meta').innerText=""
+        .then((res) => {
+            res.json(),
+                document.getElementById('succ_meta').innerText = `Metarial Post done`
+
+        })
+    document.getElementById('succ_meta').innerText = ""
 
 
 }
 
 
-let meta_id =''
+let meta_id = ''
 let meta_choice = ''
-const meta_define_modal=(id,name,choice)=>{
-    meta_id=`${id}`
-    meta_choice=`${choice}`
-    document.getElementById('meta_input_eidt').value=`${name}`
+const meta_define_modal = (id, name, choice) => {
+    meta_id = `${id}`
+    meta_choice = `${choice}`
+    document.getElementById('meta_input_eidt').value = `${name}`
 }
 
 
 
-const editdelmetaform=(event)=>{
+const editdelmetaform = (event) => {
 
     event.preventDefault();
 
     const val_meta = document.getElementById('meta_input_eidt').value
 
-    const obj ={
-        choice_option:meta_choice,
-        name:val_meta
+    const obj = {
+        choice_option: meta_choice,
+        name: val_meta
     }
 
-    document.getElementById('meta_input_eidt').value=""
+    document.getElementById('meta_input_eidt').value = ""
 
-    
-    fetch(`http://127.0.0.1:8000/editdeletemeta/${meta_id}/`,{
-        method:"PUT",
-        headers:{"Content-type":"application/json"},
-        body:JSON.stringify(obj)
-    })
-    .then((res)=>{
 
-        res.json(),
-        document.getElementById('meta_edit_dne').innerText=` update Done`
+    fetch(`http://127.0.0.1:8000/editdeletemeta/${meta_id}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
     })
-    document.getElementById('meta_edit_dne').innerText=""
+        .then((res) => {
+
+            res.json(),
+                document.getElementById('meta_edit_dne').innerText = ` update Done`
+        })
+    document.getElementById('meta_edit_dne').innerText = ""
 }
 
-const DelMeta=(id)=>{
+const DelMeta = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/editdeletemeta/${id}/`,{
-        method:"DELETE"
+    fetch(`http://127.0.0.1:8000/editdeletemeta/${id}/`, {
+        method: "DELETE"
     })
-    .then((res) =>{
-        res.json(),
-        document.getElementById('del_succ').innerText='Delete Done'
-    })
-    document.getElementById('del_succ').innerText=""
+        .then((res) => {
+            res.json(),
+                document.getElementById('del_succ').innerText = 'Delete Done'
+        })
+    document.getElementById('del_succ').innerText = ""
 
 
 }
 
 
-const DisplayVersion=()=>{
+const DisplayVersion = () => {
 
 
     fetch('http://127.0.0.1:8000/versionpost/')
-    .then((res) => res.json())
-    .then((data) =>{
+        .then((res) => res.json())
+        .then((data) => {
 
 
-        data.forEach(element=>{
+            data.forEach(element => {
 
 
 
-            const parent = document.getElementById('version_Div_of_parent')
+                const parent = document.getElementById('version_Div_of_parent')
 
-            const div = document.createElement('div')
+                const div = document.createElement('div')
 
-            div.innerHTML=`
+                div.innerHTML = `
             
                 <div class="d-flex justify-content-between align-items-center gap-3 version_parent_div m-2">
 
                                     <h6>Verison Name: <b>${element.name}</b></h6>
 
                                     <div class="d-flex gap-5 align-items-center">
-                                        <p>Edit</p>
-                                        <p>Delete</p>
+                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#version_modal">
+                                            <i onclick="InputValueEditVersion('${element.id}','${element.name}')" class="fa-regular fa-pen-to-square fa-xl"></i>
+                                        </button>
+                                        
+                                        <div>
+                                        <i onclick="DeleteVersion('${element.id}')" class="fa-solid fa-trash fa-xl del_versin"></i>
+                                        </div>
                                     </div>
 
                                 </div>
             
             `
-            parent.appendChild(div)
+                parent.appendChild(div)
+            })
         })
+}
+
+const DeleteVersion = (id) => {
+
+    fetch(`http://127.0.0.1:8000/versionputdelete/${id}/`, {
+        method: "DELETE"
     })
+        .then((res) => {
+            res.json(),
+                document.getElementById('success_edit_version').innerText = `Delete Done!`
+
+        })
+    document.getElementById('success_edit_version').innerText = ""
+
+
 }
 
 
-
-
 DisplayVersion()
+
+let version_id_edit = ''
+const InputValueEditVersion = (id, name) => {
+
+    document.getElementById('edit_input_tag').value = `${name}`
+    version_id_edit = `${id}`
+
+
+}
+
+const EditVersionFunction = () => {
+
+
+
+    obj = {
+
+
+        name: document.getElementById('edit_input_tag').value
+
+    }
+    console.log(obj)
+
+    fetch(`http://127.0.0.1:8000/versionputdelete/${version_id_edit}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('success_edit_version').innerText = `Name: ${document.getElementById('edit_input_tag').value} Edited!`
+        })
+    document.getElementById('success_edit_version').innerText = ""
+}
+const PostVersion=(event)=>{
+
+    event.preventDefault();
+
+    const form = document.getElementById('version_form')
+    const form_data = new FormData(form)
+
+    obj ={
+        name:form_data.get('post_input')
+    }
+
+    fetch('http://127.0.0.1:8000/versionpost/',{
+        method:"POST",
+        headers:{"Content-type":"application/json"},
+        body:JSON.stringify(obj)
+    })
+    .then((res) =>{
+        res.json(),
+        document.getElementById('post_versin_p').innerText="Post Successfull!"
+    })
+    document.getElementById('post_versin_p').innerText=""
+}
+
+

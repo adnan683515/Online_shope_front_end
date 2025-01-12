@@ -4,6 +4,7 @@
 const LoadSportsItem = () => {
 
 
+    console.log("Load sport item")
     fetch('http://127.0.0.1:8000/Football/')
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
@@ -13,6 +14,8 @@ const LoadSportsItem = () => {
 LoadSportsItem()
 
 const DisplaySportsItem = (data) => {
+    console.log("DATA",data)
+    console.log("Display sports funcion")
 
     document.getElementById('sports-box-container').innerHTML = ""
     document.getElementById('not_found_sports').innerHTML =""
@@ -24,10 +27,11 @@ const DisplaySportsItem = (data) => {
         `
     }
     else {
-
+        // <a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>
         data.forEach(element => {
 
             const parent = document.getElementById('sports-box-container')
+            const token = localStorage.getItem('Token')
 
             const div = document.createElement('div')
 
@@ -47,13 +51,28 @@ const DisplaySportsItem = (data) => {
                                     </div>
                                     <div class="d-flex justify-content-around">
                                         <p>Description: ${element.description.slice(0, 10)}.... </p>
-                                        <a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>
+                                        ${token ? `<a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>` : '<a class="button-3 text-decoration-none text-dark" href="login.html">more</a>'}
+                            
+                                            
                                     </div>
                                 </div>
             
             
             
             `
+
+           
+            // if (token){
+            //     document.getElementById('button_auth').innerHTML=`
+            //         <a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>
+            //     `
+                
+            // }
+            // else{
+            //     document.getElementById('button_auth').innerHTML=`
+            //         <button> asdf</button>
+            //     `
+            // }
             parent.appendChild(div)
         });
     }

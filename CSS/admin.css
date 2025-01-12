@@ -932,3 +932,39 @@ price .button-price:hover {
     background-color: whitesmoke;
     color: black;
 }
+.modal_bd_version{
+    background-color: rgb(176, 181, 185);
+    max-height: 400px;
+    color: black;
+}
+.update_version_form{
+    height: 100px;
+    display: flex;
+    margin: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+.update_version_form input{
+    padding: 8px 20px;
+    border-radius: 3px;
+    border: none;
+}
+.update_version_form label{
+    font-size: 600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.del_versin{
+    cursor: pointer;
+}
+.offcanvas_bd_jacket{
+    background-color: rgb(241, 243, 239);
+}
+.white_div_jackter_display{
+    background-color: #fff;
+    margin: 10px 9px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}

@@ -353,6 +353,10 @@ const JURSIDTAIls = (id) => {
 
 const FootballDetails = (id) => {
 
+
+
+    console.log("Football Details",id)
+
     const token = localStorage.getItem('Token')
     document.getElementById('saree-details-section').innerHTML = ""
 

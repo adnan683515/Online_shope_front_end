@@ -223,11 +223,14 @@
 
                             <div>
 
-                                <form action="" id="version_form" class="version_form_class" >
+                                <p id="post_versin_p" class="text-center text-dark"></p>
+                                <form onsubmit="PostVersion(event)" action="" id="version_form"
+                                    class="version_form_class">
 
                                     <label class="mb-3" for="version">Name: </label>
                                     <br>
-                                    <input type="text" placeholder="Enter the Version Name" id="version_input" class="bersion_input_class mb-3">
+                                    <input name="post_input" type="text" placeholder="Enter the Version Name"
+                                        id="post_input_version" class="bersion_input_class mb-3">
                                     <br>
                                     <button class="submit_version" type="submit">submit</button>
 
@@ -253,7 +256,7 @@
 
                     <button class="button-9" type="button" data-bs-toggle="offcanvas" data-bs-target="#size_canvas"
                         aria-controls="size_canvas">
-                        Add Size
+                        Type OF Jacket
                     </button>
 
                     <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="size_canvas"
@@ -263,10 +266,32 @@
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                         </div>
-                        <div class="offcanvas-body">
+                        <div class="offcanvas_bd_jacket">
 
                             <div>
 
+                                <form action="">
+
+                                </form>
+
+                            </div>
+
+                            <div id="All_data_type_jactket" class="mt-5">
+
+                                <div>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center justify-content-between p-2 white_div_jackter_display">
+                                        <h4>Type: ledis jacket</h4>
+                                        <div class="d-flex gap-3">
+                                            <div>
+                                                edit
+                                            </div>
+                                            <div>
+                                                delete
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
 
@@ -767,7 +792,45 @@
                 </div>
             </div>
 
+
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="version_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal version</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal_bd_version">
+
+
+
+
+                            <p class="text-center text-dark" id="success_edit_version"></p>
+                            <form action="" class="update_version_form">
+
+                                <label for="name">
+                                    Version Name:
+                                    <input id="edit_input_tag" type="text" placeholder="new version name">
+                                </label>
+
+                            </form>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button onclick="EditVersionFunction()" type="button" class="btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
+
 
 
     </main>
