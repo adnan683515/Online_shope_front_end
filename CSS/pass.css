@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.pass_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 6rem 0;
+}
+.pass_word_container{
+    width: 50%;
+    padding: 1rem;
+}
+.form_pass{
+    padding: 3rem;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 4px 4px 30px 6px rgb(109, 108, 108);
+
+}
+.new_pass_lab{
+    margin: 2rem 0;
+}
+#new_pass,#con_pass{
+    padding: .5rem 3rem;
+}
+.pass_btn{
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    background-color: rgb(130, 27, 227);
+    color: aliceblue;
+}
+#wrong{
+    font-style: italic;
+    color: red;
+}
+.succ{
+    color: rgb(0, 235, 0);
+}

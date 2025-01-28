@@ -64,28 +64,46 @@
 }
 
 
-.recnet_card{
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    padding: 10px;
-    height: auto;
-}
 
-.recnet_card:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-}
-.recent_vieew_img{
+
+.recent_vieew_img {
     width: 120px;
     height: 160px;
     border-radius: 10px;
 }
 
 
-.del_recnt_itm{
-    
+.del_recnt_itm {
+
     color: red;
     font-weight: bold;
     padding: 2px;
     border-radius: 5px;
+}
+.container {
+    width: 100%;
+    overflow: hidden;
+
+}
+.recnet_card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 10px;
+    height: auto;
+    animation: marquee_div 10s linear infinite ;
+    /* animation: name duration timing-function delay iteration-count direction ; */
+}
+
+
+
+@keyframes marquee_div {
+    from {
+        transform: translateX(100%) rotate(20deg) ;
+    }
+
+    to {
+        transform: translateX(-100%);
+
+    }
 }
 
 
@@ -95,7 +113,7 @@
 /* CSS */
 .button-3 {
     appearance: none;
-    background-color: #2ea44f;
+    background-color: #6d12e4;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -169,9 +187,9 @@
 }
 
 
-.button-r{
+.button-r {
     appearance: none;
-    background-color:red;
+    background-color: rgb(233, 0, 85);
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -195,9 +213,10 @@
 }
 
 
-.button-r:hover{
-background-color: green;
+.button-r:hover {
+    background-color: green;
 }
+
 /* CSS */
 .button-2 {
     background-color: rgb(11, 55, 103);
@@ -221,8 +240,9 @@ background-color: green;
     -webkit-user-select: none;
     touch-action: manipulation;
 }
-.button-2:hover{
-    background-color:green;
+
+.button-2:hover {
+    background-color: green;
 }
 
 .img_recent_view {
@@ -235,12 +255,12 @@ background-color: green;
 /* CSS */
 .button-120 {
     appearance: none;
-    background-color: red;
+    background-color: rgb(233, 0, 85);
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
     box-sizing: border-box;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
     font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
@@ -282,4 +302,18 @@ background-color: green;
 .button-120:active {
     background-color: #298e46;
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.button-MOre-cart {
+    background-color: #5b3cd7;
+    padding: .4rem 1rem;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.button-ck {
+    background-color: #5b3cd7;
+    padding: .8rem 1.9rem;
+    border-radius: 1.3rem 1.3rem 1.3rem 1.3rem;
+    color: whitesmoke;
 }

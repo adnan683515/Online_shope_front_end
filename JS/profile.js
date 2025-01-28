@@ -28,11 +28,20 @@ const LoadOderlist = () => {
                     const parentUser = document.getElementById('otherinfo')
 
                     parentUser.innerHTML = `
-                                <p>Username:${user_data.username}</p>
-    
-                                <p>First Name: ${user_data.first_name}</p>
-                                <p>Last Name: ${user_data.last_name}</p>
-                                <p>Email: ${user_data.email}</p>
+                                <div class="d-flex justify-content-around">
+                                        <div>
+                                            <p>Username:${user_data.username}</p>
+                
+                                            <p>First Name: ${user_data.first_name}</p>
+                                            <p>Last Name: ${user_data.last_name}</p>
+                                            <p>Email: ${user_data.email}</p>
+                                        </div>
+
+                                            <div>
+                                                <a href="pass_word.html"  class="pass_cng text-decoration-none text-white">Password Change</a>
+                                            </div>
+
+                                </div>
             
             
             `  

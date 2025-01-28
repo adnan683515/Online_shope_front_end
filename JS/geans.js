@@ -100,7 +100,7 @@ const SingleGeans = (data) => {
     document.getElementById('geans_container').innerHTML = ""
     document.getElementById('not_found_geans').innerHTML = ""
 
-    
+    const token = localStorage.getItem('Token')
 
     if (data.length == 0) {
 
@@ -133,8 +133,9 @@ const SingleGeans = (data) => {
                                     <div class="d-flex justify-content-between align-items-center">
                                     <p>Abailable:${element.abailable}</p>
                             
-                                    <a class="text-decoration-none view_more  btn" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
-                                    </div>
+                                    ${token?` <a class="text-decoration-none view_more  btn" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
+                                    </div>`:` <a class="text-decoration-none view_more  btn" href="login.html">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
+                                    </div>`}
                                     
                                 
                                 </div>    

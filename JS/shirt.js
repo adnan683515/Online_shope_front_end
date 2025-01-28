@@ -9,7 +9,7 @@ LoadShirt()
 
 const SingleShirt = (data) => {
 
-
+    const token = localStorage.getItem('Token')
     document.getElementById('single-shirt-items').innerHTML=""
     document.getElementById('not_found_shirt').innerHTML=""
     if (data.length == 0) {
@@ -30,7 +30,6 @@ const SingleShirt = (data) => {
             div.classList.add('col-md-3')
             div.classList.add('col-sm-12')
             div.classList.add('m-1')
-            div.classList.add('p-1')
             div.style = "width: 14rem;"
 
 
@@ -43,9 +42,11 @@ const SingleShirt = (data) => {
 
                                     <p>Price: ${element.fixed_price}$</p>
                                 </div>
-                                <div class="card-body d-flex justify-content-around">
+                                <div class="card-body d-flex gap-5 justify-content-center align-items-center">
                                     <p>${element.country}</p>
-                                    <a class="text-decoration-none icon_details btn vie_more-saree" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
+                                    
+                                    ${token ? `<a class="text-decoration-none  view_more_btn" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>`:`<a class="text-decoration-none  view_more_btn" href="login.html">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>`}
+
                                 </div>
 
 
@@ -76,7 +77,7 @@ const DisplayBrandShit = (data) => {
 
         li.innerHTML = `
 
-        <a class="text-decoration-none text-dark" onclick="BrandWiseShirt('${element.id}')">${element.brand_name}</a>
+        <a class="text-decoration-none  text-dark" onclick="BrandWiseShirt('${element.id}')">${element.brand_name}</a>
         
         `
         parent.appendChild(li)

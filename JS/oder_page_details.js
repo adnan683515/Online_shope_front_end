@@ -71,6 +71,7 @@ const DisplayOderDetails = (id) => {
                             <li class="list-group-item "><p class="${button_class_status}">Status: ${data.status}</p></li>
                             <li class="list-group-item">Quantity: ${data.quantity}</li>
                             <li class="list-group-item">Total Price: ${data.total_price} $</li>
+                            <li class="list-group-item">Tranjection Id: ${data.tranjection_id} </li>
                         </ul>
                     </div>
 

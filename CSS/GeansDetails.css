@@ -1,3 +1,7 @@
+body{
+    font-family: sans-serif;
+}
+
 .icon_details {
     width: 100px;
 }
@@ -100,7 +104,7 @@
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+    
     font-size: 16px;
     font-weight: 400;
     outline: none;
@@ -153,13 +157,14 @@
     padding: 10px;
     font-size: medium;
     font-weight: lighter;
-    font-family: Arial, Helvetica, sans-serif;
+
     border-radius: 5px;
 
 }
 
 .bd-geans-detials {
     background-color: whitesmoke;
+    color: #787885;
 }
 
 .comment-display {
@@ -178,7 +183,7 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  
     font-size: 13px;
     font-weight: 400;
     line-height: 1.15385;

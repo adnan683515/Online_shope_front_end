@@ -1,3 +1,7 @@
+
+body{
+    font-family: sans-serif;
+}
 .size_li{
     list-style: none;
 }
@@ -7,7 +11,7 @@
 .hover_li_geans{
     cursor: pointer;
     color: gainsboro;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .hover_li_geans:hover{
@@ -19,7 +23,8 @@
 }
 
 .cetagorys_drop{
-    background-color: orangered;
+
+    background-color: #f7f0f0;
 }
 
 .dropdown-menu{
@@ -27,12 +32,12 @@
 }
 .dropdown-menu li:hover{
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 
 .geans_cetagory_filter{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
     /* color: gray; */
     cursor: pointer;
 }
@@ -41,7 +46,7 @@
 }
 .hover_li_geans_cetagroy:hover{
     background-color: gainsboro;
-    font-family: cursive;
+    
     color: bisque;
     border-radius: 4px;
 }
@@ -50,23 +55,25 @@
     color: slategrey;
 }
 .geans_price_li:hover{
-    font-family: 'Courier New', Courier, monospace;
+  
     color: orangered;
     cursor: pointer;
 }
 
 .view_more{
-    background-color: rgb(255, 68, 0);
+    color: #f7f0f0;
+    background-color: rgb(114, 28, 234);
 }
 
 .single_geans_card{
+    background-color: rgb(214, 210, 210);
     border: none;
-    background-color: rgb(207, 207, 207);
-    padding: 2px;
-    height: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    color: rgb(0, 0, 0);
+    box-shadow: 4px 4px 10px 1px rgb(195, 192, 192);
 }
 
 .single_geans_card:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 5px coral ;
 }

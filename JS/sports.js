@@ -14,8 +14,7 @@ const LoadSportsItem = () => {
 LoadSportsItem()
 
 const DisplaySportsItem = (data) => {
-    console.log("DATA",data)
-    console.log("Display sports funcion")
+
 
     document.getElementById('sports-box-container').innerHTML = ""
     document.getElementById('not_found_sports').innerHTML =""
@@ -61,7 +60,7 @@ const DisplaySportsItem = (data) => {
             
             `
 
-           
+        
             // if (token){
             //     document.getElementById('button_auth').innerHTML=`
             //         <a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>

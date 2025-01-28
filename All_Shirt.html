@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="/CSS/home.css">
-
-    <link rel="stylesheet" href="/CSS/shirt.css">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/signup.css">
+    <link rel="stylesheet" href="CSS/shirt.css">
+    <link rel="stylesheet" href="CSS/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/footer.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,22 +34,20 @@
 
 
     <main>
-        <section class="link-section-shirt">
-            <div class="dropdown w-75 m-auto">
-                <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Open
-                </button>
-                <ul class="dropdown-menu link-section-shirt text-center">
-                    <li><a class="text-dark text-decoration-none" href="/index.html">Home</a></li>
-                    <li><a class="text-dark text-decoration-none" href="/all_saree.html">Saree</a></li>
-                    <li><a class="text-dark text-decoration-none" href="/all_geans.html">Geans</a></li>
-                    <li> <a class="text-dark text-decoration-none" href="">Football</a></li>
-                    <li><a class="text-dark text-decoration-none" href="">Watch</a></li>
+        <div class="dropdown cetagorys_drop">
+            <p class="w-75 m-auto" data-bs-toggle="dropdown" aria-expanded="false">Cetagorys ></p>
 
-                    <li></li>
-                </ul>
-            </div>
-        </section>
+
+            <ul class="dropdown-menu">
+
+                <li><a class="dropdown-item" href="#">Powder Item's</a></li>
+                <li><a class="dropdown-item" href="#">shirt Item's</a></li>
+                <li><a class="dropdown-item" href="#">T shirt</a></li>
+                <li><a class="dropdown-item" href="#">Male Watch</a></li>
+                <li><a class="dropdown-item" href="/all_geans.html">Geant's</a></li>
+                <li><a class="dropdown-item" href="/all_saree.html">Saree Item's</a></li>
+            </ul>
+        </div>
 
 
         <section>
@@ -56,16 +55,17 @@
             <div class="SHIRT-AND-CONTAINER row w-75 m-auto mt-5" id="SHIRT-AND-CONTAINER">
 
                 <div class="FILTER-SECTION col-lg-4 col-md-4 col-sm-12">
-                    <h3 class="filtering-text-section">Filtering Option</h3>
 
-                    <input class="find-shirt m-2" type="text" placeholder="Find shirt"><button>search</button>
+                    <input class="find-shirt m-2" type="text" placeholder="Find shirt"><button
+                        class="searcH_btn">search</button>
 
-                    <p>Brand</p>
+                    
 
                     <div>
 
                         <ul class="BrandShirt" id="BrandShirt">
-
+                            Brand: 
+                            <hr>
                         </ul>
                     </div>
 
@@ -73,19 +73,21 @@
 
 
                     <div class="mt-3 colour_box">
-                        <p>Colour</p>
+                        
                         <ul class="Colour-shrit" id="colour-shirt">
-
+                            Colour: 
+                            <hr>
 
 
                         </ul>
                     </div>
 
                     <div class="mt-2 price_box">
-                        <p>sort by price</p>
+                        
                         <div class="float-mid">
                             <ul class="price-of-shirt" id="price-of-shirt">
-
+                                Sort by price:
+                                <hr>
 
                             </ul>
                         </div>
@@ -95,11 +97,12 @@
                     <div class="mt-3">
 
 
-                        <p>Cetagory wise</p>
+                
                         <div>
 
                             <ul class="cetagory-shirt " id="cetagory-shirt">
-
+                                Cetagory:
+                                <hr>
 
 
 

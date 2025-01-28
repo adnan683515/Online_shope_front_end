@@ -29,11 +29,13 @@ const order_for_cart = () => {
                         </h4>
                         <div class="d-flex justify-content-around">
                             <h5>Name: ${user_data.first_name} ${user_data.last_name}</h5>
-                            <a class="button-2 text-decoration-none text-dark" href="mycart.html">Continue</a>
+                            <a onclick="SSLpayment()" class="button_pay text-decoration-none" type="button">payment</a>
+
                         </div>
                         <h6>Gmail: ${user_data.email}</h6>
                         <p>Total Price: ${data.price}$</p>
                         <p>Quantity: ${data.quantity}</p>
+                        
                         
                     `
 
@@ -95,7 +97,8 @@ const orderForm = (event) => {
                 quantity: parseInt(data.quantity),
                 phone: FORM_DATA.get('phne_number'),
                 user: parseInt(localStorage.getItem('user_id')),
-                product: parseInt(data.product.id)
+                product: parseInt(data.product.id),
+                tranjection_id:FORM_DATA.get('tranjection')
             }
 
 
@@ -107,6 +110,7 @@ const orderForm = (event) => {
             document.getElementById('Upzila').value = ""
             document.getElementById('phne_number').value = ""
             document.getElementById('floatingTextarea2').value = ""
+            document.getElementById('tranjection').value = ""
 
 
             fetch('http://127.0.0.1:8000/order/', {
@@ -135,4 +139,22 @@ const orderForm = (event) => {
 
 
 
+}
+
+
+const SSLpayment=()=>{
+    id = new URLSearchParams(window.location.search).get('item_id')
+    console.log("onclik kaj kore")
+    token = localStorage.getItem('Token')
+
+    fetch(`http://127.0.0.1:8000/sslcomarce/?oder_id=${id}`,{
+        method:"POST",
+        headers: {
+            'Authorization': `Token ${token}`,  // Send token in the Authorization header
+            'Content-Type': 'application/json'   // Optional: specify content type
+        }
+    })
+    .then((res) =>{
+        res.json();
+    })
 }

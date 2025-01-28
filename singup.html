@@ -33,45 +33,50 @@
 
 
 
-        <section class="sign_up_section w-100 m-auto pt-5 pb-5">
+
+
+        <div>
             <p id="email_text"></p>
             <p id="validation"></p>
             <p id="error"></p>
 
-            <form id="form_register" onsubmit="register(event)" action="" class="form_register col-lg-5 col-md-12 col-sm-12 w-75 m-auto">
+            <form id="sign_up_form" onsubmit="register(event)" action="" class="form_register">
                 <h2 class="text-center text-dark"><b>Sing Up</b></h2>
-                <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-12 m-1">
+                <div>
+                    <div>
                         <input type="text" class="form-control" placeholder="Enter your Username"
                             aria-label="Enter your Username" name="username" id="username" required>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12 m-1">
+                    <div>
                         <input type="text" class="form-control" placeholder="Enter your First name"
                             aria-label="Enter your First name" id="first_name" name="first_name" required>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12 m-1">
+                    <div>
                         <input type="text" class="form-control" placeholder="Enter your Last name"
                             aria-label="Enter your Last name" id="last_name" name="last_name" required>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12 m-1">
-                        <input required type="email" class="form-control" placeholder="Enter Your Email" id="email" aria-label="Enter Your Email" name="email">
+                    <div>
+                        <input required type="email" class="form-control" placeholder="Enter Your Email" id="email"
+                            aria-label="Enter Your Email" name="email">
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12 m-1">
+                    <div>
                         <input required type="password" class="form-control" placeholder="Password"
                             aria-label="Enter Your Password" id="password" name="password">
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12 m-1">
+                    <div>
                         <input required type="password" class="form-control" placeholder="Confirm Password"
                             aria-label="confirm Password" id="confirm_password" name="confirm_password">
                     </div>
-                    <button class="button-3 col-md-2 col-sm-3 m-1" type="submit">Register</button>
+                    <button class="singup_btn" type="submit">Register</button>
 
                 </div>
-                
+
             </form>
 
+        </div>
 
-        </section>
+
+
 
     </main>
 

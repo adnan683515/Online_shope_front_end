@@ -2,36 +2,78 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-family: sans-serif;
+
 }
+
 
 .banner {
     width: 100%;
-    min-height: 70vh;
-    background-image: url(/picture/bakcroundshooopin.jpg);
+    min-height: 80vh;
+
+    /* background: linear-gradient(90deg,rgba(115, 0, 255, 0.441),rgb(229, 7, 133)); */
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* padding: 10px 10%; */
-    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.banner_text_box {
+    width: 40%;
+}
+
+.banner_text_box button {
+    background-color: rgb(81, 0, 255);
+    padding: .5rem 1rem;
+    color: whitesmoke;
+    border: none;
+
+}
+
+.banner_title {
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.des {
+    color: rgb(101, 100, 100);
+}
+
+.shope_now {
+    color: rgb(255, 0, 81);
+}
+
+.best {
+    color: rgb(81, 0, 255);
+}
+
 
 .item-section {
     margin: 40px;
 
 }
 
-.home_card{
+.home_card {
 
-    height: 300px;
-    padding: 4px;
+
+    padding: 1rem 1rem;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 30px 6px #c8c2c2;
+    transition: home_card 5s ease-in-out 2s;
 }
 
-.home_card:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.home_card div {
+    margin: 1rem 0;
 }
 
+.home_card img {
+    border-radius: 5px;
+}
 
 
 .geans3 {

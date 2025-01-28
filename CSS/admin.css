@@ -1,4 +1,7 @@
 /* CSS */
+body{
+    font-family: sans-serif;
+}
 .button-18 {
     align-items: center;
     background-color: #0A66C2;
@@ -8,7 +11,7 @@
     color: #ffffff;
     cursor: pointer;
     display: inline-flex;
-    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
@@ -55,7 +58,6 @@
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -76,7 +78,6 @@
     color: red;
     font-size: large;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .Cenceled_btn {
@@ -93,7 +94,6 @@
 
 .order_delete_msg {
     color: black;
-    font-family: 'Courier New', Courier, monospace;
     font-size: large;
 }
 
@@ -108,7 +108,6 @@
 
 .shiped {
     color: whitesmoke;
-    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     font-size: large;
     background-color: rgb(248, 100, 46);
     font-weight: bold;
@@ -122,19 +121,16 @@
 
     border-radius: 5px;
     padding: 5px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-bottom: #0A66C2;
     /* cursor: pointer; */
 
 }
-
 .select_adminPanel:hover {
     cursor: pointer;
 }
 
 .delivered_value {
 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
     font-size: large;
     background-color: green;
     color: whitesmoke;
@@ -161,7 +157,7 @@
     background-color: whitesmoke;
     font-size: large;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 
 .cetagory_form {
@@ -215,7 +211,6 @@
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
     font-size: 100%;
     height: 44px;
     font-weight: bold;
@@ -258,7 +253,6 @@
     box-sizing: border-box;
     color: black;
     cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
@@ -300,7 +294,6 @@
     box-sizing: border-box;
     color: black;
     cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
@@ -319,6 +312,13 @@
     width: 100%;
 
 }
+.button_section_div{
+    width: 90%;
+    margin: auto;
+}
+.button_section_div > div{
+    width: 100%;
+}
 
 .button-brand:disabled {
     cursor: default;
@@ -333,14 +333,15 @@
 .button-9 {
     appearance: button;
     backface-visibility: hidden;
-    background-color: #405cf5;
+    background-color: #5e40f5;
     border-radius: 6px;
+    box-shadow: 4px 4px 30px 6px rgb(183, 183, 183);
     border-width: 0;
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    /* box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0; */
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
@@ -366,7 +367,8 @@
 .button-9:focus {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
-.button-meta{
+
+.button-meta {
     appearance: button;
     backface-visibility: hidden;
     background-color: rgb(179, 9, 226);
@@ -395,7 +397,7 @@
     width: 100%;
 }
 
-.button-meta:disabled{
+.button-meta:disabled {
     cursor: default;
 
 }
@@ -417,7 +419,6 @@
     box-sizing: border-box;
     color: black;
     cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
@@ -484,7 +485,6 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: Inter, sans-serif;
     font-size: 16px;
     font-weight: 500;
     height: 60px;
@@ -524,7 +524,7 @@ price .button-price:hover {
     box-sizing: border-box;
     color: #FFFFFF;
     display: flex;
-    font-family: Phantomsans, sans-serif;
+
     font-size: 20px;
     justify-content: center;
     line-height: 1em;
@@ -565,10 +565,11 @@ price .button-price:hover {
 }
 
 .brand_form {
-    background-color: #13aa52;
-    color: black;
+    background-color: #6d05ff;
+    color: rgb(255, 255, 255);
     border-radius: 5px;
-    padding: 5px;
+    padding: 1rem;
+    box-shadow: 4px 4px 30px 6px rgb(206, 207, 208);
 }
 
 .brand_submitbtn {
@@ -590,7 +591,6 @@ price .button-price:hover {
 }
 
 .brand_form_succeess {
-    font-family: 'Courier New', Courier, monospace;
     font-size: large;
 
 }
@@ -644,12 +644,159 @@ price .button-price:hover {
 
 }
 
+.form_jac_update {
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    background: linear-gradient(60deg, rgb(2, 103, 126), rgb(200, 82, 4));
+}
+
+.update_btn_jac {
+
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    background: linear-gradient(90deg, rgb(195, 121, 2), rgb(0, 80, 127));
+}
+
+.form_jac_update input {
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}
+
+.form_jac_update input:focus {
+    color: rgb(6, 95, 128);
+
+}
+
+.del_jac {
+    cursor: pointer;
+}
+
+.sport_post_form {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    height: 100px;
+    border: 1px solid crimson;
+    border-radius: 5px;
+}
+
+.sport_post_form input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Football_all_data {
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(1, 104, 152);
+    justify-content: space-between;
+}
+
+.Football_all_data div {
+    display: flex;
+    gap: 30px;
+}
+
+.Football_all_data h5 {
+    font-size: 1rem;
+}
+
+.amount_form {
+    /* background: linear-gradient(rgb(66, 12, 229), rgb(222, 12, 163)); */
+    width: 90%;
+    margin: auto;
+    background-color: #5e40f5;
+    box-shadow:  4px 4px 30px 5px rgb(255, 255, 255);
+    margin-top: 1rem;
+    color: whitesmoke;
+    padding: 1rem 1.4rem;
+    border-radius: 5px;
+}
+
+.amount_form button {
+    padding: 5px 1rem;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(rgb(199, 196, 196), rgb(144, 140, 140));
+}
+
+.amount_form button:hover {
+    background: linear-gradient(rgb(0, 138, 176), rgb(70, 165, 200));
+}
+
+.amount_form input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 5px 1rem;
+    border-radius: 2px;
+    border: none;
+}
+
+.sport_post_form input:focus {
+    border: 2px solid orangered;
+    color: rgba(0, 0, 0, .5);
+
+}
+
+.sport_post_form button {
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgb(6, 133, 172), rgb(111, 110, 110));
+}
+
+.sport_post_form button:hover {
+    padding: 5px 11px;
+    margin: 2px;
+    border: 2px solid orangered;
+    background: linear-gradient(90deg, rgb(111, 110, 110), rgb(6, 133, 172));
+}
+
+.offcanvas_bd_sports {
+    border-radius: 5px;
+    background: linear-gradient(rgb(66, 12, 229), rgb(222, 12, 163)); 
+    /* background: linear-gradient(90deg, rgb(227, 132, 6), rgba(2, 233, 253, 0.634)); */
+}
+
+.modalbd_jacket {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(80deg, rgb(226, 102, 18), rgb(17, 140, 197));
+}
+
 .modal-body {
-    background-color: #09223b;
+    background-color: #7000ef;
+    color: whitesmoke;
 }
 
 .model_brandbody {
-    background-color: #AF40FF;
+    background-color: #6a00ff;
+    color: whitesmoke;
 }
 
 .brand_name_edit {
@@ -679,10 +826,11 @@ price .button-price:hover {
 }
 
 .form_country {
-    background-color: #760be0;
+    background-color: #621ae8;
     padding: 6px;
     border-radius: 7px;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 2px 2px 40px 4px rgb(95, 9, 243);
 
 }
 
@@ -798,30 +946,31 @@ price .button-price:hover {
 
 }
 
-.team_edit_update_form{
+.team_edit_update_form {
     margin: 9px;
     padding: 10px;
     border-radius: 9px;
 }
 
-.edit_name_team{
+.edit_name_team {
     border-radius: 5px;
     padding: 3px;
 }
 
-.submit_btn_team{
+.submit_btn_team {
     padding: 6px;
     background-color: whitesmoke;
     color: black;
     border-radius: 4px;
 }
-.submit_btn_team:hover{
+
+.submit_btn_team:hover {
     background-color: #09223b;
     color: whitesmoke;
     cursor: pointer;
 }
 
-.filter_btn_oder{
+.filter_btn_oder {
     background-color: #5B42F3;
     padding: 6px;
     width: 200px;
@@ -829,12 +978,12 @@ price .button-price:hover {
     border-radius: 5px;
 }
 
-.filter_btn_oder:hover{
+.filter_btn_oder:hover {
     background-color: whitesmoke;
     color: black;
 }
 
-.date_input_option{
+.date_input_option {
     padding: 5px;
     background-color: #fff;
     color: black;
@@ -843,15 +992,15 @@ price .button-price:hover {
 
 }
 
-.section_of_filter_count{
+.section_of_filter_count {
 
     padding: 10px;
-    
+
     color: black;
     border-radius: 5px;
 }
 
-.text_and_icon_box_meta{
+.text_and_icon_box_meta {
 
 
     border: 1px solid gray;
@@ -860,7 +1009,7 @@ price .button-price:hover {
     background-color: aliceblue;
 }
 
-.metarial_form{
+.metarial_form {
     background-color: #760be0;
     color: whitesmoke;
 
@@ -868,13 +1017,14 @@ price .button-price:hover {
     margin: 9px;
     padding: 5px;
 }
-.meta_name{
+
+.meta_name {
     border-radius: 4px;
     border: 2px solid whitesmoke;
     padding: 4px;
 }
 
-.meta_edit_form{
+.meta_edit_form {
     background-color: darkslategray;
     color: whitesmoke;
     margin: 4px;
@@ -882,62 +1032,68 @@ price .button-price:hover {
     border-radius: 7px;
 }
 
-.update_btn_meta{
+.update_btn_meta {
     background-color: rgb(223, 78, 25);
     padding: 5px;
     border-radius: 6px;
     color: black;
 }
-.update_btn_meta:hover{
+
+.update_btn_meta:hover {
     background-color: #09223b;
     color: whitesmoke;
 }
 
-.meta_nput_edit{
+.meta_nput_edit {
     padding: 5px;
     border-radius: 4px;
 }
 
-.del_meta{
+.del_meta {
     cursor: pointer;
 }
 
-.version_parent_div{
+.version_parent_div {
     border: 1px solid #AF40FF;
     padding: 6px;
     border-radius: 5px;
     background-color: whitesmoke;
 }
-.version_form_class{
+
+.version_form_class {
     background-color: darkorange;
     padding: 10px;
     border-radius: 5px;
 
 }
 
-.bersion_input_class{
+.bersion_input_class {
     padding: 6px;
     border-radius: 5px;
 }
 
-.submit_version{
+.submit_version {
     background-color: #760be0;
     padding: 6px;
     border-radius: 5px;
 }
-.submit_version::shadow{
+
+.submit_version::shadow {
     background-color: #09223b;
 }
-.submit_version:hover{
+
+.submit_version:hover {
     background-color: whitesmoke;
     color: black;
 }
-.modal_bd_version{
+
+.modal_bd_version {
     background-color: rgb(176, 181, 185);
     max-height: 400px;
     color: black;
 }
-.update_version_form{
+
+.update_version_form {
     height: 100px;
     display: flex;
     margin: 40px;
@@ -947,24 +1103,185 @@ price .button-price:hover {
     border-radius: 10px;
     padding: 10px;
 }
-.update_version_form input{
+
+.update_version_form input {
     padding: 8px 20px;
     border-radius: 3px;
     border: none;
 }
-.update_version_form label{
+
+.update_version_form label {
     font-size: 600;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.del_versin{
+
+.del_versin {
     cursor: pointer;
 }
-.offcanvas_bd_jacket{
+
+.offcanvas_bd_jacket {
     background-color: rgb(241, 243, 239);
+    background: linear-gradient(90deg, rgb(183, 149, 149)), rgb(241, 205, 0);
 }
-.white_div_jackter_display{
+
+.white_div_jackter_display {
     background-color: #fff;
     margin: 10px 9px;
     border-radius: 5px;
     border: 1px solid gainsboro;
+}
+
+#All_data_type_jactket h4 {
+   
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.offcanvas_bd_jacket input {
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+
+
+}
+
+.offcanvas_bd_jacket form {
+    margin: 10px;
+    /* background-color: #fff; */
+    background-color: #fff;
+
+    padding-right: 2px;
+    /* height: 80px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    max-height: 110px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* align-items: center; */
+    padding-left: 2px;
+}
+
+.offcanvas_bd_jacket button {
+    margin: 10px 5px;
+    border: none;
+    color: #fff;
+    ;
+    padding: 5px 10px;
+
+    background: linear-gradient(90deg, rgb(128, 128, 149), rgb(110, 81, 144));
+    border-radius: 5px;
+}
+
+.modal-body-amount-edit {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6028ec;
+    transition: background-color 5s ease-in-out 2s;
+}
+
+.del_btn_aoumt,.move_del {
+    cursor: pointer;
+}
+
+.modal-body-amount-edit:hover {
+    background-color: #ffffff;
+}
+
+.modal-body-amount-edit form {
+    background-color: #ffffff;
+    padding: 30px 2rem;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.wacth_body {
+
+    padding-bottom: 20px;
+    /* background: linear-gradient(90deg, rgb(106, 0, 255), rgba(255, 0, 85, 0.634)); */
+}
+
+.modal-body-amount-edit input {
+    margin-left: 10px;
+    border: none;
+    padding: .4rem .7rem;
+
+}
+
+.All_Movement_List>div {
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 0;
+    border: 2px solid rgb(93, 0, 255);
+
+}
+.form_post_movement{
+    padding: 20px;
+    margin: 10px;
+    padding-top: 10px;
+    background-color: #7a00f4;
+    border-radius: 5px;
+    color: whitesmoke;
+    box-shadow: 4px 4px 30px 6px rgb(163, 163, 163);
+
+}
+.form_post_movement input{
+    border: none;
+    margin: .5rem;
+    padding: 1rem;
+    margin-bottom: 10px;
+}
+.modal-body-move-ment{
+    background: linear-gradient(90deg, rgb(227, 132, 6), rgba(2, 233, 253, 0.634));
+    height: 20vh;
+}
+.form_edit_watch_move{
+
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.form_edit_watch_move input{
+    border: none;
+    margin-left: .5rem;
+    padding: 5px .8rem;
+}
+.form_post_movement button{
+    padding:.3rem;
+    border: none;
+}
+.edit_amount_btn {
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 8px 1rem;
+    transition: background-color 3s ease-in-out 1s, color 1s;
+}
+
+.edit_amount_btn:hover {
+    background-color: black;
+    color: white;
+
+}
+.size_div{
+    border: 1px solid rgb(101, 169, 228);
+}
+
+.form_post_size{
+    background-color: #5e40f5;
+    padding: 1rem .4rem;
+
+    color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 4px 4px 40px 6px rgb(158, 157, 157);
+}
+.btn_size_post{
+    background-color: whitesmoke;
+    padding: 5px 1rem;
+    border: none;
+    border-radius: 3px;
+
 }

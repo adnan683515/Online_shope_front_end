@@ -4,24 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>change Password</title>
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/saree.css">
+    <link rel="stylesheet" href="CSS/pass.css">
+    <link rel="stylesheet" href="CSS/signup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/saree.css">
-    <link rel="stylesheet" href="CSS/home.css">
-    <link rel="stylesheet" href="CSS/geans.css">
-    <link rel="stylesheet" href="CSS/signup.css">
 </head>
 
 <body>
-    <!--  -->
+
     <header>
+
+
 
         <div class="navigation" id="navber">
 
@@ -29,125 +30,45 @@
 
 
         </div>
+    
 
 
     </header>
 
 
     <main>
-        <div class="dropdown cetagorys_drop">
-            <p class="w-75 m-auto" data-bs-toggle="dropdown" aria-expanded="false">Cetagorys ></p>
 
+        <section class="pass_section">
 
-            <ul class="dropdown-menu">
-                
-                <li><a class="dropdown-item" href="#">Powder Item's</a></li>
-                <li><a class="dropdown-item" href="#">shirt Item's</a></li>
-                <li><a class="dropdown-item" href="#">T shirt</a></li>
-                <li><a class="dropdown-item" href="#">Male Watch</a></li>
-                <li><a class="dropdown-item" href="/all_geans.html">Geant's</a></li>
-                <li><a class="dropdown-item" href="/all_saree.html">Saree Item's</a></li>
-            </ul>
-        </div>
-        <section class="saree_page_container">
-            <p><a href="/home.html" class="text-decoration-none">Home</a> > Search Results</p>
-            <hr>
-        </section>
+            <div class="pass_word_container">
+                <h4 class="text-center">Password Change Form</h4>
+                <p class="" id="wrong"></p>
+                <p id="suc" class="succ"></p>
+                <form onsubmit="pass_word_cng(event)" id="form_pass" class="form_pass" action="">
 
-        <section class="">
-
-            <div class="seacr_box row">
-                <div class="dropdown col-lg-4 col-md-4 col-sm-12 m-1">
-                    <p class="w-75 m-auto" data-bs-toggle="dropdown" aria-expanded="false">Range Of Price ></p>
-
-
-                    <ul class="dropdown-menu " id="price_box_geans">
-
-
-                    </ul>
-                </div>
-
-
-
-
-                <div class="col-lg-7 col-md-7 col-sm-12 m-1">
-                    <input class="sare_seacrh_input" id="geans_search_input" type="text"
-                        placeholder="Enter the name of geans">
-                    <i onclick="InputValueGet()" class="fa-solid fa-magnifying-glass btn_search_saree"></i>
-                </div>
-
-
-            </div>
-
-            <div class="row w-75 m-auto" id="geans_cetagory_container">
-
-
-
-                <div class="cetagorys col-lg-2 col-md-4 col-sm-12 m-1">
-                    <ul class="geans_cetagory_filter" id="geans_cetagory_filter">Cetagorys
-                        <hr>
-
-                    </ul>
-
-
-
-
-                    <ul class="mt-5 geans_brand_filter" id="brand_geans">Brand
-                        <hr>
-
-                    </ul>
-
-                    <ul class="mt-5 sare_cetagory_filter" id="geans_size">Size
-                        <hr>
-
-                    </ul>
-
-
-                
-
-
-                    <ul class="mt-5 sare_cetagory_filter" id="colour_ul_geans">Colour Family
-                        <hr>
-
-
-                    </ul>
-
-
-
-
-
-
-
-                </div>
-
-                <div class="saree col-lg-9 col-md-7 col-sm-12 m-1">
-
-
-
-                    <div class="row mb-3" id="geans_container">
-
-
-
-
+                    <label class="new_pass_lab" for="new_pass">
+                        new password: <input id="new_pass" name="new_pass" type="password" required placeholder="your new password">
+                    </label>
+                    <br>
+                    <label for="con">
+                        confirm password: <input type="password" required id="con_pass" name="con_pass" placeholder="confirm password"> 
+                    </label>
+                    <div class="mt-4">
+                        <button class="pass_btn" type="submit">changes</button>
                     </div>
-                    <div class="text-center" id="not_found_geans">
-
-
-                    </div>
-                </div>
-
-
+                </form>
             </div>
 
         </section>
-
-
-
-
 
 
 
     </main>
+
+
+
+
+
 
 
 
@@ -190,7 +111,7 @@
 
         <!-- Section: Links  -->
         <section class="">
-            <div class="container text-center text-md-start mt-5">
+            <div class="text-center text-md-start mt-5">
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
@@ -276,16 +197,14 @@
     </footer>
     <!-- Footer -->
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="/JS/app.js"></script>
-    <script src="/JS/nav.js"></script>
-    <script src="/JS/saree.js"></script>
-    <script src="/JS/geans.js"></script>
-    <script src="/JS/cart.js"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/nav.js"></script>
+    <script src="JS/pass.js"></script>
 </body>
+
 
 
 

@@ -12,7 +12,7 @@ const displaycartitems = (data) => {
 
 
     data.forEach(element => {
-      
+
 
         const parent = document.getElementById('cart_items_main')
 
@@ -48,7 +48,7 @@ const displaycartitems = (data) => {
                             <i onclick="positve_Icon_cart('${element.id}')" class="fa-solid fa-plus icon" id="${element.id}-"></i>
 
                             <button onclick="updatecart_items('${element.id}','${element.product.id}','${element.cart}')" class="button-3" role="button">update</button>
-                            <a onclick="DeleteCart_items('${element.id}')" class="button-120 text-decoration-none text-dark" role="button">Delete</a>
+                            <a onclick="DeleteCart_items('${element.id}')" class="button-120 text-decoration-none text-white" role="button">Delete</a>
                         </div>
 
                     </div>
@@ -57,7 +57,7 @@ const displaycartitems = (data) => {
 
                     <h5>SUBTOTAL</h5>
                     <p>Total Price: ${element.price} $</p>
-                    <a href="checkout.html?item_id=${element.id}" class="button-37 text-decoration-none text-center">check out</a>
+                    <a href="checkout.html?item_id=${element.id}" class="button-ck text-decoration-none text-center">check out</a>
 
                 </div>
 
@@ -104,62 +104,62 @@ const DeleteCart_items = (id) => {
 }
 
 
-const updatecart_items=(id,product_id,cart_id)=>{
+const updatecart_items = (id, product_id, cart_id) => {
 
 
 
 
     update_obj = {
-        id : parseInt(id),
-        product:  parseInt(product_id),
+        id: parseInt(id),
+        product: parseInt(product_id),
         quantity: parseInt(document.getElementById(id).value),
         cart: parseInt(cart_id)
     }
 
 
 
-    fetch(`http://127.0.0.1:8000/updatecart/${id}/`,{
-        method:'PUT',
+    fetch(`http://127.0.0.1:8000/updatecart/${id}/`, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json' // Set the request content type to JSON
         },
-        body:JSON.stringify(update_obj)
+        body: JSON.stringify(update_obj)
     })
-    .then((res) => {
-        if(res.ok){
-            res.json()
-         
-        }
-    })
+        .then((res) => {
+            if (res.ok) {
+                res.json()
+
+            }
+        })
 }
 
 
-const recentViewProduct=()=>{
+const recentViewProduct = () => {
 
 
     const token = localStorage.getItem('Token')
 
-    fetch('http://127.0.0.1:8000/viewproduct/',{
-        method:"GET",
+    fetch('http://127.0.0.1:8000/viewproduct/', {
+        method: "GET",
         headers: {
             'Authorization': `Token ${token}`,  // Send token in the Authorization header
             'Content-Type': 'application/json'   // Optional: specify content type
         }
-        
+
     })
-    .then((res)=> res.json())
-    .then((data) => DisplayRecentViewproduct(data))
+        .then((res) => res.json())
+        .then((data) => DisplayRecentViewproduct(data))
 }
 
 recentViewProduct()
 
 
-const DisplayRecentViewproduct=(data)=>{
+const DisplayRecentViewproduct = (data) => {
 
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
-   
+
 
         const parent = document.getElementById('recomendation_box')
         const div = document.createElement('div')
@@ -180,13 +180,13 @@ const DisplayRecentViewproduct=(data)=>{
                             </p>
                             <div class="d-flex justify-content-between">
                                 <button onclick="delteItemRecentViewProduct('${element.id}')" class="button-r">Remove</button>
-                                <a href="SareeDetails.html?product_id=${element.Product.id}&type_product=${element.Product.type_your_product}&sports_type=${element.Product.sports_Type}" class="button-2 text-decoration-none ">More</a>
+                                <a href="SareeDetails.html?product_id=${element.Product.id}&type_product=${element.Product.type_your_product}&sports_type=${element.Product.sports_Type}" class="button-MOre-cart text-decoration-none ">More</a>
 
 
                             </div>
 
                         </div>
-                    </div>
+                </div>
         
         
         `
@@ -195,15 +195,15 @@ const DisplayRecentViewproduct=(data)=>{
     })
 }
 
-const delteItemRecentViewProduct=(id)=>{
-    
+const delteItemRecentViewProduct = (id) => {
 
-    fetch(`http://127.0.0.1:8000/viewDelete/${id}/`,{
-        method:"DELETE"
+
+    fetch(`http://127.0.0.1:8000/viewDelete/${id}/`, {
+        method: "DELETE"
     })
-    .then((res) =>{
-        document.getElementById('del_recent_item').innerHTML="Delete Item",
-        res.json()
-    })
-    document.getElementById('del_recent_item').innerHTML=""
+        .then((res) => {
+            document.getElementById('del_recent_item').innerHTML = "Delete Item",
+                res.json()
+        })
+    document.getElementById('del_recent_item').innerHTML = ""
 }

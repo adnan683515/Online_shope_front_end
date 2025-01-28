@@ -1161,27 +1161,424 @@ const EditVersionFunction = () => {
         })
     document.getElementById('success_edit_version').innerText = ""
 }
-const PostVersion=(event)=>{
+const PostVersion = (event) => {
 
     event.preventDefault();
 
     const form = document.getElementById('version_form')
     const form_data = new FormData(form)
 
-    obj ={
-        name:form_data.get('post_input')
+    obj = {
+        name: form_data.get('post_input')
     }
 
-    fetch('http://127.0.0.1:8000/versionpost/',{
+    fetch('http://127.0.0.1:8000/versionpost/', {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('post_versin_p').innerText = "Post Successfull!"
+        })
+    document.getElementById('post_versin_p').innerText = ""
+}
+
+let jacket_type_id = ''
+const jacket_input_value_set = (id, name) => {
+
+    console.log(id, name)
+    document.getElementById('jac_update_name').value = name
+    jacket_type_id = `${id}`
+}
+
+const DisplayAllTypeOfJacket = () => {
+
+    fetch('http://127.0.0.1:8000/TypeOfjaceketPost/')
+        .then((res) => res.json())
+        .then((data) => {
+
+            console.log(data)
+
+            data.forEach(element => {
+
+                const parent = document.getElementById('All_data_type_jactket')
+
+                const div = document.createElement('div')
+
+                div.innerHTML = `
+            
+                                        <div class="d-flex justify-content-center align-items-center justify-content-between p-2 white_div_jackter_display">
+                                            <h4>Type: ${element.name}</h4>
+                                            <div class="d-flex gap-3 justify-content-center align-items-center">
+                                                <div>
+                                                <button type="button"   class="btn" data-bs-toggle="modal" data-bs-target="#Jacket_modal">
+                                                    <i  onclick="jacket_input_value_set('${element.id}','${element.name}')" class="fa-solid fa-pen-to-square fa-xl"></i>
+                                                </button>
+
+                                                
+                                                
+                                                </div>
+                                                <div>
+                                                    <i onclick="DeleteJacket('${element.id}')" class="fa-solid fa-trash fa-xl del_jac"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+            
+            
+            `
+                parent.appendChild(div)
+            })
+        })
+}
+
+DisplayAllTypeOfJacket()
+
+
+
+const DeleteJacket = (id) => {
+
+    fetch(`http://127.0.0.1:8000/JacketPutDelete/${id}/`, {
+        method: "DELETE"
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('success_del_jac').innerText = "Successfully Deleted!"
+
+        })
+    document.getElementById('success_del_jac').innerText = ""
+
+}
+
+const UpdateJacketType = () => {
+
+    obj = {
+        id: jacket_type_id,
+        name: document.getElementById('jac_update_name').value
+    }
+
+
+    console.log(obj)
+
+
+    fetch(`http://127.0.0.1:8000/JacketPutDelete/${jacket_type_id}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('success_edit_jac').innerText = `Update Done!`
+
+        })
+    document.getElementById('success_edit_jac').innerText = ""
+    document.getElementById('jac_update_name').value = ""
+
+
+}
+
+
+
+
+const JacketTypePost = (event) => {
+    event.preventDefault();
+
+    const form = document.getElementById('fomr_type_jacket')
+
+    const formdata = new FormData(form)
+    const obj = {
+
+        name: formdata.get('jacket_input')
+    }
+
+    document.getElementById('jacket_input').value = ""
+
+    fetch('http://127.0.0.1:8000/TypeOfjaceketPost/', {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('post_jackter').innerText = `Name: ${formdata.get('jacket_input')} Added!`
+        })
+    document.getElementById('post_jackter').innerText = ""
+
+}
+
+
+const AllReangeOfPrice = () => {
+
+    fetch('http://127.0.0.1:8000/range_of_price/')
+        .then((res) => res.json())
+        .then((data) => {
+
+            console.log(data)
+
+            data.forEach(element => {
+
+                const parent = document.getElementById('AllRangeOFprice_box')
+                const div = document.createElement('div')
+                div.classList.add('Football_all_data')
+
+                div.innerHTML = `
+            
+                                    <h5>Amount: ${element.price_name}</h5>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <p>
+                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#AMOUNT_MODAL">
+                                        <i onclick="SetAmountNameinField('${element.id}','${element.price_name}')"  class="fa-solid fa-pen-to-square fa-xl"></i>
+                                        </button>
+                                        
+                                        </p>
+                                        <p>
+                                        <i onclick="DeletTkamount('${element.id}')" class="fa-solid fa-trash fa-xl del_btn_aoumt"></i>
+                                        </p>
+                                    </div>
+            
+            `
+                parent.appendChild(div)
+            })
+        })
+}
+
+AllReangeOfPrice()
+
+
+let Edit_id_amount = ''
+const SetAmountNameinField = (id, name) => {
+    console.log(id, name)
+
+    document.getElementById('edit_amnount').value = `${name}`
+    Edit_id_amount = `${id}`
+
+}
+
+
+const EditAmountRange = (event) => {
+    event.preventDefault()
+    const val = document.getElementById('edit_amnount').value
+    const obj = {
+        price_name: val
+    }
+
+    console.log(obj)
+    // http://127.0.0.1:8000/RangePriceDeletePut/3/
+    fetch(`http://127.0.0.1:8000/RangePriceDeletePut/${Edit_id_amount}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('edit_amnout_dne').innerText = "Edited!"
+        })
+    document.getElementById('edit_amnout_dne').innerText = ""
+    document.getElementById('edit_amnount').value = ""
+}
+
+const DeletTkamount = (id) => {
+
+    fetch(`http://127.0.0.1:8000/RangePriceDeletePut/${id}/`, {
+        method: "DELETE"
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('del_amnout_dne').innerText = "Deleted!"
+        })
+    document.getElementById('del_amnout_dne').innerText = ""
+}
+
+const POstRangeOFprice = (event) => {
+
+    event.preventDefault();
+
+    const form = document.getElementById('amount_form')
+    const form_data = new FormData(form)
+    const obj = {
+        price_name: form_data.get('amount')
+    }
+
+    fetch(`http://127.0.0.1:8000/range_of_price/`, {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('tk_success').innerText = "POST Successfully!"
+        })
+    document.getElementById('amount_input').value = ""
+    document.getElementById('tk_success').innerText = ""
+    console.log(obj)
+}
+
+
+const AllMovementWacth = () => {
+
+
+    fetch('http://127.0.0.1:8000/MoveMentWatchPostGEt/')
+        .then((res) => res.json())
+        .then((data) => {
+
+
+            data.forEach(element => {
+
+
+                const parent = document.getElementById('All_Movement_List')
+                const div = document.createElement('div')
+                div.innerHTML = `
+            
+                        <div class="d-flex justify-content-center align-items-center gap-4 p-2">
+                                            <p>Name: ${element.title}</p>
+
+                                            <div class="d-flex justify-content-between justify-content-center align-items-center gap-3">
+                                                <p>
+                                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#edit_move_ment">
+                                                        <i onclick="EditMovementWatch('${element.id}','${element.title}')" class="fa-solid fa-pen-to-square fa-xl"></i>
+                                                </button>
+                                                
+
+                                                </p>
+                                                <p>
+                                                <i onclick="DeleteMovementWatch('${element.id}')" class="fa-solid fa-trash fa-xl move_del"></i>
+                                                </p>
+                                            </div>
+
+                                        </div>
+            
+            
+            
+            
+            
+            `
+                parent.appendChild(div)
+            })
+        })
+}
+
+AllMovementWacth()
+
+
+const FormPOSTwacthEnv = (event) => {
+
+    event.preventDefault();
+
+    const val = document.getElementById('name_movement').value
+    const obj = {
+        title: val
+    }
+    document.getElementById('name_movement').value = ""
+
+    fetch('http://127.0.0.1:8000/MoveMentWatchPostGEt/', {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('success_post_move').innerText = "Successfully Done!"
+
+        })
+    document.getElementById('success_post_move').innerText = ""
+    console.log(obj)
+}
+
+let edit_movement_watch_id = ''
+const EditMovementWatch = (id, name) => {
+
+    edit_movement_watch_id = id
+    document.getElementById('move_edit_watch').value = name
+}
+
+const PutFunMovementWatch = () => {
+
+    const obj = {
+        title: document.getElementById('move_edit_watch').value
+    }
+    console.log(obj)
+
+    fetch(`http://127.0.0.1:8000/MoveMentPutDelApivew/${edit_movement_watch_id}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('move_edited').innerText = "Update Done!"
+        })
+    document.getElementById('move_edit_watch').value = ""
+    document.getElementById('move_edited').innerText = ""
+}
+
+const DeleteMovementWatch = (id) => {
+
+
+    fetch(`http://127.0.0.1:8000/MoveMentPutDelApivew/${id}/`, {
+        method: "DELETE"
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('success_post_move').innerText = "Deleted"
+        })
+    document.getElementById('success_post_move').innerText = ""
+}
+
+const AllSizeDisplay = () => {
+
+    fetch('http://127.0.0.1:8000/SizeApiView/')
+        .then((res) => res.json())
+        .then((data) => {
+
+            data.forEach(element => {
+
+
+                const parent = document.getElementById('size_body')
+                const div = document.createElement('div')
+                div.innerHTML = `
+                    <div class="size_div  d-flex justify-content-between p-2 m-2">
+                                    <div class="d-flex justify-content-center align-items-center gap-3">
+                                        <p>Type: ${element.choice_size}</p>
+                                        <p>Name: ${element.size_name}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center gap-3">
+                                        <p><i class="fa-solid fa-pen-to-square fa-xl"></i></p>
+                                        <p><i class="fa-solid fa-trash fa-xl"></i></p>
+                                    </div>
+                                </div>
+            `
+                parent.appendChild(div)
+            })
+        })
+}
+AllSizeDisplay()
+
+
+
+const PostSizeFunction = (event) => {
+    event.preventDefault()
+
+    const option_value = document.getElementById('size_option').value
+    const val = document.getElementById('size_name_post').value
+    console.log(val,option_value)
+    const obj = {
+        choice_size: option_value,
+        size_name: val
+
+    }
+    console.log(obj)
+    document.getElementById('size_name_post').value=""
+    document.getElementById('size_option').value="Open this select menu"
+    // http://127.0.0.1:8000/SizeApiView/
+    fetch('http://127.0.0.1:8000/SizeApiView/',{
         method:"POST",
         headers:{"Content-type":"application/json"},
         body:JSON.stringify(obj)
     })
     .then((res) =>{
         res.json(),
-        document.getElementById('post_versin_p').innerText="Post Successfull!"
+        document.getElementById('post_size_suc').innerText="POST SUCCESSFULLY!"
     })
-    document.getElementById('post_versin_p').innerText=""
+    document.getElementById('post_size_suc').innerText=""
 }
-
-

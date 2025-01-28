@@ -414,7 +414,7 @@ const FootballDetails = (id) => {
 
                     <div class="d-flex gap-3">
                         <p>Available: ${data.abailable}</p>
-                        <p>Size: ${data.size_of_shirt}</p>
+                        <p>Size: ${data.size}</p>
                     </div>
 
                     <div class="d-flex gap-5">
