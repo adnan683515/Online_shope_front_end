@@ -39,10 +39,21 @@ const SingleWatchProduct = (data) => {
                 div.classList.add('single_watch'),
                 div.style = "width: 16rem;"
 
+            let imageurl = element.display_image
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+            }
+
             div.innerHTML = `
         
         
-                        <img src="http://127.0.0.1:8000/${element.display_image}" class="card-img-top watc-pic" alt="...">
+                        <img src="${imageurl}" class="card-img-top watc-pic" alt="...">
                             <div class="card-body">
                                 <div class="d-flex gap-4">
                                 
@@ -139,11 +150,11 @@ const DisplayBrandWatch = (data) => {
     })
 }
 
-const BrandWiseWacth=(id)=>{
+const BrandWiseWacth = (id) => {
 
     fetch(`http://127.0.0.1:8000/watch/?brand_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleWatchProduct(data))
+        .then((res) => res.json())
+        .then((data) => SingleWatchProduct(data))
 }
 
 
@@ -174,10 +185,10 @@ const DisplayWarenty = (data) => {
     })
 }
 
-const WarentWiseProduct=(id)=>{
+const WarentWiseProduct = (id) => {
     fetch(`http://127.0.0.1:8000/watch/?warenty_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleWatchProduct(data))
+        .then((res) => res.json())
+        .then((data) => SingleWatchProduct(data))
 }
 
 const LoaddiyalSize = () => {
@@ -210,11 +221,11 @@ const Displaydiyal = (data) => {
 }
 
 
-const Diyal_size_wise_product=(id)=>{
+const Diyal_size_wise_product = (id) => {
 
     fetch(`http://127.0.0.1:8000/watch/?diyal_size_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleWatchProduct(data))
+        .then((res) => res.json())
+        .then((data) => SingleWatchProduct(data))
 }
 
 const LoadStrapMetarail = () => {
@@ -245,11 +256,11 @@ const displayStrapmetarail = (data) => {
     })
 }
 
-const StrapmetarialWiseProduct=(id)=>{
+const StrapmetarialWiseProduct = (id) => {
 
     fetch(`http://127.0.0.1:8000/watch/?strap_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleWatchProduct(data))
+        .then((res) => res.json())
+        .then((data) => SingleWatchProduct(data))
 }
 
 
@@ -280,9 +291,9 @@ const DisplayRangeOfPrice = (data) => {
 }
 
 
-const TkWiseProduct=(id)=>{
+const TkWiseProduct = (id) => {
 
     fetch(`http://127.0.0.1:8000/watch/?tk_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleWatchProduct(data))
+        .then((res) => res.json())
+        .then((data) => SingleWatchProduct(data))
 }

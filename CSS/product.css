@@ -1,0 +1,48 @@
+.post_product_form {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: .5rem;
+    box-shadow: 3px 3px 20px 6px rgb(179, 182, 183);
+}
+
+.form_container {
+    padding: 1.6rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_post {
+    background-color: #5e40f5;
+    width: 80%;
+    text-align: center;
+    color: whitesmoke;
+    padding: 1rem 5rem;
+    border-radius: 6px;
+    border: none;
+    transition: transform 2s ease-in;
+}
+.product_post:hover{
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width:576px) {
+    .post_product_form {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+    .form_container{
+        margin: 0;
+        padding: 1rem;
+    }
+    .welcome{
+        font-size: 1.5rem;
+    }
+    
+
+}

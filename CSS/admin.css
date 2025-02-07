@@ -1,7 +1,8 @@
 /* CSS */
-body{
+body {
     font-family: sans-serif;
 }
+
 .button-18 {
     align-items: center;
     background-color: #0A66C2;
@@ -47,7 +48,9 @@ body{
     background: rgba(0, 0, 0, .08);
     color: rgba(0, 0, 0, .3);
 }
-
+.del_size{
+    cursor: pointer;
+}
 
 
 /* CSS */
@@ -124,6 +127,7 @@ body{
     /* cursor: pointer; */
 
 }
+
 .select_adminPanel:hover {
     cursor: pointer;
 }
@@ -157,7 +161,7 @@ body{
     background-color: whitesmoke;
     font-size: large;
     font-weight: bold;
-    
+
 }
 
 .cetagory_form {
@@ -312,11 +316,13 @@ body{
     width: 100%;
 
 }
-.button_section_div{
+
+.button_section_div {
     width: 90%;
     margin: auto;
 }
-.button_section_div > div{
+
+.button_section_div>div {
     width: 100%;
 }
 
@@ -341,7 +347,7 @@ body{
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    
+
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
@@ -565,11 +571,12 @@ price .button-price:hover {
 }
 
 .brand_form {
-    background-color: #6d05ff;
-    color: rgb(255, 255, 255);
+    background-color: #5e40f5;
+    padding: 2rem 1.5rem;
+
+    color: whitesmoke;
     border-radius: 5px;
-    padding: 1rem;
-    box-shadow: 4px 4px 30px 6px rgb(206, 207, 208);
+    box-shadow: 4px 4px 40px 6px rgb(158, 157, 157);
 }
 
 .brand_submitbtn {
@@ -606,20 +613,22 @@ price .button-price:hover {
 }
 
 .form_colour {
-    background-color: aqua;
-    color: black;
-    padding: 5px;
+    background-color: #5e40f5;
+    padding: 2rem 1.4rem;
+
+    color: whitesmoke;
     border-radius: 5px;
-    border: 2px solid black;
+    box-shadow: 4px 4px 40px 6px rgb(158, 157, 157);
 }
 
 .colour_btn {
     padding: 5px;
     border-radius: 3px;
-    background-color: #5E5DF0;
+    background-color: #ffffff;
     border-radius: 5px;
+    margin-top: 1rem;
     width: 100px;
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
 }
 
 .colour_name {
@@ -727,7 +736,7 @@ price .button-price:hover {
     width: 90%;
     margin: auto;
     background-color: #5e40f5;
-    box-shadow:  4px 4px 30px 5px rgb(255, 255, 255);
+    box-shadow: 4px 4px 30px 5px rgb(255, 255, 255);
     margin-top: 1rem;
     color: whitesmoke;
     padding: 1rem 1.4rem;
@@ -776,7 +785,7 @@ price .button-price:hover {
 
 .offcanvas_bd_sports {
     border-radius: 5px;
-    background: linear-gradient(rgb(66, 12, 229), rgb(222, 12, 163)); 
+    background: linear-gradient(rgb(66, 12, 229), rgb(222, 12, 163));
     /* background: linear-gradient(90deg, rgb(227, 132, 6), rgba(2, 233, 253, 0.634)); */
 }
 
@@ -978,6 +987,29 @@ price .button-price:hover {
     border-radius: 5px;
 }
 
+.size_eidt_modal {
+    background-color: #5B42F3;
+    padding: 3rem 1rem;
+    border-radius: .4rem;
+    box-shadow:  4px 4px 30px 6px rgb(158, 158, 158);
+
+}
+.size_eidt_modal input{
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+}
+.size_edt{
+    background-color: #5B42F3;
+    padding: .4rem 1.5rem;
+    border: none;
+    border-radius: .2rem;
+    color: whitesmoke;
+    box-shadow:  4px 4px 30px 6px rgb(158, 158, 158); 
+}
+.body_eidt_size{
+    background-color: whitesmoke;
+}
+
 .filter_btn_oder:hover {
     background-color: whitesmoke;
     color: black;
@@ -1131,7 +1163,7 @@ price .button-price:hover {
 }
 
 #All_data_type_jactket h4 {
-   
+
     font-size: 17px;
     font-weight: 500;
 }
@@ -1180,7 +1212,8 @@ price .button-price:hover {
     transition: background-color 5s ease-in-out 2s;
 }
 
-.del_btn_aoumt,.move_del {
+.del_btn_aoumt,
+.move_del {
     cursor: pointer;
 }
 
@@ -1198,6 +1231,7 @@ price .button-price:hover {
 .wacth_body {
 
     padding-bottom: 20px;
+
     /* background: linear-gradient(90deg, rgb(106, 0, 255), rgba(255, 0, 85, 0.634)); */
 }
 
@@ -1218,41 +1252,48 @@ price .button-price:hover {
     border: 2px solid rgb(93, 0, 255);
 
 }
-.form_post_movement{
-    padding: 20px;
-    margin: 10px;
-    padding-top: 10px;
-    background-color: #7a00f4;
-    border-radius: 5px;
+
+.form_post_movement {
+    background-color: #5e40f5;
+    padding: 2rem 1.4rem;
+
+
     color: whitesmoke;
-    box-shadow: 4px 4px 30px 6px rgb(163, 163, 163);
+    border-radius: 5px;
+    box-shadow: 4px 4px 40px 6px rgb(158, 157, 157);
 
 }
-.form_post_movement input{
+
+.form_post_movement input {
     border: none;
     margin: .5rem;
     padding: 1rem;
     margin-bottom: 10px;
 }
-.modal-body-move-ment{
+
+.modal-body-move-ment {
     background: linear-gradient(90deg, rgb(227, 132, 6), rgba(2, 233, 253, 0.634));
     height: 20vh;
 }
-.form_edit_watch_move{
+
+.form_edit_watch_move {
 
     padding: 1.5rem 2rem;
     background-color: #fff;
     border-radius: 5px;
 }
-.form_edit_watch_move input{
+
+.form_edit_watch_move input {
     border: none;
     margin-left: .5rem;
     padding: 5px .8rem;
 }
-.form_post_movement button{
-    padding:.3rem;
+
+.form_post_movement button {
+    padding: .3rem;
     border: none;
 }
+
 .edit_amount_btn {
     background-color: #ffffff;
     border: 2px solid black;
@@ -1266,11 +1307,12 @@ price .button-price:hover {
     color: white;
 
 }
-.size_div{
+
+.size_div {
     border: 1px solid rgb(101, 169, 228);
 }
 
-.form_post_size{
+.form_post_size {
     background-color: #5e40f5;
     padding: 1rem .4rem;
 
@@ -1278,10 +1320,17 @@ price .button-price:hover {
     border-radius: 5px;
     box-shadow: 4px 4px 40px 6px rgb(158, 157, 157);
 }
-.btn_size_post{
+
+.btn_size_post {
     background-color: whitesmoke;
     padding: 5px 1rem;
     border: none;
     border-radius: 3px;
 
+}
+
+/* post prduct */
+.offcanvas_body_post {
+    height: 100vh;
+    overflow-y: hidden;
 }

@@ -17,8 +17,8 @@ LoadJackets()
 const singlejackets = (data) => {
 
 
-    document.getElementById('single-jacket-items').innerHTML =""
-    document.getElementById('not_found_jacket').innerHTML =""
+    document.getElementById('single-jacket-items').innerHTML = ""
+    document.getElementById('not_found_jacket').innerHTML = ""
 
     if (data.length == 0) {
 
@@ -41,8 +41,19 @@ const singlejackets = (data) => {
                 div.classList.add('card_sports'),
                 div.style = "width: 14rem;"
 
+            let imageurl = element.display_image
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+            }
+
             div.innerHTML = `
-            <img src="http://127.0.0.1:8000/${element.display_image}" class="card-img-top sporst_img" alt="...">
+            <img src="${imageurl}" class="card-img-top sporst_img" alt="...">
                     <div class="card-body">
                         <div class="d-flex justify-content-around">
                             <p><i class="fa-solid fa-eye"></i> +${element.eyes}views</p>
@@ -63,12 +74,12 @@ const singlejackets = (data) => {
 }
 
 
-const typeofjacketwiseproduct =(id)=>{
-    
+const typeofjacketwiseproduct = (id) => {
+
 
     fetch(`http://127.0.0.1:8000/jackets/?type_jac_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => singlejackets(data))
+        .then((res) => res.json())
+        .then((data) => singlejackets(data))
 }
 
 const BrandWise_product = (id) => {
@@ -121,7 +132,7 @@ const DisplayTypeJackets = (data) => {
 
 
     data.forEach(element => {
-       
+
 
         const parent = document.getElementById('typejacket')
         const li = document.createElement('li')
@@ -137,11 +148,11 @@ const DisplayTypeJackets = (data) => {
 }
 
 
-const colour_wise_product = (id)=>{
+const colour_wise_product = (id) => {
 
     fetch(`http://127.0.0.1:8000/jackets/?colour_id=${id}`)
-    .then((res) =>res.json())
-    .then((data) => singlejackets(data))
+        .then((res) => res.json())
+        .then((data) => singlejackets(data))
 }
 
 const LoadColour_jacks = () => {
@@ -171,11 +182,11 @@ const DisplayColourJacks = (data) => {
 }
 
 
-const warrenty_wise_proudct =(id)=>{
+const warrenty_wise_proudct = (id) => {
 
     fetch(`http://127.0.0.1:8000/jackets/?warrenty_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => singlejackets(data))
+        .then((res) => res.json())
+        .then((data) => singlejackets(data))
 }
 
 const LoadWarrentyJacks = () => {

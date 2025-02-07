@@ -62,7 +62,7 @@ const SingleGeansCetagory = (data) => {
 
     data.forEach(element => {
         const parent = document.getElementById("geans_cetagory_filter")
-        
+
 
         const li = document.createElement('li')
         li.classList.add("dropdown-item")
@@ -97,6 +97,7 @@ LoadGeans()
 const SingleGeans = (data) => {
 
 
+
     document.getElementById('geans_container').innerHTML = ""
     document.getElementById('not_found_geans').innerHTML = ""
 
@@ -122,8 +123,26 @@ const SingleGeans = (data) => {
             div.classList.add('m-1')
             div.classList.add('single_geans_card')
             div.style = "width: 16rem;"
+
+            console.log("geans ->", element)
+            let imageurl = element.display_image
+            if (imageurl) {
+                if (imageurl.includes("image/upload/https://")) {
+                    imageurl = imageurl.replace("image/upload/", "");
+                }
+
+                // Ensure the image URL is properly formatted
+                if (!imageurl.startsWith("https://")) {
+                    imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                }
+            }
+            else{
+                alert("Please Admin This image could not found")
+            }
+
+
             div.innerHTML = `       
-                            <img src="http://127.0.0.1:8000${element.display_image}" class="card-img-top img_card_saree" alt="...">
+                            <img src="${imageurl}" class="card-img-top img_card_saree" alt="...">
                                 <div class="card-body">
                                     <div class="d-flex  justify-content-around">
                                         <p id="eyes"><i class="fa-solid fa-eye"></i> +${element.eyes} views</i></p>
@@ -133,8 +152,8 @@ const SingleGeans = (data) => {
                                     <div class="d-flex justify-content-between align-items-center">
                                     <p>Abailable:${element.abailable}</p>
                             
-                                    ${token?` <a class="text-decoration-none view_more  btn" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
-                                    </div>`:` <a class="text-decoration-none view_more  btn" href="login.html">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
+                                    ${token ? ` <a class="text-decoration-none view_more  btn" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
+                                    </div>`: ` <a class="text-decoration-none view_more  btn" href="login.html">view <i class="fa-solid fa-circle-arrow-right"></i></i></a>
                                     </div>`}
                                     
                                 
@@ -179,24 +198,24 @@ const ColourWiseGeans = (id) => {
         .then((data) => SingleGeans(data))
 }
 
-const BrandWiseGeans=(id)=>{
+const BrandWiseGeans = (id) => {
 
     fetch(`http://127.0.0.1:8000/geans/?brand_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleGeans(data))
+        .then((res) => res.json())
+        .then((data) => SingleGeans(data))
 }
 
-const SizeWiseGeans=(id)=>{
+const SizeWiseGeans = (id) => {
 
     fetch(`http://127.0.0.1:8000/geans/?size_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleGeans(data))
+        .then((res) => res.json())
+        .then((data) => SingleGeans(data))
 }
 
-const RangePriceGeans=()=>{
+const RangePriceGeans = () => {
     fetch('http://127.0.0.1:8000/range_of_price/')
-    .then((res) => res.json())
-    .then((data) => load_range_price_geans(data))
+        .then((res) => res.json())
+        .then((data) => load_range_price_geans(data))
 }
 
 RangePriceGeans()
@@ -217,21 +236,21 @@ const load_range_price_geans = (price_list) => {
     })
 }
 
-const price_wise_geans=(id)=>{
+const price_wise_geans = (id) => {
 
     fetch(`http://127.0.0.1:8000/geans/?taka_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => SingleGeans(data))
+        .then((res) => res.json())
+        .then((data) => SingleGeans(data))
 }
 
-const InputValueGet=()=>{
+const InputValueGet = () => {
 
-    const  GeansSearchValue=document.getElementById('geans_search_input').value
+    const GeansSearchValue = document.getElementById('geans_search_input').value
 
     fetch(`http://127.0.0.1:8000/geans/?title=${GeansSearchValue}`)
-    .then((res) => res.json())
-    .then((data) => SingleGeans(data))
+        .then((res) => res.json())
+        .then((data) => SingleGeans(data))
 
-    document.getElementById('geans_search_input').value=""
+    document.getElementById('geans_search_input').value = ""
 }
 

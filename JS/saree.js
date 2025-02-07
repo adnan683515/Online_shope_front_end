@@ -24,7 +24,7 @@ const single_saree = (saree_list) => {
 
 
         saree_list.forEach(element => {
-            
+
 
 
             const parent = document.getElementById('saree_container')
@@ -36,8 +36,18 @@ const single_saree = (saree_list) => {
             div.classList.add('m-1')
             div.classList.add('single_saree_card')
             div.style = "width: 16rem;"
+            let imageurl = element.display_image
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+            }
             div.innerHTML = `       
-                            <img src="http://127.0.0.1:8000${element.display_image}" class="card-img-top img_card_saree" alt="...">
+                            <img src="${imageurl}" class="card-img-top img_card_saree" alt="...">
                                 <div class="card-body">
                                     <div class="d-flex  justify-content-around">
                                         <p id="eyes"><i class="fa-solid fa-eye"></i> +${element.eyes} views</i></p>
@@ -70,8 +80,8 @@ fetch('http://127.0.0.1:8000/saree_cetagory/')
 const load_saree_cetagory = (cetagory_list) => {
 
     cetagory_list.forEach(element => {
-    
-        console.log('saree cetagory',element)
+
+        console.log('saree cetagory', element)
         const parent = document.getElementById('sare_cetagory_filter')
 
         const li = document.createElement('li')
@@ -198,7 +208,7 @@ const catch_search_box = () => {
 
     const value = document.getElementById('sare_seacrh_input').value
 
-  
+
 
     fetch(`http://127.0.0.1:8000/saree/?product_title=${value}`)
         .then((res) => res.json())

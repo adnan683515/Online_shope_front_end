@@ -32,6 +32,21 @@ const DisplayOderDetails = (id) => {
 
             const div = document.getElementById('order_page')
 
+
+            let imageurl = data.product.display_image
+            let img_2 = data.product.font_image
+
+            if (imageurl.includes("image/upload/https://") || img_2.includes("image/upload/https://") ) {
+                imageurl = imageurl.replace("image/upload/", "");
+                img_2 = imageurl.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://") || !img_2.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                img_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${img_2}`;
+            }
+
             div.innerHTML = `
             
                 
@@ -91,12 +106,10 @@ const DisplayOderDetails = (id) => {
                 
                 <div class="row">
 
-                <img src=" http://127.0.0.1:8000/${data.product.display_image}" class="col-lg-4 col-md-4 col-sm-12 m-1 rounded mx-auto d-block order_img_detils" alt="...">
+                <img src="${imageurl}" class="col-lg-4 col-md-4 col-sm-12 m-1 rounded mx-auto d-block order_img_detils" alt="...">
 
-                <img src=" http://127.0.0.1:8000/${data.product.font_image}" class="col-lg-4 col-md-4 col-sm-12 m-1 rounded mx-auto d-block order_img_detils" alt="...">
+                <img src="${img_2}" class="col-lg-4 col-md-4 col-sm-12 m-1 rounded mx-auto d-block order_img_detils" alt="...">
 
-
-                <img src=" http://127.0.0.1:8000/${data.product.back_image}" class="col-lg-4 col-md-4 col-sm-12 m-1 rounded mx-auto d-block order_img_detils" alt="...">
 
                 </div>
 
@@ -112,15 +125,10 @@ const DisplayOderDetails = (id) => {
                     </blockquote>
                 </div>
                 </div>
-
-    
-            
+     
             </div>
 
-
-
             `
-
 
         })
 }

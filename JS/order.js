@@ -41,12 +41,23 @@ const order_for_cart = () => {
 
                     const second_div = document.getElementById('items')
 
+                    let imageurl =data.product.display_image
+
+                    if (imageurl.includes("image/upload/https://")) {
+                        imageurl = imageurl.replace("image/upload/", "");
+                    }
+
+                    // Ensure the image URL is properly formatted
+                    if (!imageurl.startsWith("https://")) {
+                        imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                    }
+
                     second_div.innerHTML = `
                     
                         <div  class="d-flex mt-5 items_box_roder">
 
                             <div>
-                            <img class="img_items m-1" src="http://127.0.0.1:8000/${data.product.display_image}" alt="">
+                            <img class="img_items m-1" src="${imageurl}" alt="">
                             
                             </div>
                             
@@ -98,7 +109,7 @@ const orderForm = (event) => {
                 phone: FORM_DATA.get('phne_number'),
                 user: parseInt(localStorage.getItem('user_id')),
                 product: parseInt(data.product.id),
-                tranjection_id:FORM_DATA.get('tranjection')
+                tranjection_id: FORM_DATA.get('tranjection')
             }
 
 
@@ -122,17 +133,17 @@ const orderForm = (event) => {
                 body: JSON.stringify(create_order_obj)
             })
                 .then((response) => {
-                    
-    
+
+
                     if (response.ok == true) {
-            
+
                         response.json()
 
                     }
-                
+
 
                 })
-        
+
 
 
         })
@@ -142,19 +153,19 @@ const orderForm = (event) => {
 }
 
 
-const SSLpayment=()=>{
+const SSLpayment = () => {
     id = new URLSearchParams(window.location.search).get('item_id')
     console.log("onclik kaj kore")
     token = localStorage.getItem('Token')
 
-    fetch(`http://127.0.0.1:8000/sslcomarce/?oder_id=${id}`,{
-        method:"POST",
+    fetch(`http://127.0.0.1:8000/sslcomarce/?oder_id=${id}`, {
+        method: "POST",
         headers: {
             'Authorization': `Token ${token}`,  // Send token in the Authorization header
             'Content-Type': 'application/json'   // Optional: specify content type
         }
     })
-    .then((res) =>{
-        res.json();
-    })
+        .then((res) => {
+            res.json();
+        })
 }

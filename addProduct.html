@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rakuten</title>
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/saree.css">
+    <link rel="stylesheet" href="CSS/product.css">
+    <link rel="stylesheet" href="CSS/signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <header>
+
+        <a href=""></a>
+        <div class="navigation" id="navber">
+
+
+
+
+        </div>
+
+
+    </header>
+
+    <main>
+
+        <h1 class="text-center mt-5 mb-2 font-bold welcome">Welcome Admin,Do you want Add Product Now!</h1>
+        <div class="form_container">
+
+            <form enctype="multipart/form-data" method="POST"  id="post_product_form" class="post_product_form" action="">
+                <div class="mb-3">
+                    <label for="product_title" class="form-label">Product Title: </label>
+                    <input required type="text" name="product_title" class="form-control" id="product_title"
+                        placeholder="Your Product title..">
+                </div>
+                <div class="mb-3">
+                    <label for="">Select Product Type: </label>
+                    <div class="form-floating">
+                        
+                        <select name="type_product" class="form-select" id="type_product"
+                            aria-label="Floating label select example">
+                            <option aria-required="true" selected></option>
+                            <option value="Saree">Saree</option>
+                            <option value="Geans">Geans</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="T shirt">T shirt</option>
+                            <option value="Watch">Watch</option>
+                            <option value="Powder">Powder</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Jacket">Jacket</option>
+                        </select>
+                        <label for="type_product">Type of Products</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <select name="brand" class="form-select text-black" id="brand_option"
+                            aria-label="Floating label select example">
+                            <option selected>Select Brand Name: </option>
+
+                        </select>
+                        <label for="brand">Add Brand Name!</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <select name="cetagory" class="form-select" id="cetagory_option"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+
+                        </select>
+                        <label for="cetagory_option">Select your cetagory name by product</label>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="">Select Range Of Price: </label>
+                    <div class="form-floating">
+                        <select name="price" class="form-select" id="price_option"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+
+                        </select>
+                        <label for="price_option">Range of Price</label>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Product Price: </label>
+                    <input name="fixed_price" type="text" class="form-control" id="price" placeholder="product price">
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <select name="team" class="form-select" id="team_option"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+
+                        </select>
+                        <label for="team_option">Select Your Team Name:</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Select Type Of Version: </label>
+                    <div class="form-floating">
+
+                        <select name="version" class="form-select" id="version_option"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+
+                        </select>
+                        <label for="version_option">select version name</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <select name="sports_type" class="form-select" id="sports"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+                            <option value="Football">Football</option>
+                            <option value="Cricket Ball">Cricket Ball</option>
+                            <option value="Cricket Bat">Cricket Bat</option>
+                            <option value="Jursi">Jursi</option>
+                            <option value="Boot">Boot</option>
+                            <option value="Basketball">Basketball</option>
+                            <option value="Tennis ball">Tennis ball</option>
+                            <option value="Handball">Handball</option>
+                            <option value="Rink ball">Rink ball</option>
+                            <option value="Volleyball ball">Volleyball ball</option>
+                        </select>
+                        <label for="sports">Works with selects</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Select country Name: </label>
+                    <div class="form-floating">
+                        <select name="country" class="form-select" id="country_option"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+
+                        </select>
+                        <label for="country_option">selects country name</label>
+                    </div>
+                </div>
+
+
+
+
+                <div class="mb-3">
+                    <label for="">Type Of Jacket:</label>
+                    <div class="form-floating">
+                        <select name="jack" class="form-select" id="jac_option"
+                            aria-label="Floating label select example">
+                            <option selected> </option>
+
+                        </select>
+                        <label for="jac_option">select type of jacket</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="">Select Your Product colour: </label>
+                    <div class="form-floating">
+                        <select name="colour" class="form-select" id="colour_optioin"
+                            aria-label="Floating label select example">
+                            <option selected></option>
+
+                        </select>
+                        <label for="colour_optioin">select colour</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Product Quantity: </label>
+                    <input name="quantity" required type="number" class="form-control" id="qantity"
+                        placeholder="product quantity">
+                </div>
+                <div class="mb-3">
+                    <label for="">Select Your Product Metairals:</label>
+                    <div class="form-floating">
+                        <select name="meta" class="form-select" id="meta_option"
+                            aria-label="Floating label select example">
+                            <option selected> </option>
+
+                        </select>
+                        <label for="meta_option">select product Metarials</label>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="">Select Your Product Size:</label>
+                    <div class="form-floating">
+                        <select name="size" class="form-select" id="size_option"
+                            aria-label="Floating label select example">
+                            <option selected> </option>
+
+                        </select>
+                        <label for="size_option">select size</label>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="">Select Warrenty Watch:</label>
+                    <div class="form-floating">
+                        <select name="warrenty" class="form-select" id="floatingSelect"
+                            aria-label="Floating label select example">
+                            <option selected> </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label for="floatingSelect">select warrenty watch</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Select Movement Watch:</label>
+                    <div class="form-floating">
+                        <select name="move" class="form-select" id="move_option"
+                            aria-label="Floating label select example">
+                            <option selected> </option>
+
+                        </select>
+                        <label for="move_option">select Movement Watch</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                        <label for="image_1" class="form-label">Your Product Display Image: </label>
+                        <input class="form-control form-control-lg" name="image_1" id="image_1" type="file">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                        <label for="image_2" class="form-label">Your Product second Image: </label>
+                        <input name="image_2" class="form-control  form-control-lg" id="image_2" type="file">
+                    </div>
+                </div>
+
+                
+
+
+
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <textarea name="text-area-box" class="form-control" placeholder="Leave a comment here"
+                            id="des" style="height: 100px"></textarea>
+                        <label for="des">Product Description: </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button onclick="ProductPostFunction(event)" class="product_post" type="submit">POST</button>
+                </div>
+
+            </form>
+
+
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start foot ">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div class="">
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to or
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/nav.js"></script>
+    <script src="JS/product.js"></script>
+</body>
+
+
+
+
+</html>

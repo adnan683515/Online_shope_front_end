@@ -17,9 +17,9 @@ const DisplaySportsItem = (data) => {
 
 
     document.getElementById('sports-box-container').innerHTML = ""
-    document.getElementById('not_found_sports').innerHTML =""
+    document.getElementById('not_found_sports').innerHTML = ""
     if (data.length == 0) {
-        
+
         document.getElementById('not_found_sports').innerHTML = `
                 <h4 class="w-75 m-auto mt-5 ml-5 align-items-center">No results found</h4>
         
@@ -41,8 +41,19 @@ const DisplaySportsItem = (data) => {
                 div.classList.add('card_sports'),
                 div.style = "width: 15rem;"
 
+            let imageurl = element.display_image
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+            }
+
             div.innerHTML = `
-                        <img src="http://127.0.0.1:8000/${element.display_image}" class="card-img-top sporst_img" alt="...">
+                        <img src="${imageurl}" class="card-img-top sporst_img" alt="...">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-around">
                                         <p><i class="fa-solid fa-eye"></i> +${element.eyes}views</p>
@@ -60,12 +71,12 @@ const DisplaySportsItem = (data) => {
             
             `
 
-        
+
             // if (token){
             //     document.getElementById('button_auth').innerHTML=`
             //         <a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>
             //     `
-                
+
             // }
             // else{
             //     document.getElementById('button_auth').innerHTML=`
@@ -116,20 +127,20 @@ const LoadJurseywiseTEam = (id) => {
 }
 
 
-const LoadVersion=()=>{
+const LoadVersion = () => {
 
 
     fetch('http://127.0.0.1:8000/version/')
-    .then((res) => res.json())
-    .then((data) => DIsplayVersionWisejursery(data))
+        .then((res) => res.json())
+        .then((data) => DIsplayVersionWisejursery(data))
 }
 
 LoadVersion()
 
-const DIsplayVersionWisejursery=(data)=>{
+const DIsplayVersionWisejursery = (data) => {
 
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
         const parent = document.getElementById('jursey_type')
 
@@ -145,58 +156,58 @@ const DIsplayVersionWisejursery=(data)=>{
     })
 }
 
-const VersionWiseProduct=(id)=>{
+const VersionWiseProduct = (id) => {
 
 
     fetch(`http://127.0.0.1:8000/Football/?version_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
-const lOadRangeofPrice=()=>{
+const lOadRangeofPrice = () => {
 
     fetch('http://127.0.0.1:8000/range_of_price/')
-    .then((res) => res.json())
-    .then((data)=>{
+        .then((res) => res.json())
+        .then((data) => {
 
 
-        data.forEach(element=>{
+            data.forEach(element => {
 
-            const parent = document.getElementById('range_of_price_sports')
+                const parent = document.getElementById('range_of_price_sports')
 
-            const p = document.createElement('p')
-            p.classList.add('version_name')
-            p.innerHTML = `
+                const p = document.createElement('p')
+                p.classList.add('version_name')
+                p.innerHTML = `
             
                     <a class="text-decoration-none text-dark" onclick="DisplayProductWiseprice('${element.id}')" >${element.price_name}</a>
             `
 
-            parent.appendChild(p)
+                parent.appendChild(p)
+            })
         })
-    })
 }
 
 lOadRangeofPrice()
 
 
-const DisplayProductWiseprice=(id)=>{
+const DisplayProductWiseprice = (id) => {
 
     fetch(`http://127.0.0.1:8000/Football/?tk_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
-const LoadColour=()=>{
+const LoadColour = () => {
 
     fetch('http://127.0.0.1:8000/colour/')
-    .then((res) => res.json())
-    .then((data) => Display_colour(data))
+        .then((res) => res.json())
+        .then((data) => Display_colour(data))
 }
 LoadColour()
 
-const Display_colour=(data)=>{
+const Display_colour = (data) => {
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
         const parent = document.getElementById('Colour_Family')
         const li = document.createElement('li')
@@ -211,28 +222,28 @@ const Display_colour=(data)=>{
 }
 
 
-const ColourWisePorudct=(id)=>{
+const ColourWisePorudct = (id) => {
 
     fetch(`http://127.0.0.1:8000/Football/?colour_Id=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
 
-const LoadCricketBrand=()=>{
+const LoadCricketBrand = () => {
 
     fetch('http://127.0.0.1:8000/CricketBrand/')
-    .then((res) => res.json())
-    .then((data) => DisplayCricketBran(data))
+        .then((res) => res.json())
+        .then((data) => DisplayCricketBran(data))
 }
 LoadCricketBrand()
 
-const DisplayCricketBran=(data)=>{
+const DisplayCricketBran = (data) => {
 
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
-        const parent =document.getElementById('cricket_Brand')
+        const parent = document.getElementById('cricket_Brand')
 
 
         const p = document.createElement('p')
@@ -245,32 +256,32 @@ const DisplayCricketBran=(data)=>{
     })
 }
 
-const LoadCricketBrandWiseProudct=(id)=>{
+const LoadCricketBrandWiseProudct = (id) => {
 
 
     fetch(`http://127.0.0.1:8000/Football/?cricket_brand=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
 
-const LoadMetarial=()=>{
+const LoadMetarial = () => {
     fetch('http://127.0.0.1:8000/mainmetarial/')
-    .then((res) => res.json())
-    .then((data) => DisplayMetarail(data))
+        .then((res) => res.json())
+        .then((data) => DisplayMetarail(data))
 }
 
 LoadMetarial()
 
-const DisplayMetarail=(data)=>{
+const DisplayMetarail = (data) => {
 
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
         const parent = document.getElementById("meterail")
         const p = document.createElement('p')
         p.classList.add('meta_p')
-        p.innerHTML= `
+        p.innerHTML = `
             <a class="text-decoration-none text-dark" onclick="LoadMetraillwiseProduct('${element.id}')">${element.name}</a>
             
         `
@@ -279,30 +290,30 @@ const DisplayMetarail=(data)=>{
 
 }
 
-const LoadMetraillwiseProduct=(id)=>{
+const LoadMetraillwiseProduct = (id) => {
 
 
     fetch(`http://127.0.0.1:8000/Football/?metarail_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
 
-const LoadBATSize=()=>{
+const LoadBATSize = () => {
 
     fetch("http://127.0.0.1:8000/Batsize/")
-    .then((res) => res.json())
-    .then((data) =>  DisplayBATSIZE(data))
+        .then((res) => res.json())
+        .then((data) => DisplayBATSIZE(data))
 }
 
 LoadBATSize()
 
-const DisplayBATSIZE=(data)=>{
+const DisplayBATSIZE = (data) => {
 
-    data.forEach(element=>{
+    data.forEach(element => {
         const parent = document.getElementById("Batsize")
 
-        const p  = document.createElement('p')
+        const p = document.createElement('p')
         p.classList.add('Size_p')
 
         p.innerHTML = `
@@ -314,29 +325,29 @@ const DisplayBATSIZE=(data)=>{
     })
 }
 
-const SIZewiseBAT=(id)=>{
+const SIZewiseBAT = (id) => {
 
     fetch(`http://127.0.0.1:8000/Football/?size_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
 
 
 
-const lOadRangeofPriceFB=()=>{
+const lOadRangeofPriceFB = () => {
 
     fetch('http://127.0.0.1:8000/range_of_price/')
-    .then((res) => res.json())
-    .then((data) => DisplayRangePriceFB(data))
+        .then((res) => res.json())
+        .then((data) => DisplayRangePriceFB(data))
 
 }
 
 lOadRangeofPriceFB()
 
-const DisplayRangePriceFB=(data)=>{
+const DisplayRangePriceFB = (data) => {
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
         const parent = document.getElementById('price_family')
         const li = document.createElement('li')
@@ -353,28 +364,28 @@ const DisplayRangePriceFB=(data)=>{
 }
 
 
-const price_wise_football=(id)=>{
+const price_wise_football = (id) => {
 
 
     fetch(`http://127.0.0.1:8000/Football/?price_fb=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }
 
 
 // http://127.0.0.1:8000/warenty/
 
-const LoadWarentyFb=()=>{
+const LoadWarentyFb = () => {
 
     fetch('http://127.0.0.1:8000/warenty/')
-    .then((res) => res.json())
-    .then((data) => DisplayWarrentyFb(data))
+        .then((res) => res.json())
+        .then((data) => DisplayWarrentyFb(data))
 }
 LoadWarentyFb()
 
-const DisplayWarrentyFb=(data)=>{
+const DisplayWarrentyFb = (data) => {
 
-    data.forEach(element=>{
+    data.forEach(element => {
 
 
         const parent = document.getElementById('warenty_fb')
@@ -392,9 +403,9 @@ const DisplayWarrentyFb=(data)=>{
 }
 
 
-const warentyWiseFootball=(id)=>{
+const warentyWiseFootball = (id) => {
 
     fetch(`http://127.0.0.1:8000/Football/?warrenty_fb=${id}`)
-    .then((res) => res.json())
-    .then((data) => DisplaySportsItem(data))
+        .then((res) => res.json())
+        .then((data) => DisplaySportsItem(data))
 }

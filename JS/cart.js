@@ -13,7 +13,16 @@ const displaycartitems = (data) => {
 
     data.forEach(element => {
 
+        let imageurl = element.product.display_image
 
+        if (imageurl.includes("image/upload/https://")) {
+            imageurl = imageurl.replace("image/upload/", "");
+        }
+
+        // Ensure the image URL is properly formatted
+        if (!imageurl.startsWith("https://")) {
+            imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+        }
         const parent = document.getElementById('cart_items_main')
 
         const div = document.createElement('div')
@@ -25,7 +34,7 @@ const displaycartitems = (data) => {
 
                     <div class="d-flex gap-3 align-items-center m-2">
 
-                        <img class="card_logo_img" src="http://127.0.0.1:8000/${element.product.display_image}" alt="">
+                        <img class="card_logo_img" src="${imageurl}" alt="">
 
                         <div class="text-title-card">
 
@@ -156,18 +165,32 @@ recentViewProduct()
 
 const DisplayRecentViewproduct = (data) => {
 
+    console.log("data", data)
 
     data.forEach(element => {
 
 
+        console.log("helw", element)
+        let imageUrl = element.Product.display_image;
 
+        // Remove incorrect "image/upload/" prefix if it exists
+        if (imageUrl.includes("image/upload/https://")) {
+            imageUrl = imageUrl.replace("image/upload/", "");
+        }
+
+        // Ensure the image URL is properly formatted
+        if (!imageUrl.startsWith("https://")) {
+            imageUrl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageUrl}`;
+        }
+
+        console.log("cloudinary image asce", element)
         const parent = document.getElementById('recomendation_box')
         const div = document.createElement('div')
         div.classList.add('item')
 
         div.innerHTML = `
             <div class="recnet_card" style="width: 16rem;">
-                        <img src="http://127.0.0.1:8000/${element.Product.display_image}" class="card-img-top recent_vieew_img" alt="...">
+                        <img src="${imageUrl}" class="card-img-top recent_vieew_img" alt="...">
                         <div class="card-body">
                             <p class="card-text">
                             <div class="d-flex justify-content-between">

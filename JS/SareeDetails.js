@@ -145,7 +145,7 @@ const SingleReView = (data) => {
         parent.appendChild(div)
 
         const token = localStorage.getItem('Token')
-        if (token){
+        if (token) {
             document.getElementById('del_icon_cmt').innerHTML = `<i class="fa-solid fa-trash"></i>`
         }
 
@@ -265,9 +265,7 @@ const JURSIDTAIls = (id) => {
                                 <div class="carousel-item"> 
                                     <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -354,8 +352,9 @@ const JURSIDTAIls = (id) => {
 const FootballDetails = (id) => {
 
 
+    console.log("Foot", id)
 
-    console.log("Football Details",id)
+    console.log("Football Details", id)
 
     const token = localStorage.getItem('Token')
     document.getElementById('saree-details-section').innerHTML = ""
@@ -369,25 +368,39 @@ const FootballDetails = (id) => {
         .then((res) => res.json())
         .then((data) => {
 
+            let imageurl = data.display_image
+            let img_2 = data.font_image
+            console.log("data", data)
+
+            if (imageurl.includes("image/upload/https://") || img_2.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+                img_2 = img_2.replace("image/upload/", "");
+                // img_3 = img_3.replace("image/upload/", "");
+
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://") || !img_2.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                img_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${img_2}`;
+            }
             document.getElementById('saree-details-section').innerHTML = `
         
         
         
             <div class="col-lg-6 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="${imageurl}" class="display_image_for_details img-fluid" alt="">
 
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${img_2}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                        
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -408,13 +421,14 @@ const FootballDetails = (id) => {
                     <h3>Product Title: ${data.product_title}
                     </h3>
                     <div class="d-flex gap-3">
-                    <p>Brand:${data.Brand.name}</p>
+                    ${data.Brand != null ? `<p>Brand: ${Brand.name} </p>` : `<p>Brand:Null</p>`
+                }
                     <p>cetagory: ${data.cetagory.name}</p>
                     </div>
 
                     <div class="d-flex gap-3">
                         <p>Available: ${data.abailable}</p>
-                        <p>Size: ${data.size}</p>
+                        <p>Size: ${data.size.size_name}</p>
                     </div>
 
                     <div class="d-flex gap-5">
@@ -475,25 +489,36 @@ const jacketDetails = (id) => {
         .then((res) => res.json())
         .then((data) => {
 
+            let imageurl = data.display_image
+            let image_2 = data.font_image
+
+            if (imageurl.includes("image/upload/https://") || image_2.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+                image_2 = imageurl.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://") || !image_2.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                image_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${image_2}`;
+            }
             document.getElementById('saree-details-section').innerHTML = `
         
         
         
             <div class="col-lg-6 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="${imageurl}" class="display_image_for_details img-fluid" alt="">
 
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${image_2}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                    
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -514,8 +539,8 @@ const jacketDetails = (id) => {
                     <h3>Product Title: ${data.product_title}
                     </h3>
                     <div class="d-flex gap-3">
-                    <p>Brand:${data.Brand.name}</p>
-                    <p>cetagory: ${data.cetagory.name}</p>
+                    <p>Brand:${data.Brand}</p>
+                    <p>cetagory: ${data.cetagory}</p>
                     </div>
 
                     <div class="d-flex gap-3">
@@ -587,6 +612,18 @@ const DisplayRecomendationJackets = (data) => {
 
         const div = document.createElement('div')
         div.classList.add('item')
+        let imageurl = element.display_image
+
+        if (imageurl.includes("image/upload/https://")) {
+            imageurl = imageurl.replace("image/upload/", "");
+
+        }
+
+        // Ensure the image URL is properly formatted
+        if (!imageurl.startsWith("https://")) {
+            imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+
+        }
 
         div.innerHTML = `
 
@@ -594,7 +631,7 @@ const DisplayRecomendationJackets = (data) => {
                     <div class="card box_football" style="width: 17rem;">
                     
 
-                        <img src="http://127.0.0.1:8000/${element.display_image}" class="card-img-top image_of_recom_jack mt-2" alt="...">
+                        <img src="${imageurl}" class="card-img-top image_of_recom_jack mt-2" alt="...">
                         <div class="card-body">
 
                             <p class="card-text">${element.description.slice(0, 20)}...</p>
@@ -628,27 +665,38 @@ const shirtDetails = (id) => {
         .then((res) => res.json())
         .then((data) => {
 
+            let imageurl = element.display_image
 
+
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+
+            }
 
             document.getElementById('saree-details-section').innerHTML = `
         
         
         
             <div class="col-lg-3 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="${imageurl}" class="display_image_for_details img-fluid" alt="">
 
-                   <div class="w-50 mt-4">
+                <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
                                     <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                    
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -697,7 +745,7 @@ const shirtDetails = (id) => {
                     </div>
                     </div>
                     <button  onclick="onclick_Add_to_cart()" class="button-7"> Add to Cart </button>
-                       <a class="button-37 text-decoration-none" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">More Details</a>
+                    <a class="button-37 text-decoration-none" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">More Details</a>
 
                 
                     <div class="row">
@@ -752,9 +800,7 @@ const CriketDetails = (id) => {
                                 <div class="carousel-item"> 
                                     <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                        
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -859,25 +905,36 @@ const SareeDeatails = (id) => {
 
 
 
+            let imageurl = data.display_image
+            let img_2 = data.font_image
+
+            if (imageurl.includes("image/upload/https://") || img_2.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+                img_2 = img_2.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://") || !img_2.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                img_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${img_2}`;
+            }
             document.getElementById('saree-details-section').innerHTML = `
         
         
         
             <div class="col-lg-6 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="${imageurl}" class="display_image_for_details img-fluid" alt="">
 
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${img_2}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                            
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -981,23 +1038,37 @@ const GeansDeatails = (id) => {
         .then((data) => {
 
 
+            let imageurl = data.display_image
+            let imageurl_2 = data.font_image
+
+            console.log("geans details", data)
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+                imageurl_2 = imageurl_2.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                imageurl_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl_2}`;
+            }
 
             document.getElementById('saree-details-section').innerHTML = `
         
             <div class="col-lg-6 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="${imageurl}" class="display_image_for_details img-fluid" alt="">
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                <div class="carousel-item active">
+                                    <img src="${imageurl_2}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                    
+                        
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -1018,13 +1089,13 @@ const GeansDeatails = (id) => {
                     <h3>Product Title: ${data.product_title}
                     </h3>
                     <div class="d-flex gap-3">
-                    <p>Brand: ${data.Brand.name} gens</P>
+                    <p>Brand: ${data.Brand.name}</P>
                     <p>cetagory: ${data.cetagory.name}</p>
                     </div>
 
                     <div class="d-flex gap-3">
                         <p>Available: ${data.abailable}</p>
-                        <p>Size: ${data.size_of_geans}</p>
+                        <p>Size: ${data.size}</p>
                     </div>
 
                     <div class="d-flex gap-5">
@@ -1086,24 +1157,36 @@ const WatchDetails = (id) => {
         .then((res) => res.json())
         .then((data) => {
 
-            console.log("Watch", data)
+
+
+            let imageurl = data.display_image
+            let imageurl_2 = data.font_image
+
+            if (imageurl.includes("image/upload/https://")) {
+                imageurl = imageurl.replace("image/upload/", "");
+                imageurl_2 = imageurl_2.replace("image/upload/", "");
+            }
+
+            // Ensure the image URL is properly formatted
+            if (!imageurl.startsWith("https://")) {
+                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                imageurl_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl_2}`;
+            }
 
             document.getElementById('saree-details-section').innerHTML = `
         
             <div class="col-lg-6 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="${imageurl}" class="display_image_for_details img-fluid" alt="">
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="${imageurl_2}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://127.0.0.1:8000/${data.back_image}" class="d-block details_geans_pic img-fluid" alt="...">
-                                </div>
+                            
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
@@ -1124,8 +1207,8 @@ const WatchDetails = (id) => {
                     <h3>Product Title: ${data.product_title}
                     </h3>
                     <div class="d-flex gap-3">
-                    <p>Brand: ${data.Brand.name} gens</P>
-                    <p>cetagory: ${data.cetagory.name}</p>
+                    <p>Brand: ${data.Brand} gens</P>
+                    <p>cetagory: ${data.cetagory}</p>
                     </div>
 
                     <div class="d-flex gap-3">
@@ -1297,7 +1380,7 @@ const CatchSearchParamsSaree = () => {
     else if (params_type_product == 'Sports') {
 
         let type_of_sports = new URLSearchParams(window.location.search).get('sports_type')
-        if (type_of_sports == 'Football') {
+        if (type_of_sports === 'Football') {
             FootballDetails(params),
                 LoadAllFootballs()
         }

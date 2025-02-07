@@ -10,11 +10,12 @@ fetch("navber.html")
             document.getElementById('admin_box').innerHTML = `
                 <div class="d-flex justify-content-center align-items-center">
                     <a class="m-4 text-white text-decoration-none singup_btn" href="admin_panel.html">DeshBoard</a>
-                    <button class="singup_btn">Add product</button>
+                    <a class="singup_btn text-decoration-none" href="addProduct.html" type="button"
+                        >Add Prduct</a>
                 </div>
             `;
-            
-            
+
+
         }
         if (token) {
             document.getElementById('nav_cart_and_profile').innerHTML = `
@@ -61,11 +62,11 @@ fetch("navber.html")
 
 
 
-const logout_user=()=>{
+const logout_user = () => {
 
     localStorage.removeItem('Token')
     localStorage.removeItem('user_id')
     localStorage.removeItem('card_id')
     localStorage.removeItem('Admin')
-    window.location.href="login.html"
+    window.location.href = "login.html"
 }

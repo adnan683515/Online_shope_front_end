@@ -348,6 +348,7 @@ const DisplayAllBrandName = () => {
 
             data.forEach(element => {
                 const parent = document.getElementById('all_brand')
+
                 var li = document.createElement('li')
                 li.classList.add("list-group-item")
                 li.innerHTML = `
@@ -1542,9 +1543,19 @@ const AllSizeDisplay = () => {
                                         <p>Type: ${element.choice_size}</p>
                                         <p>Name: ${element.size_name}</p>
                                     </div>
-                                    <div class="d-flex justify-content-center align-items-center gap-3">
-                                        <p><i class="fa-solid fa-pen-to-square fa-xl"></i></p>
-                                        <p><i class="fa-solid fa-trash fa-xl"></i></p>
+                                    <div class="">
+                                        
+                                        <div class="d-flex justify-content-center align-items-center gap-2">   
+
+
+                                                <div class="">
+                                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#size_modal">
+                                                    <i onclick="UPdateSizefun('${element.id}','${element.choice_size}','${element.size_name}')" class="fa-solid fa-pen-to-square fa-xl"></i>
+                                                    </button>
+                                                </div>
+                                                <div class=""><i onclick="delsize('${element.id}')" class="fa-solid fa-trash fa-xl del_size"></i></div>
+
+                                        </div>
                                     </div>
                                 </div>
             `
@@ -1555,30 +1566,213 @@ const AllSizeDisplay = () => {
 AllSizeDisplay()
 
 
+let size_id_update = ''
+let type_size = ''
+const UPdateSizefun = (id, typee, name) => {
+
+
+    size_id_update = `${id}`
+    type_size = `${typee}`
+    document.getElementById('size_value_edt').value = `${name}`
+
+}
+
+const form_edt_size = () => {
+
+    console.log("form edit size")
+    const obj =
+    {
+        choice_size: type_size,
+        size_name: document.getElementById('size_value_edt').value
+    }
+    console.log("obj", obj)
+    fetch(`http://127.0.0.1:8000/sizeupdate/${size_id_update}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json()
+            // document.getElementById('succ_siZe').innerText='update Done!'
+        })
+}
+
+
+const delsize = (id) => {
+
+
+    fetch(`http://127.0.0.1:8000/sizeupdate/${id}/`, {
+        method: "DELETE",
+
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById("del_size").innerText = "Deleted!"
+        })
+    document.getElementById('del_size').innerText = ""
+}
 
 const PostSizeFunction = (event) => {
     event.preventDefault()
 
     const option_value = document.getElementById('size_option').value
     const val = document.getElementById('size_name_post').value
-    console.log(val,option_value)
+    console.log(val, option_value)
     const obj = {
         choice_size: option_value,
         size_name: val
 
     }
     console.log(obj)
-    document.getElementById('size_name_post').value=""
-    document.getElementById('size_option').value="Open this select menu"
+    document.getElementById('size_name_post').value = ""
+    document.getElementById('size_option').value = "Open this select menu"
     // http://127.0.0.1:8000/SizeApiView/
-    fetch('http://127.0.0.1:8000/SizeApiView/',{
-        method:"POST",
-        headers:{"Content-type":"application/json"},
+    fetch('http://127.0.0.1:8000/SizeApiView/', {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('post_size_suc').innerText = "POST SUCCESSFULLY!"
+        })
+    document.getElementById('post_size_suc').innerText = ""
+}
+
+
+function warrentypost(event) {
+
+    event.preventDefault()
+    const type_warretny = document.getElementById('warrenty_option').value
+    const value_warretny = document.getElementById('warrenty_value').value
+
+    const obj = {
+        choice_type: type_warretny,
+        name: value_warretny
+    }
+    console.log("obj", obj)
+    document.getElementById('warrenty_option').value = ""
+    document.getElementById('warrenty_value').value = "open this"
+
+    fetch('http://127.0.0.1:8000/WarrentyApiView/', {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(obj)
+    })
+        .then((res) => {
+            res.json(),
+                document.getElementById('post_warrenty_suc').innerText = `${obj.name} POST SUCCESSFULLY.`
+        })
+    document.getElementById('post_warrenty_suc').innerText = ""
+
+}
+
+// data.forEach(element => {
+
+
+//     const parent = document.getElementById('size_body')
+//     const div = document.createElement('div')
+//     div.innerHTML = `
+//         <div class="size_div  d-flex justify-content-between p-2 m-2">
+//                         <div class="d-flex justify-content-center align-items-center gap-3">
+//                             <p>Type: ${element.choice_size}</p>
+//                             <p>Name: ${element.size_name}</p>
+//                         </div>
+//                         <div class="">
+
+//                             <div class="d-flex justify-content-center align-items-center gap-2">   
+
+
+//                                     <div class="">
+//                                         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#size_modal">
+//                                         <i onclick="UPdateSizefun('${element.id}','${element.choice_size}','${element.size_name}')" class="fa-solid fa-pen-to-square fa-xl"></i>
+//                                         </button>
+//                                     </div>
+//                                     <div class=""><i onclick="delsize('${element.id}')" class="fa-solid fa-trash fa-xl del_size"></i></div>
+
+//                             </div>
+//                         </div>
+//                     </div>
+// `
+//     parent.appendChild(div)
+// })
+
+const DisplayWarrenty = () => {
+
+
+
+    fetch('http://127.0.0.1:8000/WarrentyApiView/')
+        .then((res) => res.json())
+        .then((data) => {
+
+            data.forEach(element => {
+
+
+
+                const parent = document.getElementById('warrenty_body')
+                const div = document.createElement('div')
+                div.innerHTML = `
+                <div class="size_div  d-flex justify-content-between p-2 m-2">
+                                <div class="d-flex justify-content-center align-items-center gap-3">
+                                    <p>Type: ${element.choice_type}</p>
+                                    <p>Name: ${element.name}</p>
+                                </div>
+                                <div class="">
+
+                                    <div class="d-flex justify-content-center align-items-center gap-2">   
+
+
+                                            <div class="">
+                                                
+                                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#warrenty_modal">
+                                                    <i onclick="updatewarrenty('${element.id}','${element.choice_type}','${element.name}')" class="fa-solid fa-pen-to-square fa-xl"></i>
+                                            </button>
+                                            </div>
+                                
+                                            <div class=""><i onclick="delsize('${element.id}')" class="fa-solid fa-trash fa-xl del_size"></i></div>
+
+                                    </div>
+                                </div>
+                            </div>
+        `
+                parent.appendChild(div)
+            })
+
+
+
+
+        })
+}
+DisplayWarrenty()
+
+
+let warrenty_id = '';
+let typename = ''
+const updatewarrenty = (id, typename, value) => {
+
+    document.getElementById('warrenty_input_value').value = `${value}`
+    warrenty_id = `${id}`
+    typename = `${typename}`
+}
+
+
+// WarrentyCrudApiview
+
+const updatefuctionwarrenty = (event) => {
+    event.preventDefault()
+    const obj = {
+        choice_type: typename,
+        name: document.getElementById('warrenty_input_value').value
+    }
+    fetch(`http://127.0.0.1:8000/WarrentyCrudApiview/${warrenty_id}/`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
         body:JSON.stringify(obj)
     })
-    .then((res) =>{
+    .then((res) => {
         res.json(),
-        document.getElementById('post_size_suc').innerText="POST SUCCESSFULLY!"
+        document.getElementById('succ_warrenty').innerText=`UPDATE DONE`
     })
-    document.getElementById('post_size_suc').innerText=""
+    document.getElementById('succ_warrenty').innerText=""
+
 }
