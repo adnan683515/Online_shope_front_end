@@ -1,5 +1,5 @@
 const sareee = () => {
-    fetch('http://online-shope-backend.vercel.app/saree/')
+    fetch('https://online-shope-backend.vercel.app/saree/')
         .then((res) => res.json())
         .then((data) => single_saree(data))
 }
@@ -72,7 +72,7 @@ const single_saree = (saree_list) => {
 
 }
 
-fetch('http://online-shope-backend.vercel.app/saree_cetagory/')
+fetch('https://online-shope-backend.vercel.app/saree_cetagory/')
     .then((res) => res.json())
     .then((data) => load_saree_cetagory(data))
 
@@ -98,14 +98,14 @@ const load_saree_cetagory = (cetagory_list) => {
 }
 
 const cetagory_wise_saree = (id) => {
-    fetch(`http://online-shope-backend.vercel.app/saree/?cetagory=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/saree/?cetagory=${id}`)
         .then((res) => res.json())
         .then((data) => single_saree(data))
 }
 
 
 const colour = () => {
-    fetch('http://online-shope-backend.vercel.app/colour/')
+    fetch('https://online-shope-backend.vercel.app/colour/')
         .then((res) => res.json())
         .then((data) => load_colour(data))
 }
@@ -134,14 +134,14 @@ const load_colour = (colour_list) => {
 const colour_wise_saree = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/saree/?colour_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/saree/?colour_id=${id}`)
         .then((res) => res.json())
         .then((data) => single_saree(data))
 }
 
 
 
-fetch('http://online-shope-backend.vercel.app/range_of_price/')
+fetch('https://online-shope-backend.vercel.app/range_of_price/')
     .then((res) => res.json())
     .then((data) => load_range_price(data))
 
@@ -167,13 +167,13 @@ const load_range_price = (price_list) => {
 const price_wise_saree = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/saree/?range_of_price=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/saree/?range_of_price=${id}`)
         .then((res) => res.json())
         .then((data) => single_saree(data))
 }
 
 
-fetch('http://online-shope-backend.vercel.app/brand_saree/')
+fetch('https://online-shope-backend.vercel.app/brand_saree/')
     .then((res) => res.json())
     .then((data) => laod_bran_saree(data))
 
@@ -198,7 +198,7 @@ const laod_bran_saree = (brand_list) => {
 
 const brand_wise_sare = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/saree/?brand_saree=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/saree/?brand_saree=${id}`)
         .then((res) => res.json())
         .then((data) => single_saree(data))
 }
@@ -210,7 +210,7 @@ const catch_search_box = () => {
 
 
 
-    fetch(`http://online-shope-backend.vercel.app/saree/?product_title=${value}`)
+    fetch(`https://online-shope-backend.vercel.app/saree/?product_title=${value}`)
         .then((res) => res.json())
         .then((data) => single_saree(data))
 

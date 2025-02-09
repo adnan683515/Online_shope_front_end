@@ -5,7 +5,7 @@ const LoadSportsItem = () => {
 
 
     console.log("Load sport item")
-    fetch('http://online-shope-backend.vercel.app/Football/')
+    fetch('https://online-shope-backend.vercel.app/Football/')
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
@@ -92,7 +92,7 @@ const DisplaySportsItem = (data) => {
 const LoadTeamName = () => {
 
 
-    fetch('http://online-shope-backend.vercel.app/team/')
+    fetch('https://online-shope-backend.vercel.app/team/')
         .then((res) => res.json())
         .then((data) => DisplayTEam(data))
 }
@@ -121,7 +121,7 @@ const DisplayTEam = (data) => {
 
 const LoadJurseywiseTEam = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?team_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?team_id=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
@@ -130,7 +130,7 @@ const LoadJurseywiseTEam = (id) => {
 const LoadVersion = () => {
 
 
-    fetch('http://online-shope-backend.vercel.app/version/')
+    fetch('https://online-shope-backend.vercel.app/version/')
         .then((res) => res.json())
         .then((data) => DIsplayVersionWisejursery(data))
 }
@@ -159,14 +159,14 @@ const DIsplayVersionWisejursery = (data) => {
 const VersionWiseProduct = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?version_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?version_id=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
 
 const lOadRangeofPrice = () => {
 
-    fetch('http://online-shope-backend.vercel.app/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -192,14 +192,14 @@ lOadRangeofPrice()
 
 const DisplayProductWiseprice = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?tk_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?tk_id=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
 
 const LoadColour = () => {
 
-    fetch('http://online-shope-backend.vercel.app/colour/')
+    fetch('https://online-shope-backend.vercel.app/colour/')
         .then((res) => res.json())
         .then((data) => Display_colour(data))
 }
@@ -224,7 +224,7 @@ const Display_colour = (data) => {
 
 const ColourWisePorudct = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?colour_Id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?colour_Id=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
@@ -232,7 +232,7 @@ const ColourWisePorudct = (id) => {
 
 const LoadCricketBrand = () => {
 
-    fetch('http://online-shope-backend.vercel.app/CricketBrand/')
+    fetch('https://online-shope-backend.vercel.app/CricketBrand/')
         .then((res) => res.json())
         .then((data) => DisplayCricketBran(data))
 }
@@ -259,14 +259,14 @@ const DisplayCricketBran = (data) => {
 const LoadCricketBrandWiseProudct = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?cricket_brand=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?cricket_brand=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
 
 
 const LoadMetarial = () => {
-    fetch('http://online-shope-backend.vercel.app/mainmetarial/')
+    fetch('https://online-shope-backend.vercel.app/mainmetarial/')
         .then((res) => res.json())
         .then((data) => DisplayMetarail(data))
 }
@@ -293,7 +293,7 @@ const DisplayMetarail = (data) => {
 const LoadMetraillwiseProduct = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?metarail_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?metarail_id=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
@@ -301,7 +301,7 @@ const LoadMetraillwiseProduct = (id) => {
 
 const LoadBATSize = () => {
 
-    fetch("http://online-shope-backend.vercel.app/Batsize/")
+    fetch("https://online-shope-backend.vercel.app/Batsize/")
         .then((res) => res.json())
         .then((data) => DisplayBATSIZE(data))
 }
@@ -327,7 +327,7 @@ const DisplayBATSIZE = (data) => {
 
 const SIZewiseBAT = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?size_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?size_id=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
@@ -337,7 +337,7 @@ const SIZewiseBAT = (id) => {
 
 const lOadRangeofPriceFB = () => {
 
-    fetch('http://online-shope-backend.vercel.app/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => DisplayRangePriceFB(data))
 
@@ -367,7 +367,7 @@ const DisplayRangePriceFB = (data) => {
 const price_wise_football = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?price_fb=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?price_fb=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }
@@ -377,7 +377,7 @@ const price_wise_football = (id) => {
 
 const LoadWarentyFb = () => {
 
-    fetch('http://online-shope-backend.vercel.app/warenty/')
+    fetch('https://online-shope-backend.vercel.app/warenty/')
         .then((res) => res.json())
         .then((data) => DisplayWarrentyFb(data))
 }
@@ -405,7 +405,7 @@ const DisplayWarrentyFb = (data) => {
 
 const warentyWiseFootball = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/Football/?warrenty_fb=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/Football/?warrenty_fb=${id}`)
         .then((res) => res.json())
         .then((data) => DisplaySportsItem(data))
 }

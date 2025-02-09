@@ -1,6 +1,6 @@
 const LoadShirt = () => {
 
-    fetch('http://online-shope-backend.vercel.app/shirt/')
+    fetch('https://online-shope-backend.vercel.app/shirt/')
         .then((res) => res.json())
         .then((data) => SingleShirt(data))
 }
@@ -61,7 +61,7 @@ const SingleShirt = (data) => {
 
 const LoadShirtBrand = () => {
 
-    fetch('http://online-shope-backend.vercel.app/brandShirt/')
+    fetch('https://online-shope-backend.vercel.app/brandShirt/')
         .then((res) => res.json())
         .then((data) => DisplayBrandShit(data))
 }
@@ -87,7 +87,7 @@ const DisplayBrandShit = (data) => {
 const BrandWiseShirt = (id) => {
 
     console.log(id)
-    fetch(`http://online-shope-backend.vercel.app/shirt/?brand_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/shirt/?brand_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleShirt(data))
 }
@@ -95,7 +95,7 @@ const BrandWiseShirt = (id) => {
 
 const Loadcolour = () => {
 
-    fetch('http://online-shope-backend.vercel.app/colour/')
+    fetch('https://online-shope-backend.vercel.app/colour/')
         .then((res) => res.json())
         .then((data) => DisplayColour(data))
 }
@@ -126,7 +126,7 @@ const DisplayColour = (data) => {
 
 const LoadPrice = () => {
 
-    fetch('http://online-shope-backend.vercel.app/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => DisplayPrice(data))
 }
@@ -154,7 +154,7 @@ const DisplayPrice = (data) => {
 
 
 const LoadCetagoryShirt = () => {
-    fetch('http://online-shope-backend.vercel.app/cetagoryshirt/')
+    fetch('https://online-shope-backend.vercel.app/cetagoryshirt/')
         .then((res) => res.json())
         .then((data) => DisplayCetagoryShirt(data))
 }
@@ -179,21 +179,21 @@ const DisplayCetagoryShirt = (data) => {
 
 const LoadTk=(id)=>{
 
-    fetch(`http://online-shope-backend.vercel.app/shirt/?tk_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/shirt/?tk_id=${id}`)
     .then((res) => res.json())
     .then((data) => SingleShirt(data))
 }
 
 const Loadcolour_wise=(id)=>{
 
-    fetch(`http://online-shope-backend.vercel.app/shirt/?colour_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/shirt/?colour_id=${id}`)
     .then((res) => res.json())
     .then((data) => SingleShirt(data))
 }
 
 const LoadCetagorywise=(id)=>{
 
-    fetch(`http://online-shope-backend.vercel.app/shirt/?ceta_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/shirt/?ceta_id=${id}`)
     .then((res) => res.json())
     .then((data) => SingleShirt(data))
 }

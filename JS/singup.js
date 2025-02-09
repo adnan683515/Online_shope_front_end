@@ -29,7 +29,7 @@ const register = (event) => {
         if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;"'<>,.?/~`|-]).{8,}$/.test(user_Data.password)) {
 
 
-            fetch('http://online-shope-backend.vercel.app/register/', {
+            fetch('https://online-shope-backend.vercel.app/register/', {
                 method: "POST",
                 headers: { "Content-type": 'application/json' },
                 body: JSON.stringify(user_Data)

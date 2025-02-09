@@ -5,7 +5,7 @@
 const LoadOderlist = () => {
 
     const token = localStorage.getItem('Token')
-    fetch('http://online-shope-backend.vercel.app/oderlist/', {
+    fetch('https://online-shope-backend.vercel.app/oderlist/', {
         method: "GET",
         headers: {
             'Authorization': `Token ${token}`,
@@ -21,7 +21,7 @@ const LoadOderlist = () => {
 
 
 
-            fetch(`http://online-shope-backend.vercel.app/user/${localStorage.getItem('user_id')}/`)
+            fetch(`https://online-shope-backend.vercel.app/user/${localStorage.getItem('user_id')}/`)
                 .then((res) => res.json())
                 .then((user_data) => {
 
@@ -105,7 +105,7 @@ LoadOderlist()
 const Delete_order_user=(id)=>{
 
 
-    fetch(`http://online-shope-backend.vercel.app/order/?order_id_del=${id}`,{
+    fetch(`https://online-shope-backend.vercel.app/order/?order_id_del=${id}`,{
         method:"DELETE"
     })
     .then((res) =>{

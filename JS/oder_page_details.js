@@ -3,7 +3,7 @@ const DisplayOderDetails = (id) => {
 
     const token = localStorage.getItem('Token')
 
-    fetch(`http://online-shope-backend.vercel.app/oderlist/?oderitem_id=${id}`, {
+    fetch(`https://online-shope-backend.vercel.app/oderlist/?oderitem_id=${id}`, {
         method: "GET",
         headers: {
             'Authorization': `Token ${token}`,

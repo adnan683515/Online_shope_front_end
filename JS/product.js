@@ -1,5 +1,5 @@
 const DisplayAllBrandName_product = () => {
-    fetch('http://online-shope-backend.vercel.app/brandpost/')
+    fetch('https://online-shope-backend.vercel.app/brandpost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -21,7 +21,7 @@ DisplayAllBrandName_product()
 
 
 const displaycetagory_pro = () => {
-    fetch('http://online-shope-backend.vercel.app/cetagorypost/')
+    fetch('https://online-shope-backend.vercel.app/cetagorypost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -46,7 +46,7 @@ displaycetagory_pro()
 
 const allPriceoptioin = () => {
 
-    fetch('http://online-shope-backend.vercel.app/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -67,7 +67,7 @@ allPriceoptioin()
 
 const AllteamLoadedproduct = () => {
 
-    fetch('http://online-shope-backend.vercel.app/allteam/')
+    fetch('https://online-shope-backend.vercel.app/allteam/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -90,7 +90,7 @@ const version_product_display = () => {
 
 
 
-    fetch('http://online-shope-backend.vercel.app/versionpost/')
+    fetch('https://online-shope-backend.vercel.app/versionpost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -114,7 +114,7 @@ version_product_display()
 const colourDisplayproduct = () => {
 
 
-    fetch('http://online-shope-backend.vercel.app/colourpost/')
+    fetch('https://online-shope-backend.vercel.app/colourpost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -135,7 +135,7 @@ colourDisplayproduct()
 
 const AllcountryNameDisplayproduct = () => {
 
-    fetch('http://online-shope-backend.vercel.app/courntrypost/')
+    fetch('https://online-shope-backend.vercel.app/courntrypost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -156,7 +156,7 @@ AllcountryNameDisplayproduct()
 const AllMEtarialsproduct = () => {
 
 
-    fetch('http://online-shope-backend.vercel.app/mainmetarials/')
+    fetch('https://online-shope-backend.vercel.app/mainmetarials/')
         .then((res) => res.json())
         .then((data) => {
             data.forEach(element => {
@@ -176,7 +176,7 @@ AllMEtarialsproduct()
 
 const DisplayAllTypeOfJacketproduct = () => {
 
-    fetch('http://online-shope-backend.vercel.app/TypeOfjaceketPost/')
+    fetch('https://online-shope-backend.vercel.app/TypeOfjaceketPost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -197,7 +197,7 @@ DisplayAllTypeOfJacketproduct()
 
 const AllSizeDisplayproduct = () => {
 
-    fetch('http://online-shope-backend.vercel.app/SizeApiView/')
+    fetch('https://online-shope-backend.vercel.app/SizeApiView/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -217,7 +217,7 @@ AllSizeDisplayproduct()
 const AllMovementWacthprodcut = () => {
 
 
-    fetch('http://online-shope-backend.vercel.app/MoveMentWatchPostGEt/')
+    fetch('https://online-shope-backend.vercel.app/MoveMentWatchPostGEt/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -303,7 +303,7 @@ const ProductPostFunction = (event) => {
             console.log("object of product", obj)
 
 
-            fetch(`http://online-shope-backend.vercel.app/productpost/`, {
+            fetch(`https://online-shope-backend.vercel.app/productpost/`, {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify(obj)

@@ -1,7 +1,7 @@
 
 const load_geans_size = () => {
 
-    fetch('http://online-shope-backend.vercel.app/size_of_geans/')
+    fetch('https://online-shope-backend.vercel.app/size_of_geans/')
         .then((res) => res.json())
         .then((data) => single_geans_size(data))
 }
@@ -28,7 +28,7 @@ const single_geans_size = (data) => {
 
 const LoadGeansBrand = () => {
 
-    fetch('http://online-shope-backend.vercel.app/geans_brand/')
+    fetch('https://online-shope-backend.vercel.app/geans_brand/')
         .then((res => res.json()))
         .then((data) => SingleGeansBrand(data))
 }
@@ -53,7 +53,7 @@ const SingleGeansBrand = (data) => {
 }
 
 const LoadGeansCetagory = () => {
-    fetch("http://online-shope-backend.vercel.app/geans_cetagory/")
+    fetch("https://online-shope-backend.vercel.app/geans_cetagory/")
         .then((res) => res.json())
         .then((data) => SingleGeansCetagory(data))
 }
@@ -79,7 +79,7 @@ const SingleGeansCetagory = (data) => {
 
 const GeansCetagoryWise = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/geans/?geans_cetagory_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/geans/?geans_cetagory_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 }
@@ -87,7 +87,7 @@ const GeansCetagoryWise = (id) => {
 
 const LoadGeans = () => {
 
-    fetch('http://online-shope-backend.vercel.app/geans/')
+    fetch('https://online-shope-backend.vercel.app/geans/')
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 }
@@ -193,27 +193,27 @@ const SingleColourLoad = (data) => {
 }
 
 const ColourWiseGeans = (id) => {
-    fetch(`http://online-shope-backend.vercel.app/geans/?colour_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/geans/?colour_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 }
 
 const BrandWiseGeans = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/geans/?brand_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/geans/?brand_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 }
 
 const SizeWiseGeans = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/geans/?size_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/geans/?size_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 }
 
 const RangePriceGeans = () => {
-    fetch('http://online-shope-backend.vercel.app/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => load_range_price_geans(data))
 }
@@ -238,7 +238,7 @@ const load_range_price_geans = (price_list) => {
 
 const price_wise_geans = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/geans/?taka_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/geans/?taka_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 }
@@ -247,7 +247,7 @@ const InputValueGet = () => {
 
     const GeansSearchValue = document.getElementById('geans_search_input').value
 
-    fetch(`http://online-shope-backend.vercel.app/geans/?title=${GeansSearchValue}`)
+    fetch(`https://online-shope-backend.vercel.app/geans/?title=${GeansSearchValue}`)
         .then((res) => res.json())
         .then((data) => SingleGeans(data))
 

@@ -9,7 +9,7 @@ const CartCreated = () => {
         user: localStorage.getItem('user_id')
     }
 
-    fetch('http://online-shope-backend.vercel.app/cart/', {
+    fetch('https://online-shope-backend.vercel.app/cart/', {
         method: "POST",
         headers: {
             'Authorization': `Token ${token}`,  // Send token in the Authorization header
@@ -28,7 +28,7 @@ const SETCART_ID = () => {
 
     console.log('cart id',localStorage.getItem('user_id'))
 
-    fetch(`http://online-shope-backend.vercel.app/cart/?user_id=${localStorage.getItem('user_id')}`)
+    fetch(`https://online-shope-backend.vercel.app/cart/?user_id=${localStorage.getItem('user_id')}`)
         .then((res) => res.json())
         .then((data) => {
 
@@ -44,7 +44,7 @@ const set_cart_item = () => {
 
     console.log("SET cart items")
 
-    fetch(`http://online-shope-backend.vercel.app/cartItems/?cart_id=${localStorage.getItem('cart_id')}`)
+    fetch(`https://online-shope-backend.vercel.app/cartItems/?cart_id=${localStorage.getItem('cart_id')}`)
         .then((res) => res.json())
         .then((data) => {
 
@@ -67,7 +67,7 @@ set_cart_item()
 const admin_staff=()=>{
 
 
-    fetch(`http://online-shope-backend.vercel.app/adminstaff/${localStorage.getItem('user_id')}/`)
+    fetch(`https://online-shope-backend.vercel.app/adminstaff/${localStorage.getItem('user_id')}/`)
     .then((res) => res.json())
     .then((data) => {
         localStorage.setItem('Admin', data.is_staff)

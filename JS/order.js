@@ -7,13 +7,13 @@ const order_for_cart = () => {
 
     const item_id = new URLSearchParams(window.location.search).get('item_id')
 
-    fetch(`http://127.0.0.1:8000/updatecart/${item_id}/`)
+    fetch(`https://127.0.0.1:8000/updatecart/${item_id}/`)
         .then((res) => res.json())
         .then((data) => {
 
 
 
-            fetch(`http://127.0.0.1:8000/user/${localStorage.getItem('user_id')}/`)
+            fetch(`https://127.0.0.1:8000/user/${localStorage.getItem('user_id')}/`)
                 .then((res) => res.json())
                 .then((user_data) => {
 
@@ -86,7 +86,7 @@ const orderForm = (event) => {
     event.preventDefault()
 
     const item_id = new URLSearchParams(window.location.search).get('item_id')
-    fetch(`http://127.0.0.1:8000/updatecart/${item_id}/`)
+    fetch(`https://127.0.0.1:8000/updatecart/${item_id}/`)
         .then((res) => res.json())
         .then((data) => {
 
@@ -124,7 +124,7 @@ const orderForm = (event) => {
             document.getElementById('tranjection').value = ""
 
 
-            fetch('http://127.0.0.1:8000/order/', {
+            fetch('https://127.0.0.1:8000/order/', {
                 method: "POST",
                 headers: {
                     // 'Authorization': `Token ${token}`,
@@ -158,7 +158,7 @@ const SSLpayment = () => {
     console.log("onclik kaj kore")
     token = localStorage.getItem('Token')
 
-    fetch(`http://127.0.0.1:8000/sslcomarce/?oder_id=${id}`, {
+    fetch(`https://127.0.0.1:8000/sslcomarce/?oder_id=${id}`, {
         method: "POST",
         headers: {
             'Authorization': `Token ${token}`,  // Send token in the Authorization header

@@ -19,7 +19,7 @@ const pass_word_cng = (event) => {
 
     const token = localStorage.getItem('Token')
 
-    fetch('http://online-shope-backend.vercel.app/pass/', {
+    fetch('https://online-shope-backend.vercel.app/pass/', {
         method: "POST",
         headers: {
             'Authorization': `Token ${token}`,

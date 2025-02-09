@@ -2,7 +2,7 @@
 
 const LoadWatchProduct = () => {
 
-    fetch('http://online-shope-backend.vercel.app/watch/')
+    fetch('https://online-shope-backend.vercel.app/watch/')
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }
@@ -78,7 +78,7 @@ const SingleWatchProduct = (data) => {
 
 const LoadWatchCetagory = () => {
 
-    fetch('http://online-shope-backend.vercel.app/WatchCetagory/')
+    fetch('https://online-shope-backend.vercel.app/WatchCetagory/')
         .then((res) => res.json())
         .then((data) => DisplayWatchCetgory(data))
 }
@@ -115,7 +115,7 @@ const DisplayWatchCetgory = (data) => {
 
 const LoadCetagoryWatch = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/watch/?cetagory_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/watch/?cetagory_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }
@@ -124,7 +124,7 @@ const LoadCetagoryWatch = (id) => {
 
 const LoadBrandWatch = () => {
 
-    fetch('http://online-shope-backend.vercel.app/WatchBrand/')
+    fetch('https://online-shope-backend.vercel.app/WatchBrand/')
         .then((res) => res.json())
         .then((data) => DisplayBrandWatch(data))
 }
@@ -152,7 +152,7 @@ const DisplayBrandWatch = (data) => {
 
 const BrandWiseWacth = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/watch/?brand_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/watch/?brand_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }
@@ -160,7 +160,7 @@ const BrandWiseWacth = (id) => {
 
 const LoadWantenty = () => {
 
-    fetch('http://online-shope-backend.vercel.app/warenty/')
+    fetch('https://online-shope-backend.vercel.app/warenty/')
         .then((res) => res.json())
         .then((data) => DisplayWarenty(data))
 }
@@ -186,14 +186,14 @@ const DisplayWarenty = (data) => {
 }
 
 const WarentWiseProduct = (id) => {
-    fetch(`http://online-shope-backend.vercel.app/watch/?warenty_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/watch/?warenty_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }
 
 const LoaddiyalSize = () => {
 
-    fetch('http://online-shope-backend.vercel.app/diyal/')
+    fetch('https://online-shope-backend.vercel.app/diyal/')
         .then((res) => res.json())
         .then((data) => Displaydiyal(data))
 }
@@ -223,14 +223,14 @@ const Displaydiyal = (data) => {
 
 const Diyal_size_wise_product = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/watch/?diyal_size_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/watch/?diyal_size_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }
 
 const LoadStrapMetarail = () => {
 
-    fetch('http://online-shope-backend.vercel.app/strapMetarail/')
+    fetch('https://online-shope-backend.vercel.app/strapMetarail/')
         .then((res) => res.json())
         .then((data) => displayStrapmetarail(data))
 }
@@ -258,7 +258,7 @@ const displayStrapmetarail = (data) => {
 
 const StrapmetarialWiseProduct = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/watch/?strap_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/watch/?strap_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }
@@ -266,7 +266,7 @@ const StrapmetarialWiseProduct = (id) => {
 
 const LoadRangeOfPrice = () => {
 
-    fetch('http://online-shope-backend.vercel.app/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => DisplayRangeOfPrice(data))
 }
@@ -293,7 +293,7 @@ const DisplayRangeOfPrice = (data) => {
 
 const TkWiseProduct = (id) => {
 
-    fetch(`http://online-shope-backend.vercel.app/watch/?tk_id=${id}`)
+    fetch(`https://online-shope-backend.vercel.app/watch/?tk_id=${id}`)
         .then((res) => res.json())
         .then((data) => SingleWatchProduct(data))
 }

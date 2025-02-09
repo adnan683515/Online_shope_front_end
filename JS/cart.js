@@ -2,7 +2,7 @@
 
 const LoadCartItems = () => {
 
-    fetch(`http://online-shope-backend.vercel.app/cartItems/?cart_id=${localStorage.getItem('cart_id')}`)
+    fetch(`https://online-shope-backend.vercel.app/cartItems/?cart_id=${localStorage.getItem('cart_id')}`)
         .then((res) => res.json())
         .then((data) => displaycartitems(data))
 }
@@ -102,7 +102,7 @@ const Negative_icon_cart = (id) => {
 const DeleteCart_items = (id) => {
     document.getElementById('del_msg').innerHTML = ""
 
-    fetch(`http://online-shope-backend.vercel.app/updatecart/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/updatecart/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -127,7 +127,7 @@ const updatecart_items = (id, product_id, cart_id) => {
 
 
 
-    fetch(`http://online-shope-backend.vercel.app/updatecart/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/updatecart/${id}/`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json' // Set the request content type to JSON
@@ -148,7 +148,7 @@ const recentViewProduct = () => {
 
     const token = localStorage.getItem('Token')
 
-    fetch('http://online-shope-backend.vercel.app/viewproduct/', {
+    fetch('https://online-shope-backend.vercel.app/viewproduct/', {
         method: "GET",
         headers: {
             'Authorization': `Token ${token}`,  // Send token in the Authorization header
@@ -221,7 +221,7 @@ const DisplayRecentViewproduct = (data) => {
 const delteItemRecentViewProduct = (id) => {
 
 
-    fetch(`http://online-shope-backend.vercel.app/viewDelete/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/viewDelete/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
