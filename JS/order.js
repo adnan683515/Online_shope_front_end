@@ -41,7 +41,7 @@ const order_for_cart = () => {
 
                     const second_div = document.getElementById('items')
 
-                    let imageurl =data.product.display_image
+                    let imageurl = data.product.display_image
 
                     if (imageurl.includes("image/upload/https://")) {
                         imageurl = imageurl.replace("image/upload/", "");
@@ -167,5 +167,18 @@ const SSLpayment = () => {
     })
         .then((res) => {
             res.json();
+            console.log("res",res)
         })
+        .then(result => {
+            console.log("Request", result)
+
+            if (result) {
+                console.log("success", result)
+                window.location.href = result.payment_url;
+            }
+        })
+        .catch(error => {
+            console.error("Error initiating payment:", error);
+            alert("Something went wrong. Please check your connection.");
+        });
 }

@@ -23,7 +23,7 @@ const onclick_Add_to_cart = () => {
 
 
 
-    fetch('http://127.0.0.1:8000/cartItems/', {
+    fetch('http://online-shope-backend.vercel.app/cartItems/', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(obj)
@@ -54,7 +54,7 @@ const commentProduct = (event) => {
     document.getElementById('floatingTextarea').value = ""
     document.getElementById("cars").value = "🧡"
 
-    fetch(`http://127.0.0.1:8000/review_for_product/?product_id=${id}`, {
+    fetch(`http://online-shope-backend.vercel.app/review_for_product/?product_id=${id}`, {
         method: "POST",
         headers: { "Content-type": 'application/json' },
         body: JSON.stringify(CmtObj)
@@ -73,7 +73,7 @@ const Load_review_saree = () => {
 
     const id = new URLSearchParams(window.location.search).get('product_id')
 
-    fetch(`http://127.0.0.1:8000/reviewForget/?product_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/reviewForget/?product_id=${id}`)
         .then((res => res.json()))
         .then((data) => SingleReView_saree(data))
 }
@@ -107,7 +107,7 @@ const Load_review = () => {
 
     const id = new URLSearchParams(window.location.search).get('product_id')
 
-    fetch(`http://127.0.0.1:8000/reviewForget/?product_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/reviewForget/?product_id=${id}`)
         .then((res => res.json()))
         .then((data) => SingleReView(data))
 }
@@ -165,7 +165,7 @@ const total_tk = () => {
 
 
 
-    fetch(`http://127.0.0.1:8000/cart_items/?cart_id=${localStorage.getItem('cart_id')}`)
+    fetch(`http://online-shope-backend.vercel.app/cart_items/?cart_id=${localStorage.getItem('cart_id')}`)
         .then((res) => res.json())
         .then((data) => {
 
@@ -199,7 +199,7 @@ const tk_upate = (data) => {
     }
 
 
-    fetch(`http://127.0.0.1:8000/update_cart/${localStorage.getItem('cart_id')}/`, {
+    fetch(`http://online-shope-backend.vercel.app/update_cart/${localStorage.getItem('cart_id')}/`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(obj)
@@ -238,7 +238,7 @@ const JURSIDTAIls = (id) => {
     document.getElementById('saree-details-section').innerHTML = ""
 
 
-    fetch(`http://127.0.0.1:8000/SportsDetails/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/SportsDetails/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -254,16 +254,16 @@ const JURSIDTAIls = (id) => {
         
         
             <div class="col-lg-6 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="http://online-shope-backend.vercel.app/${data.display_image}" class="display_image_for_details img-fluid" alt="">
 
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="http://online-shope-backend.vercel.app/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="http://online-shope-backend.vercel.app/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                 
                             </div>
@@ -359,7 +359,7 @@ const FootballDetails = (id) => {
     const token = localStorage.getItem('Token')
     document.getElementById('saree-details-section').innerHTML = ""
 
-    fetch(`http://127.0.0.1:8000/SportsDetails/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/SportsDetails/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -480,7 +480,7 @@ const jacketDetails = (id) => {
     const token = localStorage.getItem('Token')
     document.getElementById('saree-details-section').innerHTML = ""
 
-    fetch(`http://127.0.0.1:8000/jackdetails/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/jackdetails/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -593,7 +593,7 @@ const jacketDetails = (id) => {
 
 const recomendationJackets = (id) => {
 
-    fetch(`http://127.0.0.1:8000/jackets/?product_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/jackets/?product_id=${id}`)
         .then((res) => res.json())
         .then((data) => {
             DisplayRecomendationJackets(data)
@@ -656,7 +656,7 @@ const shirtDetails = (id) => {
 
 
 
-    fetch(`http://127.0.0.1:8000/shirtDetails/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/shirtDetails/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -694,7 +694,7 @@ const shirtDetails = (id) => {
                                     <img src="${imageurl}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="http://online-shope-backend.vercel.app/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                     
                             </div>
@@ -773,7 +773,7 @@ const CriketDetails = (id) => {
     document.getElementById('saree-details-section').innerHTML = ""
 
 
-    fetch(`http://127.0.0.1:8000/SportsDetails/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/SportsDetails/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -789,16 +789,16 @@ const CriketDetails = (id) => {
         
         
             <div class="col-lg-3 col-md-8 col-sm-11">
-                    <img src="http://127.0.0.1:8000/${data.display_image}" class="display_image_for_details img-fluid" alt="">
+                    <img src="http://online-shope-backend.vercel.app/${data.display_image}" class="display_image_for_details img-fluid" alt="">
 
                     <div class="w-50 mt-4">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="http://127.0.0.1:8000/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="http://online-shope-backend.vercel.app/${data.display_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item"> 
-                                    <img src="http://127.0.0.1:8000/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
+                                    <img src="http://online-shope-backend.vercel.app/${data.font_image}" class="d-block details_geans_pic img-fluid" alt="...">
                                 </div>
                         
                             </div>
@@ -894,7 +894,7 @@ const SareeDeatails = (id) => {
     document.getElementById('saree-details-section').innerHTML = ""
 
 
-    fetch(`http://127.0.0.1:8000/saree_details/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/saree_details/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -1028,7 +1028,7 @@ const GeansDeatails = (id) => {
 
 
 
-    fetch(`http://127.0.0.1:8000/geans/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/geans/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -1148,7 +1148,7 @@ const WatchDetails = (id) => {
 
 
 
-    fetch(`http://127.0.0.1:8000/watchDetails/${id}/`, {
+    fetch(`http://online-shope-backend.vercel.app/watchDetails/${id}/`, {
         headers: {
             'Authorization': `Token ${token}`,
             'Content-Type': 'application/json'  // Optional, depending on your API
@@ -1266,7 +1266,7 @@ const WatchDetails = (id) => {
 
 const LoadAllFootballs = () => {
 
-    fetch('http://127.0.0.1:8000/allfootball/')
+    fetch('http://online-shope-backend.vercel.app/allfootball/')
         .then((res) => res.json())
         .then((data) => DisplayAllFootball(data))
 }
@@ -1289,7 +1289,7 @@ const DisplayAllFootball = (data) => {
                     <div class="card box_football" style="width: 17rem;">
                     
 
-                        <img src="http://127.0.0.1:8000/${element.display_image}" class="card-img-top image_of_recomen mt-2" alt="...">
+                        <img src="http://online-shope-backend.vercel.app/${element.display_image}" class="card-img-top image_of_recomen mt-2" alt="...">
                         <div class="card-body">
 
                             <p class="card-text">${element.description.slice(0, 20)}...</p>
@@ -1309,7 +1309,7 @@ const DisplayAllFootball = (data) => {
 
 const LoadAlljursey = () => {
 
-    fetch('http://127.0.0.1:8000/alljursery/')
+    fetch('http://online-shope-backend.vercel.app/alljursery/')
         .then((res) => res.json())
         .then((data) => DisplayAlljursey(data))
 }
@@ -1333,7 +1333,7 @@ const DisplayAlljursey = (data) => {
                     <div class="card box_football" style="width: 15rem; hight:14rem;">
                     
 
-                        <img src="http://127.0.0.1:8000/${element.display_image}" class="card-img-top recomdantion_img_jursey mt-2" alt="...">
+                        <img src="http://online-shope-backend.vercel.app/${element.display_image}" class="card-img-top recomdantion_img_jursey mt-2" alt="...">
                         <div class="card-body">
 
                             <p class="card-text">${element.description.slice(0, 15)}...</p>

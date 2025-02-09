@@ -19,7 +19,7 @@ const pass_word_cng = (event) => {
 
     const token = localStorage.getItem('Token')
 
-    fetch('http://127.0.0.1:8000/pass/', {
+    fetch('http://online-shope-backend.vercel.app/pass/', {
         method: "POST",
         headers: {
             'Authorization': `Token ${token}`,
@@ -32,6 +32,6 @@ const pass_word_cng = (event) => {
         document.getElementById('suc').innerText="Password Update Successfully!"
     })
     document.getElementById('suc').innerText=""
-    // http://127.0.0.1:8000/pass/
+    // http://online-shope-backend.vercel.app/pass/
 
 }

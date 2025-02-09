@@ -2,7 +2,7 @@
 
 const all_oder_list = () => {
 
-    fetch('http://127.0.0.1:8000/order/')
+    fetch('https://online-shope-backend.vercel.app/order/')
         .then((res) => res.json())
         .then((data) => DisplayAlloderList(data))
 }
@@ -106,7 +106,7 @@ const DisplayAlloderList = (data) => {
 const Delete_order = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/order/?order_id_del=${id}`, {
+    fetch(`https://online-shope-backend.vercel.app/order/?order_id_del=${id}`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -133,7 +133,7 @@ const ship_delivered_cencle_option = (id, value) => {
     }
 
 
-    fetch(`http://127.0.0.1:8000/oderPut/${id}/`)
+    fetch(`https://online-shope-backend.vercel.app/oderPut/${id}/`)
         .then((res) => res.json())
         .then((data) => {
 
@@ -150,7 +150,7 @@ const ship_delivered_cencle_option = (id, value) => {
                 user: data.user,
                 product: data.product
             }
-            fetch(`http://127.0.0.1:8000/oderPut/${id}/`, {
+            fetch(`https://online-shope-backend.vercel.app/oderPut/${id}/`, {
                 method: "PUT",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify(obj_create)
@@ -202,7 +202,7 @@ const BrandPostAdmin = (event) => {
     }
 
 
-    fetch('http://127.0.0.1:8000/cetagorypost/', {
+    fetch('https://online-shope-backend.vercel.app/cetagorypost/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj_crate)
@@ -223,7 +223,7 @@ const BrandPostAdmin = (event) => {
 
 const AllCetagoryLoadAdmin = () => {
 
-    fetch('http://127.0.0.1:8000/cetagorypost/')
+    fetch('https://online-shope-backend.vercel.app/cetagorypost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -324,7 +324,7 @@ const BrandFormPost = (event) => {
 
 
 
-    fetch('http://127.0.0.1:8000/brandpost/', {
+    fetch('https://online-shope-backend.vercel.app/brandpost/', {
         method: "POST",
         headers: { "Content-type": 'application/json' },
         body: JSON.stringify(obj_crate_ceta)
@@ -341,7 +341,7 @@ const BrandFormPost = (event) => {
 }
 
 const DisplayAllBrandName = () => {
-    fetch('http://127.0.0.1:8000/brandpost/')
+    fetch('https://online-shope-backend.vercel.app/brandpost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -399,7 +399,7 @@ DisplayAllBrandName()
 const brandDelete = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/brandPutDelte/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/brandPutDelte/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -413,7 +413,7 @@ const brandDelete = (id) => {
 const colourDisplay = () => {
 
 
-    fetch('http://127.0.0.1:8000/colourpost/')
+    fetch('https://online-shope-backend.vercel.app/colourpost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -473,7 +473,7 @@ const EditColourForm = (event) => {
     document.getElementById('recipient-name').value = ""
 
 
-    fetch(`http://127.0.0.1:8000/deletecolourput/${colour_id_capture}/`, {
+    fetch(`https://online-shope-backend.vercel.app/deletecolourput/${colour_id_capture}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -503,7 +503,7 @@ const ColourPost = (event) => {
 
     document.getElementById('colour_inpt').value = ""
 
-    fetch('http://127.0.0.1:8000/colourpost/', {
+    fetch('https://online-shope-backend.vercel.app/colourpost/', {
         method: "POST",
         headers: { "Content-type": 'application/json' },
         body: JSON.stringify(obj_create_for_clour)
@@ -519,7 +519,7 @@ const ColourPost = (event) => {
 const DeleteColour = (id, name) => {
 
 
-    fetch(`http://127.0.0.1:8000/deletecolourput/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/deletecolourput/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -585,7 +585,7 @@ const BrandNameUpdate = (event) => {
 
 
 
-    fetch(`http://127.0.0.1:8000/brandPutDelte/${brand_name_id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/brandPutDelte/${brand_name_id}/`, {
         method: "PUT",
         headers: { "Content-type": 'application/json' },
         body: JSON.stringify(obj)
@@ -618,7 +618,7 @@ const countryPost = (event) => {
 
 
 
-    fetch('http://127.0.0.1:8000/courntrypost/', {
+    fetch('https://online-shope-backend.vercel.app/courntrypost/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -636,7 +636,7 @@ const countryPost = (event) => {
 
 const AllcountryNameDisplay = () => {
 
-    fetch('http://127.0.0.1:8000/courntrypost/')
+    fetch('https://online-shope-backend.vercel.app/courntrypost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -675,7 +675,7 @@ AllcountryNameDisplay()
 const DeleteCountryName = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/countryPutDelet/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/countryPutDelet/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -712,7 +712,7 @@ const PutCountryForm = (event) => {
     }
 
 
-    fetch(`http://127.0.0.1:8000/countryPutDelet/${country_updteid}/`, {
+    fetch(`https://online-shope-backend.vercel.app/countryPutDelet/${country_updteid}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -756,7 +756,7 @@ const EditCetagoryName = (event) => {
 
     }
 
-    fetch(`http://127.0.0.1:8000/cetagoryputdelete/${cetagory_id_edit}/`, {
+    fetch(`https://online-shope-backend.vercel.app/cetagoryputdelete/${cetagory_id_edit}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -774,7 +774,7 @@ const EditCetagoryName = (event) => {
 
 const DeleteCetagory = (id) => {
 
-    fetch(`http://127.0.0.1:8000/cetagoryputdelete/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/cetagoryputdelete/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -786,7 +786,7 @@ const DeleteCetagory = (id) => {
 
 const AllteamLoaded = () => {
 
-    fetch('http://127.0.0.1:8000/allteam/')
+    fetch('https://online-shope-backend.vercel.app/allteam/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -843,7 +843,7 @@ const UpdateEditFunction = (event) => {
     }
     document.getElementById('edit_name_team').value = ""
 
-    fetch(`http://127.0.0.1:8000/teamputdelte/${TeamEdit_id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/teamputdelte/${TeamEdit_id}/`, {
         method: "PUT",
         headers: { "Content-type": 'application/json' },
         body: JSON.stringify(obj)
@@ -869,7 +869,7 @@ const TeamNamePOst = (event) => {
     document.getElementById("team_nameInput").value = ""
 
 
-    fetch('http://127.0.0.1:8000/allteam/', {
+    fetch('https://online-shope-backend.vercel.app/allteam/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -885,7 +885,7 @@ const TeamNamePOst = (event) => {
 
 const TeamNameDelete = (id) => {
 
-    fetch(`http://127.0.0.1:8000/teamputdelte/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/teamputdelte/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -908,7 +908,7 @@ const CaptureDate = (event) => {
 
 
 
-    fetch(`http://127.0.0.1:8000/oder_filter/?date_oder=${date_time}&end_date=${end_time}`)
+    fetch(`https://online-shope-backend.vercel.app/oder_filter/?date_oder=${date_time}&end_date=${end_time}`)
         .then((res) => res.json())
         .then((data) => {
             DisplayAlloderList(data)
@@ -920,7 +920,7 @@ const CaptureDate = (event) => {
 const AllMEtarials = () => {
 
 
-    fetch('http://127.0.0.1:8000/mainmetarials/')
+    fetch('https://online-shope-backend.vercel.app/mainmetarials/')
         .then((res) => res.json())
         .then((data) => {
             data.forEach(element => {
@@ -1003,7 +1003,7 @@ const MetarialPostForm = (event) => {
     }
 
 
-    fetch('http://127.0.0.1:8000/mainmetarials/', {
+    fetch('https://online-shope-backend.vercel.app/mainmetarials/', {
         method: "POST",
         headers: { "Content-type": 'application/json' },
         body: JSON.stringify(obj)
@@ -1043,7 +1043,7 @@ const editdelmetaform = (event) => {
     document.getElementById('meta_input_eidt').value = ""
 
 
-    fetch(`http://127.0.0.1:8000/editdeletemeta/${meta_id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/editdeletemeta/${meta_id}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1059,7 +1059,7 @@ const editdelmetaform = (event) => {
 const DelMeta = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/editdeletemeta/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/editdeletemeta/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -1075,7 +1075,7 @@ const DelMeta = (id) => {
 const DisplayVersion = () => {
 
 
-    fetch('http://127.0.0.1:8000/versionpost/')
+    fetch('https://online-shope-backend.vercel.app/versionpost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -1114,7 +1114,7 @@ const DisplayVersion = () => {
 
 const DeleteVersion = (id) => {
 
-    fetch(`http://127.0.0.1:8000/versionputdelete/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/versionputdelete/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -1151,7 +1151,7 @@ const EditVersionFunction = () => {
     }
     console.log(obj)
 
-    fetch(`http://127.0.0.1:8000/versionputdelete/${version_id_edit}/`, {
+    fetch(`https://online-shope-backend.vercel.app/versionputdelete/${version_id_edit}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1173,7 +1173,7 @@ const PostVersion = (event) => {
         name: form_data.get('post_input')
     }
 
-    fetch('http://127.0.0.1:8000/versionpost/', {
+    fetch('https://online-shope-backend.vercel.app/versionpost/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1195,7 +1195,7 @@ const jacket_input_value_set = (id, name) => {
 
 const DisplayAllTypeOfJacket = () => {
 
-    fetch('http://127.0.0.1:8000/TypeOfjaceketPost/')
+    fetch('https://online-shope-backend.vercel.app/TypeOfjaceketPost/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -1240,7 +1240,7 @@ DisplayAllTypeOfJacket()
 
 const DeleteJacket = (id) => {
 
-    fetch(`http://127.0.0.1:8000/JacketPutDelete/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/JacketPutDelete/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -1263,7 +1263,7 @@ const UpdateJacketType = () => {
     console.log(obj)
 
 
-    fetch(`http://127.0.0.1:8000/JacketPutDelete/${jacket_type_id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/JacketPutDelete/${jacket_type_id}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1295,7 +1295,7 @@ const JacketTypePost = (event) => {
 
     document.getElementById('jacket_input').value = ""
 
-    fetch('http://127.0.0.1:8000/TypeOfjaceketPost/', {
+    fetch('https://online-shope-backend.vercel.app/TypeOfjaceketPost/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1311,7 +1311,7 @@ const JacketTypePost = (event) => {
 
 const AllReangeOfPrice = () => {
 
-    fetch('http://127.0.0.1:8000/range_of_price/')
+    fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -1366,7 +1366,7 @@ const EditAmountRange = (event) => {
 
     console.log(obj)
     // http://127.0.0.1:8000/RangePriceDeletePut/3/
-    fetch(`http://127.0.0.1:8000/RangePriceDeletePut/${Edit_id_amount}/`, {
+    fetch(`https://online-shope-backend.vercel.app/RangePriceDeletePut/${Edit_id_amount}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1381,7 +1381,7 @@ const EditAmountRange = (event) => {
 
 const DeletTkamount = (id) => {
 
-    fetch(`http://127.0.0.1:8000/RangePriceDeletePut/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/RangePriceDeletePut/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -1401,7 +1401,7 @@ const POstRangeOFprice = (event) => {
         price_name: form_data.get('amount')
     }
 
-    fetch(`http://127.0.0.1:8000/range_of_price/`, {
+    fetch(`https://online-shope-backend.vercel.app/range_of_price/`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1419,7 +1419,7 @@ const POstRangeOFprice = (event) => {
 const AllMovementWacth = () => {
 
 
-    fetch('http://127.0.0.1:8000/MoveMentWatchPostGEt/')
+    fetch('https://online-shope-backend.vercel.app/MoveMentWatchPostGEt/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -1472,7 +1472,7 @@ const FormPOSTwacthEnv = (event) => {
     }
     document.getElementById('name_movement').value = ""
 
-    fetch('http://127.0.0.1:8000/MoveMentWatchPostGEt/', {
+    fetch('https://online-shope-backend.vercel.app/MoveMentWatchPostGEt/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1500,7 +1500,7 @@ const PutFunMovementWatch = () => {
     }
     console.log(obj)
 
-    fetch(`http://127.0.0.1:8000/MoveMentPutDelApivew/${edit_movement_watch_id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/MoveMentPutDelApivew/${edit_movement_watch_id}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1516,7 +1516,7 @@ const PutFunMovementWatch = () => {
 const DeleteMovementWatch = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/MoveMentPutDelApivew/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/MoveMentPutDelApivew/${id}/`, {
         method: "DELETE"
     })
         .then((res) => {
@@ -1528,7 +1528,7 @@ const DeleteMovementWatch = (id) => {
 
 const AllSizeDisplay = () => {
 
-    fetch('http://127.0.0.1:8000/SizeApiView/')
+    fetch('https://online-shope-backend.vercel.app/SizeApiView/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -1586,7 +1586,7 @@ const form_edt_size = () => {
         size_name: document.getElementById('size_value_edt').value
     }
     console.log("obj", obj)
-    fetch(`http://127.0.0.1:8000/sizeupdate/${size_id_update}/`, {
+    fetch(`https://online-shope-backend.vercel.app/sizeupdate/${size_id_update}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1601,7 +1601,7 @@ const form_edt_size = () => {
 const delsize = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/sizeupdate/${id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/sizeupdate/${id}/`, {
         method: "DELETE",
 
     })
@@ -1627,7 +1627,7 @@ const PostSizeFunction = (event) => {
     document.getElementById('size_name_post').value = ""
     document.getElementById('size_option').value = "Open this select menu"
     // http://127.0.0.1:8000/SizeApiView/
-    fetch('http://127.0.0.1:8000/SizeApiView/', {
+    fetch('https://online-shope-backend.vercel.app/SizeApiView/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1654,7 +1654,7 @@ function warrentypost(event) {
     document.getElementById('warrenty_option').value = ""
     document.getElementById('warrenty_value').value = "open this"
 
-    fetch('http://127.0.0.1:8000/WarrentyApiView/', {
+    fetch('https://online-shope-backend.vercel.app/WarrentyApiView/', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(obj)
@@ -1701,7 +1701,7 @@ const DisplayWarrenty = () => {
 
 
 
-    fetch('http://127.0.0.1:8000/WarrentyApiView/')
+    fetch('https://online-shope-backend.vercel.app/WarrentyApiView/')
         .then((res) => res.json())
         .then((data) => {
 
@@ -1764,7 +1764,7 @@ const updatefuctionwarrenty = (event) => {
         choice_type: typename,
         name: document.getElementById('warrenty_input_value').value
     }
-    fetch(`http://127.0.0.1:8000/WarrentyCrudApiview/${warrenty_id}/`, {
+    fetch(`https://online-shope-backend.vercel.app/WarrentyCrudApiview/${warrenty_id}/`, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body:JSON.stringify(obj)

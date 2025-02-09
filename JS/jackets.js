@@ -3,7 +3,7 @@
 
 const LoadJackets = () => {
 
-    fetch('http://127.0.0.1:8000/jackets/')
+    fetch('http://online-shope-backend.vercel.app/jackets/')
         .then((res) => res.json())
         .then((data) => {
             singlejackets(data)
@@ -77,14 +77,14 @@ const singlejackets = (data) => {
 const typeofjacketwiseproduct = (id) => {
 
 
-    fetch(`http://127.0.0.1:8000/jackets/?type_jac_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/jackets/?type_jac_id=${id}`)
         .then((res) => res.json())
         .then((data) => singlejackets(data))
 }
 
 const BrandWise_product = (id) => {
 
-    fetch(`http://127.0.0.1:8000/jackets/?brand_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/jackets/?brand_id=${id}`)
         .then((res) => res.json())
         .then((data) => singlejackets(data))
 }
@@ -92,7 +92,7 @@ const BrandWise_product = (id) => {
 const LoadBrandoFjacket = () => {
 
 
-    fetch('http://127.0.0.1:8000/brandjacket/')
+    fetch('http://online-shope-backend.vercel.app/brandjacket/')
         .then((res) => res.json())
         .then((data) => DisplayBrandJackets(data))
 }
@@ -122,7 +122,7 @@ const DisplayBrandJackets = (data) => {
 const LoadTypeJackets = () => {
 
 
-    fetch('http://127.0.0.1:8000/typeofjacket/')
+    fetch('http://online-shope-backend.vercel.app/typeofjacket/')
         .then((res) => res.json())
         .then((data) => DisplayTypeJackets(data))
 }
@@ -150,14 +150,14 @@ const DisplayTypeJackets = (data) => {
 
 const colour_wise_product = (id) => {
 
-    fetch(`http://127.0.0.1:8000/jackets/?colour_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/jackets/?colour_id=${id}`)
         .then((res) => res.json())
         .then((data) => singlejackets(data))
 }
 
 const LoadColour_jacks = () => {
 
-    fetch('http://127.0.0.1:8000/colour/')
+    fetch('http://online-shope-backend.vercel.app/colour/')
         .then((res) => res.json())
         .then((data) => DisplayColourJacks(data))
 }
@@ -184,14 +184,14 @@ const DisplayColourJacks = (data) => {
 
 const warrenty_wise_proudct = (id) => {
 
-    fetch(`http://127.0.0.1:8000/jackets/?warrenty_id=${id}`)
+    fetch(`http://online-shope-backend.vercel.app/jackets/?warrenty_id=${id}`)
         .then((res) => res.json())
         .then((data) => singlejackets(data))
 }
 
 const LoadWarrentyJacks = () => {
 
-    fetch('http://127.0.0.1:8000/jacketwarrenty/')
+    fetch('http://online-shope-backend.vercel.app/jacketwarrenty/')
         .then((res) => res.json())
         .then((data) => DisplayWarrenty(data))
 }
@@ -217,7 +217,7 @@ const DisplayWarrenty = (data) => {
 
 const LoadMainMetariails = () => {
 
-    fetch('http://127.0.0.1:8000/mainmetarial/')
+    fetch('http://online-shope-backend.vercel.app/mainmetarial/')
         .then((res) => res.json())
         .then((data) => DisplayMainmetarialis(data))
 }
