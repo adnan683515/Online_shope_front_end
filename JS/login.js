@@ -16,7 +16,7 @@ const login = (event) => {
     document.getElementById('username').value = ""
     document.getElementById('password').value = ""
 
-    fetch('http://online-shope-backend.vercel.app/login', {
+    fetch('https://online-shope-backend.vercel.app/login', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(login_Obj)
