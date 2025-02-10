@@ -352,11 +352,10 @@ const JURSIDTAIls = (id) => {
 const FootballDetails = (id) => {
 
 
-    console.log("Foot", id)
 
-    console.log("Football Details", id)
 
     const token = localStorage.getItem('Token')
+    console.log(token)
     document.getElementById('saree-details-section').innerHTML = ""
 
     fetch(`https://online-shope-backend.vercel.app/SportsDetails/${id}/`, {
@@ -368,21 +367,24 @@ const FootballDetails = (id) => {
         .then((res) => res.json())
         .then((data) => {
 
+            console.log("data", data)
             let imageurl = data.display_image
             let img_2 = data.font_image
             console.log("data", data)
 
-            if (imageurl.includes("image/upload/https://") || img_2.includes("image/upload/https://")) {
-                imageurl = imageurl.replace("image/upload/", "");
-                img_2 = img_2.replace("image/upload/", "");
-                // img_3 = img_3.replace("image/upload/", "");
+            if (img_2 != null || imageurl != null) {
+                if (imageurl.includes("image/upload/https://") || img_2.includes("image/upload/https://")) {
+                    imageurl = imageurl.replace("image/upload/", "");
+                    img_2 = img_2.replace("image/upload/", "");
+                    // img_3 = img_3.replace("image/upload/", "");
 
-            }
+                }
 
-            // Ensure the image URL is properly formatted
-            if (!imageurl.startsWith("https://") || !img_2.startsWith("https://")) {
-                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
-                img_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${img_2}`;
+                // Ensure the image URL is properly formatted
+                if (!imageurl.startsWith("https://") || !img_2.startsWith("https://")) {
+                    imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                    img_2 = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${img_2}`;
+                }
             }
             document.getElementById('saree-details-section').innerHTML = `
         
@@ -421,14 +423,14 @@ const FootballDetails = (id) => {
                     <h3>Product Title: ${data.product_title}
                     </h3>
                     <div class="d-flex gap-3">
-                    ${data.Brand != null ? `<p>Brand: ${Brand.name} </p>` : `<p>Brand:Null</p>`
+                    ${data.Brand != null ? `<p>Brand: ${data.Brand} </p>` : `<p>Brand:Null</p>`
                 }
-                    <p>cetagory: ${data.cetagory.name}</p>
+                    <p>cetagory: ${data.cetagory}</p>
                     </div>
 
                     <div class="d-flex gap-3">
                         <p>Available: ${data.abailable}</p>
-                        <p>Size: ${data.size.size_name}</p>
+                        <p>Size: ${data.size}</p>
                     </div>
 
                     <div class="d-flex gap-5">

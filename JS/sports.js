@@ -29,6 +29,7 @@ const DisplaySportsItem = (data) => {
         // <a class="button-3 text-decoration-none text-dark" href="SareeDetails.html?product_id=${element.id}&type_product=${element.type_your_product}&sports_type=${element.sports_Type}" >more </a>
         data.forEach(element => {
 
+            console.log(element)
             const parent = document.getElementById('sports-box-container')
             const token = localStorage.getItem('Token')
 
@@ -42,14 +43,19 @@ const DisplaySportsItem = (data) => {
                 div.style = "width: 15rem;"
 
             let imageurl = element.display_image
+            if (imageurl != null) {
 
-            if (imageurl.includes("image/upload/https://")) {
-                imageurl = imageurl.replace("image/upload/", "");
+                if (imageurl.includes("image/upload/https://")) {
+                    imageurl = imageurl.replace("image/upload/", "");
+                }
+
+                // Ensure the image URL is properly formatted
+                if (!imageurl.startsWith("https://")) {
+                    imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+                }
             }
-
-            // Ensure the image URL is properly formatted
-            if (!imageurl.startsWith("https://")) {
-                imageurl = `https://res.cloudinary.com/dtyxxpqdl/image/upload/${imageurl}`;
+            else{
+                alert('Plz Admin Image not found!')
             }
 
             div.innerHTML = `
