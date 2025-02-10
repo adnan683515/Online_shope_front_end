@@ -157,6 +157,7 @@ const colour_wise_product = (id) => {
 
 const LoadColour_jacks = () => {
 
+    console.log('colour')
     fetch('http://online-shope-backend.vercel.app/colour/')
         .then((res) => res.json())
         .then((data) => DisplayColourJacks(data))
