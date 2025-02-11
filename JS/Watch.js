@@ -266,6 +266,8 @@ const StrapmetarialWiseProduct = (id) => {
 
 const LoadRangeOfPrice = () => {
 
+    console.log("Load reange of price")
+
     fetch('https://online-shope-backend.vercel.app/range_of_price/')
         .then((res) => res.json())
         .then((data) => DisplayRangeOfPrice(data))
