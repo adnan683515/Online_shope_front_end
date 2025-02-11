@@ -168,7 +168,7 @@ const SingleGeans = (data) => {
 }
 
 const LoadColourGEans = () => {
-    fetch('http://online-shope-backend.vercel.app/colour/')
+    fetch('https://online-shope-backend.vercel.app/colour/')
         .then((res) => res.json())
         .then((data) => SingleColourLoad(data))
 }
